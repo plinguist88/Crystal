@@ -14,14 +14,6 @@ public class EmployeeRepository {
 	
 	private final String namespace = "Employee.";	// 직원 DAO
 	
-	// 직원 로그인(부서별 로그인)
-	public String employeeDepLogin(String depCheck) {
-		
-		String stmt = namespace + "employeeDepCheck";
-		
-		return sqlSession.selectOne(stmt, depCheck);
-	}
-	
 	// 직원 로그인
 	public EmployeeDTO employeeLogin(EmployeeDTO employeeDTO) {
 		

@@ -70,7 +70,7 @@
 	</div>
 </c:if>
 
-<c:if test="${employeeDepCheck eq 'HR' }">
+<c:if test="${employeeInfo.deptNum eq 'HR' }">
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>
@@ -90,7 +90,7 @@
 	</div>
 </c:if>
 
-<c:if test="${employeeDepCheck eq 'CT' }">
+<c:if test="${employeeInfo.deptNum eq 'CT' }">
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>
@@ -110,7 +110,7 @@
 	</div>
 </c:if>
 
-<c:if test="${employeeDepCheck eq 'GD' }">
+<c:if test="${employeeInfo.deptNum eq 'GD' }">
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>
@@ -130,7 +130,7 @@
 	</div>
 </c:if>
 
-<c:if test="${employeeDepCheck eq 'GF' }">
+<c:if test="${employeeInfo.deptNum eq 'GF' }">
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>
@@ -150,7 +150,7 @@
 	</div>
 </c:if>
 
-<c:if test="${employeeDepCheck eq 'GH' }">
+<c:if test="${employeeInfo.deptNum eq 'GH' }">
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>
@@ -170,7 +170,7 @@
 	</div>
 </c:if>
 
-<c:if test="${employeeDepCheck eq 'MA' }">
+<c:if test="${employeeInfo.deptNum eq 'MA' }">
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>
@@ -190,7 +190,7 @@
 	</div>
 </c:if>
 
-<c:if test="${employeeDepCheck eq 'SI' }">	<!-- 관리자 -->
+<c:if test="${employeeInfo.deptNum eq 'SI' }">	<!-- 관리자 -->
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>

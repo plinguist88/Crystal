@@ -6,17 +6,19 @@ public class EmployeeInfo {	// 직원의 로그인 정보를 저장하는 곳
 	private String email;
 	private String name;
 	private String pw;
+	private String deptNum;
 	
 	public EmployeeInfo() {
 		
 	}
 	
-	public EmployeeInfo(String id, String email, String name, String pw) {
+	public EmployeeInfo(String id, String email, String name, String pw, String deptNum) {
 		super();
 		this.id = id;
 		this.email = email;
 		this.name = name;
 		this.pw = pw;
+		this.deptNum = deptNum;
 	}
 
 	public String getId() {
@@ -31,7 +33,7 @@ public class EmployeeInfo {	// 직원의 로그인 정보를 저장하는 곳
 	public String getPw() {
 		return pw;
 	}
-
+	//--------
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -46,6 +48,13 @@ public class EmployeeInfo {	// 직원의 로그인 정보를 저장하는 곳
 
 	public void setPw(String pw) {
 		this.pw = pw;
+	}
+	public String getDeptNum() {
+		return deptNum;
+	}
+	
+	public void setDeptNum(String deptNum) {
+		this.deptNum = deptNum;
 	}
 	
 }

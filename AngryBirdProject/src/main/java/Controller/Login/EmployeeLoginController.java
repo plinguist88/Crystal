@@ -43,8 +43,6 @@ public class EmployeeLoginController {
 			
 		}
 		
-		String resultDep = employeeLoginService.employeeDepLogin(loginCommand, session);
-		
 		System.out.println("Goooooooooood");
 		return "main";
 		

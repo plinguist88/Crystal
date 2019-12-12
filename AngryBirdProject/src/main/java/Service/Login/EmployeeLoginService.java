@@ -35,7 +35,8 @@ public class EmployeeLoginService {
 			if (employeeDTO.getEmployeePw().equals(Encrypt.getEncryption(loginCommand.getEmployeePw() ) ) ) {
 				
 				employeeInfo = new EmployeeInfo(employeeDTO.getEmployeeNum(), employeeDTO.getEmployeeEmail(),
-												employeeDTO.getEmployeeName(), employeeDTO.getEmployeePw() );
+												employeeDTO.getEmployeeName(), employeeDTO.getEmployeePw(),
+												employeeDTO.getDeptNum() );
 				session.setAttribute("employeeInfo", employeeInfo);
 				
 				setCookie(loginCommand, response);
@@ -46,17 +47,6 @@ public class EmployeeLoginService {
 			}
 		}
 		return result;
-	}
-	
-	public String employeeDepLogin (LoginCommand loginCommand, HttpSession session) {
-		
-		String depCheck = loginCommand.getEmployeeNum();
-		
-		String check = employeeRepository.employeeDepLogin(depCheck);
-		
-		session.setAttribute("employeeDepCheck", check);
-		
-		return check;
 	}
 	
 	public void setCookie(LoginCommand loginCommand, HttpServletResponse response) {
