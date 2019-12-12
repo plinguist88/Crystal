@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation=
+			"http://www.springframework.org/schema/tx 
+        	http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+        	http://www.springframework.org/schema/context/spring-context-3.1.xsd
+			"
+>
+	<context:annotation-config />
+	
+	<bean destroy-method="close" class="com.mchange.v2.c3p0.ComboPooledDataSource" id="dataSource"><!-- 실행이되면 자동으로 닫아라 -->
+		<property value="oracle.jdbc.driver.OracleDriver" name="driverClass"/><!-- 여긴 bean의 class의 property를 말하는것 -->
+
+		<property value="jdbc:oracle:thin:@localhost:1521:xe" name="jdbcUrl"/>
+
+		<property value="CRYSTAL" name="user"/>
+
+		<property value="CRYSTAL" name="password"/>
+	</bean>
+	
+	<!-- Mybatis에서는 Spring에서 제공하는 api인 jdbcTemplate가 아닌, sqlSessionFactory라는 api를 사용 -->
+	<!-- SqlSessionFactory 객체 주입 -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+		<property name="dataSource" ref="dataSource"/>
+		<!-- <property value="classpath:mybatis-config.xml" name="configLocation"/> -->
+		
+		<!-- 쿼리문을 가지고 있는 파일은 무엇인지 설정 /폴더명-내가 설정해줌/어떤 경로이든지 상관없이 ...Mapper.xml로 끝나는 파일의 경로를 받아라는 뜻 -->
+		<property value="classpath:mappers/**/*Mapper.xml" name="mapperLocations"/>
+	</bean>
+	
+	<bean destroy-method="clearCache" class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	</bean>
+	
+	<bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<!-- Annotation 을 사용한 트랜잭션 사용시 활성화 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+		
+	<!-- @Service, @Repository애노테이션을 붙혀진 클래스를 빈으로 등록 -->
+	<context:component-scan base-package="ldg.mybatis">
+		<context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+	</context:component-scan>
+	
+	<context:annotation-config/>
+
+</beans>

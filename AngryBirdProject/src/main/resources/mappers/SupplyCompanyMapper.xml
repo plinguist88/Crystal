@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="supplyCompanyMapper">
+		
+	<cache />
+	
+	<sql id="supplyCompanyColumn">
+		sc_no, sc_license, sc_name1, sc_name2, sc_sort, sc_addr, sc_ph
+	</sql>
+	
+	<resultMap type="Model.DTO.SupplyCompanyDTO" id="supplyCompanyMap">
+		<id property="scNo" column="sc_no" />
+		<result property="scLicense" column="sc_license" />
+		<result property="scName1" column="sc_name1" />
+		<result property="scName2" column="sc_name2" />
+		<result property="scSort" column="sc_sort" />
+		<result property="scAddr" column="sc_addr" />
+		<result property="scPh" column="sc_ph" />
+	</resultMap>
+	
+	<select id="supplyCompanyList" resultMap="supplyCompanyMap">
+		select * from supply_company
+	</select>
+	
+</mapper>

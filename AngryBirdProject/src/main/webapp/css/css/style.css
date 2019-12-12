@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+
+/* 모든 컨텐츠는 <div class="container">로 감싸야함 */
+.container {
+	height:100%;
+	font-size: 18px;
+    padding-bottom:300px;
+    padding-top: 50px;
+}
+
+
+/* 테이블 td 아래에만 라인*/
+h2 {
+	text-align: center;
+}
+
+table.bottom {
+	border-collapse: collapse;
+	width: 800px;
+	margin-left:auto;  /* 테이블 자동으로 가운데 정렬 */
+	margin-right:auto; /* 테이블 자동으로 가운데 정렬 */
+}
+th {
+	text-align: center;
+}
+
+table.bottom th, table.bottom td {
+	height: 40px;
+	border-bottom: 1px solid #B8B8B8;	
+	padding: 10px;
+}
+
+/* 테이블 칸마다 라인 */
+table.line {
+	border-collapse: collapse;
+	width: 800px;
+	margin-left:auto;  /* 테이블 자동으로 가운데 정렬 */
+	margin-right:auto; /* 테이블 자동으로 가운데 정렬 */
+}
+
+table.line th, table.line td {
+	height: 40px;
+	border: 1px solid #B8B8B8;	
+	padding: 10px;
+}
+table.line td {
+	text-align: left;
+}
+
+/* input 타입별 css */
+input[type=text] {
+	border: 2px solid #B8B8B8;
+	border-radius: 4px;
+	font-size: 20px;
+}
+input[type=password] {
+	border: 2px solid #B8B8B8;
+	border-radius: 4px;
+	font-size: 20px;
+}
+input[type=date] {
+	border: 2px solid #B8B8B8;
+	border-radius: 4px;
+	font-size: 20px;
+}
+
+textarea{
+	border: 2px solid #B8B8B8;
+	border-radius: 4px;
+	font-size: 20px;
+	width: 600px;
+	height: 400px;
+}
+
+/* 커서로 클릭시 포인트 */
+input[type=text]:focus {
+	border: 3px solid #767575;
+	border-radius: 4px;
+	font-size: 20px;
+}
+input[type=date]:focus {
+	border: 3px solid #767575;
+	border-radius: 4px;
+	font-size: 20px;
+}
+input[type=password]:focus {
+	border: 3px solid #767575;
+	border-radius: 4px;
+	font-size: 20px;
+}
+textarea:focus {
+	border: 3px solid #767575;
+	border-radius: 4px;
+	font-size: 20px;
+}
+
+
+
+
+
+/* 버튼 회색으로  */
+button {
+  background-color: #e7e7e7; /* gray */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+
+input[type=submit]{
+  background-color: #e7e7e7; /* gray */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+
+input[type=reset] {
+  background-color: #e7e7e7; /* gray */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+
+
+
+/* 한글 글씨체 */
+:lang(ko) {font-family:nanum gothic, sans-serif;}
+
+/* 영문 글씨체 */
+:lang(en) {font-family: Arial, Helve tica, sans-serif;}
+

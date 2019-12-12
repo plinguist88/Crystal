@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						   http://www.springframework.org/schema/beans/spring-beans.xsd 
+						   http://www.springframework.org/schema/context 
+						   http://www.springframework.org/schema/context/spring-context.xsd" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xmlns:context="http://www.springframework.org/schema/context" 
+	   xmlns="http://www.springframework.org/schema/beans">
+	   <!-- 의존객체 생성 xml -->
+
+	<!-- @Autowired 사용하려고 context 추가 -->
+	<context:annotation-config/>
+<!-- 	<bean id="" class="" />컨트롤러에서 갖다쓰는 beans -->
+		<bean class="Service.Audition.AuditionInsertService" id="auditionInsertService"/>
+		<bean class="Repository.Audition.AuditionRepository" id="auditionRepository"/>
+		<bean class="Service.Audition.AuditionSelectService" id="auditionSelectService"/>
+		
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+	   xmlns:xsi ="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation = "http://www.springframework.org/schema/beans 
+	    http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+<bean class="Controller.Main.MainController" />
+
+<bean class="Controller.Audition.AuditionController" />
+
+<bean class="Controller.Artist.ArtistController" />
+
+<bean class="Controller.Company.CompanyController" />
+
+<bean class="Controller.News.NewsController" />
+
+<bean class="Controller.Schedule.ScheduleController" />
+
+<bean class="Controller.Login.LoginController" />
+	<bean class="Controller.Login.EmployeeLoginController" />
+	<bean class="Controller.Join.JoinController" />
+	
+<bean class="Controller.Logout.LogoutController" />
+
+</beans>
