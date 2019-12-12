@@ -57,12 +57,12 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="#" class="navA"> COMPANY</a>
-		 		 <a href="#" class="navA"> ARTIST</a> 
-		 		 <a href="#" class="navA"> NEWS</a> 
-		 		 <a href="#" class="navA"> SCHEDULE</a>
+		 		 <a href="company" class="navA"> COMPANY</a>
+		 		 <a href="artist" class="navA"> ARTIST</a> 
+		 		 <a href="news" class="navA"> NEWS</a> 
+		 		 <a href="schedule" class="navA"> SCHEDULE</a>
 		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="#" class="navA"> CONTACT US</a>   
+		  		 <a href="contactUs" class="navA"> CONTACT US</a>   
 		  		 <a href="login" class="navA"> LOGIN</a>   
 				</td>
 			</tr>
@@ -76,14 +76,14 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="#" class="navA"> COMPANY</a>
-		 		 <a href="#" class="navA"> ARTIST</a> 
-		 		 <a href="#" class="navA"> NEWS</a> 
-		 		 <a href="#" class="navA"> SCHEDULE</a>
+		 		 <a href="company" class="navA"> COMPANY</a>
+		 		 <a href="artist" class="navA"> ARTIST</a> 
+		 		 <a href="news" class="navA"> NEWS</a> 
+		 		 <a href="schedule" class="navA"> SCHEDULE</a>
 		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="#" class="navA"> CONTACT US</a>   
+		  		 <a href="contactUs" class="navA"> CONTACT US</a>  
 		  		 <a href="logout" class="navA"> LOGOUT</a>   
-		  		 <a href="#" class="navA"> HR</a>
+		  		 <a href="hr" class="navA"> HR</a>
 				</td>
 			</tr>
 		</table>
@@ -96,12 +96,12 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="#" class="navA"> COMPANY</a>
-		 		 <a href="#" class="navA"> ARTIST</a> 
-		 		 <a href="#" class="navA"> NEWS</a> 
-		 		 <a href="#" class="navA"> SCHEDULE</a>
+		 		 <a href="company" class="navA"> COMPANY</a>
+		 		 <a href="artist" class="navA"> ARTIST</a> 
+		 		 <a href="news" class="navA"> NEWS</a> 
+		 		 <a href="schedule" class="navA"> SCHEDULE</a>
 		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="#" class="navA"> CONTACT US</a>   
+		  		 <a href="contactUs" class="navA"> CONTACT US</a>   
 		  		 <a href="logout" class="navA"> LOGOUT</a>   
 		  		 <a href="cafeteriaMain" class="navA"> CT</a>
 				</td>
@@ -116,14 +116,14 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="#" class="navA"> COMPANY</a>
-		 		 <a href="#" class="navA"> ARTIST</a> 
-		 		 <a href="#" class="navA"> NEWS</a> 
-		 		 <a href="#" class="navA"> SCHEDULE</a>
+		 		 <a href="company" class="navA"> COMPANY</a>
+		 		 <a href="artist" class="navA"> ARTIST</a> 
+		 		 <a href="news" class="navA"> NEWS</a> 
+		 		 <a href="schedule" class="navA"> SCHEDULE</a>
 		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="#" class="navA"> CONTACT US</a>   
+		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
 		  		 <a href="logout" class="navA"> LOGOUT</a>   
-		  		 <a href="#" class="navA"> GD</a>
+		  		 <a href="gd" class="navA"> GD</a>
 				</td>
 			</tr>
 		</table>
@@ -136,14 +136,14 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="#" class="navA"> COMPANY</a>
-		 		 <a href="#" class="navA"> ARTIST</a> 
-		 		 <a href="#" class="navA"> NEWS</a> 
-		 		 <a href="#" class="navA"> SCHEDULE</a>
+		 		 <a href="company" class="navA"> COMPANY</a>
+		 		 <a href="artist" class="navA"> ARTIST</a> 
+		 		 <a href="news" class="navA"> NEWS</a> 
+		 		 <a href="schedule" class="navA"> SCHEDULE</a>
 		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="#" class="navA"> CONTACT US</a>   
+		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
 		  		 <a href="logout" class="navA"> LOGOUT</a>   
-		  		 <a href="#" class="navA"> GF</a>
+		  		 <a href="gf" class="navA"> GF</a>
 				</td>
 			</tr>
 		</table>
@@ -156,14 +156,14 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="#" class="navA"> COMPANY</a>
-		 		 <a href="#" class="navA"> ARTIST</a> 
-		 		 <a href="#" class="navA"> NEWS</a> 
-		 		 <a href="#" class="navA"> SCHEDULE</a>
+		 		 <a href="company" class="navA"> COMPANY</a>
+		 		 <a href="artist" class="navA"> ARTIST</a> 
+		 		 <a href="news" class="navA"> NEWS</a> 
+		 		 <a href="schedule" class="navA"> SCHEDULE</a>
 		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="#" class="navA"> CONTACT US</a>   
+		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
 		  		 <a href="logout" class="navA"> LOGOUT</a>   
-		  		 <a href="#" class="navA"> GH</a>
+		  		 <a href="gh" class="navA"> GH</a>
 				</td>
 			</tr>
 		</table>
@@ -176,14 +176,14 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="#" class="navA"> COMPANY</a>
-		 		 <a href="#" class="navA"> ARTIST</a> 
-		 		 <a href="#" class="navA"> NEWS</a> 
-		 		 <a href="#" class="navA"> SCHEDULE</a>
+		 		 <a href="company" class="navA"> COMPANY</a>
+		 		 <a href="artist" class="navA"> ARTIST</a> 
+		 		 <a href="news" class="navA"> NEWS</a> 
+		 		 <a href="schedule" class="navA"> SCHEDULE</a>
 		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="#" class="navA"> CONTACT US</a>   
+		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
 		  		 <a href="logout" class="navA"> LOGOUT</a>   
-		  		 <a href="#" class="navA"> MA</a>
+		  		 <a href="ma" class="navA"> MA</a>
 				</td>
 			</tr>
 		</table>
@@ -196,14 +196,14 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="#" class="navA"> COMPANY</a>
-		 		 <a href="#" class="navA"> ARTIST</a> 
-		 		 <a href="#" class="navA"> NEWS</a> 
-		 		 <a href="#" class="navA"> SCHEDULE</a>
+		 		 <a href="company" class="navA"> COMPANY</a>
+		 		 <a href="artist" class="navA"> ARTIST</a> 
+		 		 <a href="news" class="navA"> NEWS</a> 
+		 		 <a href="schedule" class="navA"> SCHEDULE</a>
 		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="#" class="navA"> CONTACT US</a>   
+		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
 		  		 <a href="logout" class="navA"> LOGOUT</a>   
-		  		 <a href="#" class="navA"> Admin</a>
+		  		 <a href="admin" class="navA"> Admin</a>
 				</td>
 			</tr>
 		</table>
