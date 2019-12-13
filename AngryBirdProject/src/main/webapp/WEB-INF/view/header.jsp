@@ -190,7 +190,7 @@
 	</div>
 </c:if>
 
-<c:if test="${employeeInfo.deptNum eq 'SI' }">	<!-- 관리자 -->
+<c:if test="${employeeInfo.deptNum eq 'SI' }">	<!-- 전산 관리자 -->
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>
@@ -204,6 +204,46 @@
 		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
 		  		 <a href="logout" class="navA"> LOGOUT</a>   
 		  		 <a href="admin" class="navA"> Admin</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</c:if>
+
+<c:if test="${jumjuInfo.codeNum eq 'JJ' }">
+	<div class="navbar" align="center">
+		<table class="table1" > 
+			<tr>
+				<td width="1400px" >
+				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="company" class="navA"> COMPANY</a>
+		 		 <a href="artist" class="navA"> ARTIST</a> 
+		 		 <a href="news" class="navA"> NEWS</a> 
+		 		 <a href="schedule" class="navA"> SCHEDULE</a>
+		 		 <a href="audition" class="navA"> AUDITION</a>
+		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
+		  		 <a href="logout" class="navA"> LOGOUT</a>   
+		  		 <a href="JumJu" class="navA"> JJ</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</c:if>
+
+<c:if test="${contractorInfo.levelNum == 0 || contractorInfo.levelNum == 1}">
+	<div class="navbar" align="center">
+		<table class="table1" > 
+			<tr>
+				<td width="1400px" >
+				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="company" class="navA"> COMPANY</a>
+		 		 <a href="artist" class="navA"> ARTIST</a> 
+		 		 <a href="news" class="navA"> NEWS</a> 
+		 		 <a href="schedule" class="navA"> SCHEDULE</a>
+		 		 <a href="audition" class="navA"> AUDITION</a>
+		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
+		  		 <a href="logout" class="navA"> LOGOUT</a>   
+		  		 <a href="contractor" class="navA"> CONTRACTOR</a>
 				</td>
 			</tr>
 		</table>
