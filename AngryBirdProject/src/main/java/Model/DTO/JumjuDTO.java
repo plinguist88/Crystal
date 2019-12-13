@@ -19,7 +19,6 @@ public class JumjuDTO implements Serializable{
 	public JumjuDTO() {
 		
 	}
-
 	public JumjuDTO(String storeOwnerId, String storeOwnerPw, String storeOwnerName, String storeNo,
 			String storeOwnerBank, String storeOwnerAccount, String storeOwnerPhone, String storeOwnerAddr,
 			Integer storeOwnerCalculMoney, String storeCodeNum) {

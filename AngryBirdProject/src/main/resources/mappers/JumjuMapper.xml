@@ -24,6 +24,7 @@
 		
 		
 		
+		
 		<insert id="joinJumju">
 			insert into STORE_OWNER ( <include refid="jumjuCol" /> )
 							 values ( #{storeOwnerId}, #{STORE_OWNER_PW}, #{storeOwnerName}, #{storeNo}, #{storeOwnerBank}, 

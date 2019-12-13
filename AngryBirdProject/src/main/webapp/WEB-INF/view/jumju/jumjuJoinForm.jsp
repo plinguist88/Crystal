@@ -16,7 +16,7 @@
 	<form:form action="jjJoinAction" name="frm" id="frm" method="post" commandName="jumjuJoinCommand">
 		<table width=600 class="line">
 			<tr>
-				<td width="200 ">
+				<td width="200">
 					점주 코드 번호
 				</td>
 				<td width="400">
@@ -26,7 +26,7 @@
 			</tr>
 			
 			<tr>
-				<td width="200 ">
+				<td width="200">
 					점주 ID
 				</td>
 				<td width="400">

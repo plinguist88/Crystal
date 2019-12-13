@@ -14,7 +14,6 @@ public class JumjuJoinCommand {
 	private Integer storeOwnerCalculMoney;
 	private String storeCodeNum;
 	
-	
 	public String getStoreOwnerId() {
 		return storeOwnerId;
 	}

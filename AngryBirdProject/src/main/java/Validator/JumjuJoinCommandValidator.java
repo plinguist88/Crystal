@@ -10,7 +10,7 @@ import org.springframework.validation.Validator;
 import Command.JumjuJoinCommand;
 
 public class JumjuJoinCommandValidator implements Validator{
-
+	// 정규식
 	private static final String storeNumRegExp= "^\\d{3}\\d{2}(\\d{5}[1])$";
 	private Pattern storeNumPattern;
 	

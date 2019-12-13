@@ -19,7 +19,6 @@ public class JumjuRepository {
 		
 		String stmt = namespace + "joinJumju";
 		Integer result = sqlSession.insert(stmt, jumjuDTO);
-		
 		return result;
 	}
 }

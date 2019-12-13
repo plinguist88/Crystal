@@ -16,12 +16,14 @@ public class JumjuJoinController {
 	@Autowired
 	JumjuJoinService jumjuJoinService;
 	
+	// 점주 가입 페이지
 	@RequestMapping(value = "/jumju")
 	public String jjJoin (JumjuJoinCommand jumjuJoinCommand) {
 		
 		return "jumju/jumjuJoinForm";
 	}
 	
+	// 점주 가입 정보 처리
 	@RequestMapping(value = "/jjJoinAction", method = RequestMethod.POST)
 	public String jjJoinAction (JumjuJoinCommand jumjuJoinCommand, Errors errors) {
 		System.out.println("jjID : " + jumjuJoinCommand.getStoreOwnerId() );
