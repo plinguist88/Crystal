@@ -28,14 +28,14 @@ public class AuditionController {
 	
 	//오디션공고 업로드페이지로 가기 + session값 필요
 	@RequestMapping("/goAudition")
-	public String goAudition(AuditionCommand auditionCommand, HttpSession session) {
+	public String goAudition(AuditionCommand auditionCommand) {
 		return "audition/audition_upload";
 	}
 	
 	//오디션 공고 등록하기 버튼 클릭시
 	@RequestMapping(value="/registerAudition", method = RequestMethod.POST)
 	public String registerAudition(AuditionCommand auditionCommand, HttpSession session) {
-
+		
 		auditionInsertService.regAudition(auditionCommand, session);
 		
 		

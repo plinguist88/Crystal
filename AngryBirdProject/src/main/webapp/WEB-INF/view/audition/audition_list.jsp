@@ -46,17 +46,12 @@ $(function(){
 			<td colspan="3" align="center">등록된 오디션 공고가 없습니다.</td>
 		</tr>
 	</c:if>
-<%-- 	<c:if test="${!empty employeeInfo }"> --%>
-		<tr>
-			<td colspan="3">
+</table>
+<c:if test="${employeeInfo.deptNum eq 'GD' }">
 			<div align="center"><br />
 				<button id="btn1">오디션 공고 등록</button>
 			</div>
-			</td>
-		</tr>
-<%-- 	</c:if>	 --%>	
-</table>
-
+</c:if>
 </div>
 </body>
 </html>

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import Command.AuditionCommand;
 import Model.DTO.AuditionDTO;
+import Model.DTO.EmployeeInfo;
 import Repository.Audition.AuditionRepository;
 
 @Service
@@ -26,7 +27,8 @@ public class AuditionInsertService {
 		aud.setType(auditionCommand.getAuditionType());
 		aud.setContent(auditionCommand.getAuditionContent());
 		//session에서 employeeNum을 넣기로
-		aud.setEmployeeNum("일단 session대신 id로..");
+		EmployeeInfo emp = (EmployeeInfo) session.getAttribute("employeeInfo");
+		aud.setEmployeeNum(emp.getId());
 		return auditionRepository.auditionInsert(aud); 
 	}
 }

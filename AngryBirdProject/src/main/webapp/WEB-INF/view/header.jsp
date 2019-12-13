@@ -116,32 +116,76 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="company" class="navA"> COMPANY</a>
-		 		 <a href="artist" class="navA"> ARTIST</a> 
-		 		 <a href="news" class="navA"> NEWS</a> 
-		 		 <a href="schedule" class="navA"> SCHEDULE</a>
-		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
+		 		 <a href="auditions" class="navA"> AUDITIONS</a>
+		 		 <a href="candidates" class="navA"> CANDIDATES</a>    
+		  		 <a href="initialContracts" class="navA"> INITIAL CONTRACTS</a>   
+		  		 <a href="contractors" class="navA"> CONTRACTORS</a>    
 		  		 <a href="logout" class="navA"> LOGOUT</a>   
-		  		 <a href="gd" class="navA"> GD</a>
+		  		 <a href="gdMain" class="navA"> GD</a>
 				</td>
 			</tr>
 		</table>
 	</div>
 </c:if>
 
-<c:if test="${employeeInfo.deptNum eq 'GF' }">
+<c:if test="${employeeInfo.deptNum eq 'GF' && employeeInfo.jobTypeNum eq 'NM' }"> <!-- 인재육성팀 일반사무직 -->
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
 				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="company" class="navA"> COMPANY</a>
-		 		 <a href="artist" class="navA"> ARTIST</a> 
-		 		 <a href="news" class="navA"> NEWS</a> 
-		 		 <a href="schedule" class="navA"> SCHEDULE</a>
-		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
+		 		 <a href="contractors" class="navA"> CONTRACTORS</a>
+		 		 <a href="trainings" class="navA"> TRAININGS</a> 
+		 		 <a href="trainingTFs" class="navA"> TRAINING TF</a> 
+		 		 <a href="trainees" class="navA"> TRAINEES</a> 
+		  		 <a href="logout" class="navA"> LOGOUT</a>   
+		  		 <a href="gf" class="navA"> GF</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</c:if>
+
+<c:if test="${employeeInfo.deptNum eq 'GF' && employeeInfo.jobTypeNum eq 'CT' }"> <!-- 인재육성팀 상담사-->
+	<div class="navbar" align="center">
+		<table class="table1" > 
+			<tr>
+				<td width="1400px" >
+				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="schedules" class="navA"> SCHEDULES</a>
+		 		 <a href="counseling" class="navA"> COUNSELING</a> 
+		  		 <a href="logout" class="navA"> LOGOUT</a>   
+		  		 <a href="gf" class="navA"> GF</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</c:if>
+
+<c:if test="${employeeInfo.deptNum eq 'GF' && (employeeInfo.jobTypeNum eq 'DT' || employeeInfo.jobTypeNum eq 'VT') }"> <!-- 인재육성팀 트레이너 모두 포함 -->
+	<div class="navbar" align="center">
+		<table class="table1" > 
+			<tr>
+				<td width="1400px" >
+				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="contractors" class="navA"> MY TF TEAMS</a> <!-- TF 리스트 나오고, TF 클릭하면 TF구성 멤버 나오도록 -->
+		 		 <a href="myTrainingsTrainer" class="navA"> MY TRAININGS</a> <!-- 트레이닝 안에 트레이니들 리스트 나오고, 트레이니 클릭하면 평가입력가능하게, 그동안의 평가리스트 및 차트 나오도록 -->
+		  		 <a href="logout" class="navA"> LOGOUT</a>   
+		  		 <a href="gf" class="navA"> GF</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</c:if>
+
+<c:if test="${employeeInfo.deptNum eq 'GF' && employeeInfo.jobTypeNum eq 'FC' }"> <!-- 인재육성팀 피트니스코치 -->
+	<div class="navbar" align="center">
+		<table class="table1" > 
+			<tr>
+				<td width="1400px" >
+				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="contractors" class="navA"> WLP-REQUESTS</a> <!-- 운동처방 신청목록(체중감량계획) 확인 , 처방하기-->
+		 		 <a href="artist" class="navA"> EXERCISE</a> <!-- 운동목록 업데이트/칼로리변경/ -->
 		  		 <a href="logout" class="navA"> LOGOUT</a>   
 		  		 <a href="gf" class="navA"> GF</a>
 				</td>
@@ -236,12 +280,11 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="company" class="navA"> COMPANY</a>
-		 		 <a href="artist" class="navA"> ARTIST</a> 
-		 		 <a href="news" class="navA"> NEWS</a> 
-		 		 <a href="schedule" class="navA"> SCHEDULE</a>
-		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
+		 		 <a href="company" class="navA"> MY CONTRACTS</a>
+		 		 <a href="artist" class="navA"> MY B-PROFILES</a> <!-- B-profile에 체중감량계획, 식단, 운동 모두 나올수 있도록 -->
+		 		 <a href="news" class="navA"> MY TRAININGS</a> 
+		 		 <a href="schedule" class="navA"> MY SCHEDULES</a>
+		 		 <a href="audition" class="navA"> MY COUNSELING</a>
 		  		 <a href="logout" class="navA"> LOGOUT</a>   
 		  		 <a href="contractor" class="navA"> CONTRACTOR</a>
 				</td>
