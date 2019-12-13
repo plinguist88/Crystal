@@ -6,7 +6,8 @@
 	
 		<sql id="jumjuCol">
 			STORE_OWNER_ID, STORE_OWNER_PW, STORE_OWNER_NAME, STORE_NO, STORE_OWNER_BANK, 
-			STORE_OWNER_ACCOUNT, STORE_OWNER_PHONE, STORE_OWNER_ADDR, STORE_OWNER_CALCUL_MONEY, STORE_CODE_NUM
+			STORE_OWNER_ACCOUNT, STORE_OWNER_PHONE, STORE_OWNER_ADDR, STORE_OWNER_CALCUL_MONEY, 
+			STORE_CODE_NUM, STORE_CONTRACT_DAY
 		</sql>
 		
 		<resultMap type="Model.DTO.JumjuDTO" id="jumjuRs">
@@ -20,6 +21,7 @@
 			<result column="STORE_OWNER_ADDR" jdbcType="VARCHAR" property="storeOwnerAddr" />
 			<result column="STORE_OWNER_CALCUL_MONEY" jdbcType="INTEGER" property="storeOwnerCalculMoney" />
 			<result column="STORE_CODE_NUM" jdbcType="VARCHAR" property="storeCodeNum" />
+			<result column="STORE_CONTRACT_DAY" jdbcType="VARCHAR" property="storeContractDay" />
 		</resultMap>
 		
 		
@@ -28,6 +30,7 @@
 		<insert id="joinJumju">
 			insert into STORE_OWNER ( <include refid="jumjuCol" /> )
 							 values ( #{storeOwnerId}, #{STORE_OWNER_PW}, #{storeOwnerName}, #{storeNo}, #{storeOwnerBank}, 
-							 		  #{storeOwnerAccount}, #{storeOwnerPhone}, #{storeOwnerAddr}, #{storeOwnerCalculMoney}, #{storeCodeNum} )
+							 		  #{storeOwnerAccount}, #{storeOwnerPhone}, #{storeOwnerAddr}, #{storeOwnerCalculMoney},
+							 		  #{storeCodeNum}, #{storeContractDay} )
 		</insert>
 </mapper>

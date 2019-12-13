@@ -18,7 +18,7 @@ public class JumjuJoinService {
 		Integer result = null;
 		JumjuDTO jumjuDTO = new JumjuDTO();
 		try {
-			jumjuDTO.setStoreOwnerId(jumjuJoinCommand.getStoreOwnerId() );
+			jumjuDTO.setStoreOwnerId("J" + jumjuJoinCommand.getStoreContractDay() + jumjuJoinCommand.getStoreCodeNum() );
 			jumjuDTO.setStoreOwnerPw(jumjuJoinCommand.getStoreOwnerPw() );
 			jumjuDTO.setStoreOwnerName(jumjuJoinCommand.getStoreOwnerName() );
 			jumjuDTO.setStoreNo(jumjuJoinCommand.getStoreNo() );
@@ -28,6 +28,7 @@ public class JumjuJoinService {
 			jumjuDTO.setStoreOwnerAddr(jumjuJoinCommand.getStoreOwnerAddr() );
 			jumjuDTO.setStoreOwnerCalculMoney(jumjuJoinCommand.getStoreOwnerCalculMoney() );
 			jumjuDTO.setStoreCodeNum(jumjuJoinCommand.getStoreCodeNum() );
+			jumjuDTO.setStoreContractDay(jumjuJoinCommand.getStoreContractDay() );
 			
 			result = jumjuRepository.joinJumju(jumjuDTO);
 			

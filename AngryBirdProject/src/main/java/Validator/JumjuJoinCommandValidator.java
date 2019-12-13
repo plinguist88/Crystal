@@ -20,10 +20,14 @@ public class JumjuJoinCommandValidator implements Validator{
 	private static final String phoneRegExp = "^01(?:0|1|[6-9])(\\d{3}|\\d{4})(\\d{4})$";
 	private Pattern phonePattern;
 	
+	private static final String birthRegExp = "^(\\d{2}[0-9][0-9])(\\d{2}[0-1][0-9])(\\d{2}[0-3][0-3])$";
+	private Pattern birthPattern;
+	
 	public JumjuJoinCommandValidator() {
 		storeNumPattern =  Pattern.compile(storeNumRegExp);
 		accountPattern = Pattern.compile(accountRegExp);
 		phonePattern = Pattern.compile(phoneRegExp);
+		birthPattern = Pattern.compile(birthRegExp);
 	}
 	
 	@Override
@@ -39,38 +43,50 @@ public class JumjuJoinCommandValidator implements Validator{
 		
 		// 사업자 번호 정규식
 		if(jumjuJoinCommand.getStoreNo() == null || jumjuJoinCommand.getStoreNo().trim().isEmpty() ) {
-			errors.rejectValue("jjStoreNo", "required");
+			errors.rejectValue("storeNo", "required");
 			
 		} else {
 			// false/ true
 			Matcher matcher = storeNumPattern.matcher(jumjuJoinCommand.getStoreNo() ); 
 			if(!matcher.matches()) {
-				errors.rejectValue("jjStoreNo", "badStoreNo");
+				errors.rejectValue("storeNo", "badStoreNo");
 				
 			}
 		}
 		
 		// 계좌번호 정규식
 		if(jumjuJoinCommand.getStoreOwnerAccount() == null || jumjuJoinCommand.getStoreOwnerAccount().trim().isEmpty() ) {
-			errors.rejectValue("jjBackAccount", "required");
+			errors.rejectValue("storeOwnerAccount", "required");
 		
 		}else {
 			Matcher matcher = accountPattern.matcher(jumjuJoinCommand.getStoreOwnerAccount() ); 
 			if(!matcher.matches()) {
-				errors.rejectValue("jjBackAccount", "badAccount");
+				errors.rejectValue("storeOwnerAccount", "badAccount");
 				
 			}
 		}
 		
 		// 핸드폰 번호 정규식
 		if(jumjuJoinCommand.getStoreOwnerPhone() == null || jumjuJoinCommand.getStoreOwnerPhone().trim().isEmpty() ) {
-			errors.rejectValue("jjPhone", "required");
+			errors.rejectValue("storeOwnerPhone", "required");
 
 		}else {
 			Matcher matcher = phonePattern.matcher(jumjuJoinCommand.getStoreOwnerPhone() ); 
 			if(!matcher.matches()) {
-				errors.rejectValue("jjPhone", "badPhone");
+				errors.rejectValue("storeOwnerPhone", "badPhone");
 
+			}
+		}
+		
+		// 계약 일자 정규식
+		if(jumjuJoinCommand.getStoreContractDay() == null || jumjuJoinCommand.getStoreContractDay().trim().isEmpty()) {
+			errors.rejectValue("storeContractDay", "required");
+			
+		}else {
+			Matcher matcher = birthPattern.matcher(jumjuJoinCommand.getStoreContractDay() ); 
+			if(!matcher.matches()) {
+				errors.rejectValue("storeContractDay", "badContract");
+				
 			}
 		}
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "storeOwnerId", "required");

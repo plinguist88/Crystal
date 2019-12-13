@@ -13,6 +13,7 @@ public class JumjuJoinCommand {
 	private String storeOwnerAddr;
 	private Integer storeOwnerCalculMoney;
 	private String storeCodeNum;
+	private String storeContractDay;
 	
 	public String getStoreOwnerId() {
 		return storeOwnerId;
@@ -130,6 +131,16 @@ public class JumjuJoinCommand {
 			return true;
 		}
 		return false;
+	}
+
+
+	public String getStoreContractDay() {
+		return storeContractDay;
+	}
+
+
+	public void setStoreContractDay(String storeContractDay) {
+		this.storeContractDay = storeContractDay;
 	}
 
 

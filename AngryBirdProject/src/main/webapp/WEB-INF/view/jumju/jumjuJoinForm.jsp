@@ -30,7 +30,7 @@
 					점주 ID
 				</td>
 				<td width="400">
-					<form:input path="storeOwnerId" id="storeOwnerId" size="30" maxlenght="30" />
+					<form:hidden path="storeOwnerId" id="storeOwnerId" size="30" maxlenght="30" />
 					<form:errors path="storeOwnerId" />
 				</td>
 			</tr>
@@ -111,6 +111,16 @@
 				<td width="400">
 					<form:input path="storeOwnerAddr" id="storeOwnerAddr" size="12" maxlenght="255" />
 					<form:errors path="storeOwnerAddr" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="200">
+					점주 계약일자
+				</td>
+				<td width="400">
+					<form:input path="storeContractDay" id="storeContractDay" size="12" maxlenght="255" />
+					<form:errors path="storeContractDay" />
 				</td>
 			</tr>
 			

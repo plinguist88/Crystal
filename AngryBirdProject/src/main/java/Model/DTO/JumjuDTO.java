@@ -15,13 +15,14 @@ public class JumjuDTO implements Serializable{
 	private String storeOwnerAddr;
 	private Integer storeOwnerCalculMoney;
 	private String storeCodeNum;
+	private String storeContractDay;
 	
 	public JumjuDTO() {
 		
 	}
 	public JumjuDTO(String storeOwnerId, String storeOwnerPw, String storeOwnerName, String storeNo,
 			String storeOwnerBank, String storeOwnerAccount, String storeOwnerPhone, String storeOwnerAddr,
-			Integer storeOwnerCalculMoney, String storeCodeNum) {
+			Integer storeOwnerCalculMoney, String storeCodeNum, String storeContractDay) {
 		super();
 		this.storeOwnerId = storeOwnerId;
 		this.storeOwnerPw = storeOwnerPw;
@@ -33,6 +34,7 @@ public class JumjuDTO implements Serializable{
 		this.storeOwnerAddr = storeOwnerAddr;
 		this.storeOwnerCalculMoney = storeOwnerCalculMoney;
 		this.storeCodeNum = storeCodeNum;
+		this.storeContractDay = storeContractDay;
 	}
 
 	public String getStoreOwnerId() {
@@ -113,6 +115,12 @@ public class JumjuDTO implements Serializable{
 
 	public void setStoreCodeNum(String storeCodeNum) {
 		this.storeCodeNum = storeCodeNum;
+	}
+	public String getStoreContractDay() {
+		return storeContractDay;
+	}
+	public void setStoreContractDay(String storeContractDay) {
+		this.storeContractDay = storeContractDay;
 	}
 	
 	
