@@ -5,7 +5,7 @@
 <cache />
 	<!-- 여기저기서 편하게 쓰려고 -->
 	<sql id="basecolumn">
-		audition_num, employee_num, audition_startdate, audition_enddate, audition_gather, audition_passed, 
+		audition_seq, audition_num, employee_num, audition_startdate, audition_enddate, audition_gather, audition_passed, 
 		audition_type, audition_title, audition_content, audition_upload_date 
 	</sql>
 	
@@ -15,7 +15,8 @@
 	    	MemberDTO memDTO = new MemberDTO();
 	    	memDTO.setUserId(rs.gertString("USER_ID"));
 	     -->
-		<id column="AUDITION_NUM" jdbcType="INTEGER" property="auditionNo"/>
+	    <id column="AUDITION_SEQ" jdbcType="INTEGER" property="auditionSeq" />
+		<result column="AUDITION_NUM" jdbcType="INTEGER" property="auditionNo"/>
 		<result column="EMPLOYEE_NUM" jdbcType="VARCHAR" property="employeeNum"/>
 		<result column="AUDITION_STARTDATE" jdbcType = "VARCHAR" property="startDate"/>
 		<result column="AUDITION_ENDDATE" jdbcType="VARCHAR" property="endDate"/>
@@ -29,7 +30,7 @@
 	
 	<insert id="insertAudition" >
 		insert into AUDITION( <include refid="basecolumn" /> ) 
-		values( #{auditionNo},#{employeeNum},#{startDate},#{endDate},
+		values( audition_seq.nextval, #{auditionNo},#{employeeNum},#{startDate},#{endDate},
 				#{gather},#{passed},#{type},#{title},
 				#{content},sysdate )
 	</insert>

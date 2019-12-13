@@ -37,7 +37,7 @@ $(function(){
 	<c:if test="${! empty auditions }">
 	<c:forEach var="aud" items="${auditions}" varStatus="status">
 	<tr>
-		<td>${status.count }</td><td>${aud.title }</td><td>${aud.uploadDate }</td>
+		<td>${status.count }</td><td><a href="auditionDetail">${aud.title }</a></td><td>${aud.uploadDate }</td>
 	</tr>
 	</c:forEach>
 	</c:if>

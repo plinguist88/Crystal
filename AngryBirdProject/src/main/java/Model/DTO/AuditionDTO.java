@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 
 @SuppressWarnings("serial")
 public class AuditionDTO implements Serializable{
+	Integer auditionSeq;
 	Integer auditionNo;
 	String startDate;
 	String endDate;
@@ -16,7 +17,12 @@ public class AuditionDTO implements Serializable{
 	String title;
 	String content;
 	String employeeNum;
-	
+	public Integer getAuditionSeq() {
+		return auditionSeq;
+	}
+	public void setAuditionSeq(Integer auditionSeq) {
+		this.auditionSeq = auditionSeq;
+	}	
 	public String getEmployeeNum() {
 		return employeeNum;
 	}

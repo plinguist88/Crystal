@@ -116,7 +116,7 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="auditions" class="navA"> AUDITIONS</a>
+		 		 <a href="audition" class="navA"> AUDITIONS</a>
 		 		 <a href="candidates" class="navA"> CANDIDATES</a>    
 		  		 <a href="initialContracts" class="navA"> INITIAL CONTRACTS</a>   
 		  		 <a href="contractors" class="navA"> CONTRACTORS</a>    

@@ -11,8 +11,7 @@ public class ContractorController {
 	@RequestMapping(value="/registerContractor", method = RequestMethod.GET )
 	public String registerContractor(HttpSession session) {
 		session.getAttribute("EmployeeInfo");
-		
-		
+
 		return ""; 
 	}
 }
