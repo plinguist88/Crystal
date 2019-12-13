@@ -53,7 +53,6 @@ $(function(){
 		        	$("#startDateCheck").css('color','red');
 		        }
 	        } 
-
 	    });
 	   $("#endDate").blur(function(){
  	        if($("#endDate").val()==""){
@@ -100,6 +99,18 @@ $(function(){
 	        	$("#contentCheck").text('');
 	        }
 	    });
+	   $("#frm").submit(function(){
+		   if($("#auditionTitle").val()=="" || 
+			  $("#auditionNum").val()=="" || 
+			  $("#startDate").val()=="" || 
+			  $("#endDate").val()=="" || 
+			  $("#auditionType").val()=="" || 
+			  $("#auditionGather").val()=="" || 
+			  $("#auditionContent").val()=="" ){
+			   alert("모든 항목을 채워주세요.");
+			   return false;
+		   }
+	   });
 });
 
 
@@ -112,7 +123,7 @@ $(function(){
 <body>
 <div  class="container">
 <h2>오디션 공고 등록</h2>
-<form:form action="registerAudition" method="post" commandName="auditionCommand">
+<form:form action="registerAudition" method="post" commandName="auditionCommand" id="frm">
 <table class="line">
 	<tr>
 		<td>제목</td><td><form:input path="auditionTitle" size="60" id="auditionTitle"/><div id="titleCheck"></div></td>
