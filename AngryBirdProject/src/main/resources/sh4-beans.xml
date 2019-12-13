@@ -10,6 +10,8 @@
 
 	<!-- @Autowired 사용하려고 context 추가 -->
 	<context:annotation-config/>
-<!-- 	<bean id="" class="" />컨트롤러에서 갖다쓰는 beans -->
+	<bean id="jumjuJoinService" class="Service.JumjuJoin.JumjuJoinService" />
+	
+	<bean id="jumjuRepository" class="Repository.Jumju.JumjuRepository" />
 	
 </beans>

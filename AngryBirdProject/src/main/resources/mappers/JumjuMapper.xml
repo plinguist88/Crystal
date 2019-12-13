@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Jumju">
+
+	<cache/>
+	
+		<sql id="jumjuCol">
+			STORE_OWNER_ID, STORE_OWNER_PW, STORE_OWNER_NAME, STORE_NO, STORE_OWNER_BANK, 
+			STORE_OWNER_ACCOUNT, STORE_OWNER_PHONE, STORE_OWNER_ADDR, STORE_OWNER_CALCUL_MONEY, STORE_CODE_NUM
+		</sql>
+		
+		<resultMap type="Model.DTO.JumjuDTO" id="jumjuRs">
+			<id column="STORE_OWNER_ID" jdbcType="VARCHAR" property="storeOwnerId" />
+			<result column="STORE_OWNER_PW" jdbcType="VARCHAR" property="storeOwnerPw" />
+			<result column="STORE_OWNER_NAME" jdbcType="VARCHAR" property="storeOwnerName" />
+			<result column="STORE_NO" jdbcType="VARCHAR" property="storeNo" />
+			<result column="STORE_OWNER_BANK" jdbcType="VARCHAR" property="storeOwnerBank" />
+			<result column="STORE_OWNER_ACCOUNT" jdbcType="VARCHAR" property="storeOwnerAccount" />
+			<result column="STORE_OWNER_PHONE" jdbcType="VARCHAR" property="storeOwnerPhone" />
+			<result column="STORE_OWNER_ADDR" jdbcType="VARCHAR" property="storeOwnerAddr" />
+			<result column="STORE_OWNER_CALCUL_MONEY" jdbcType="INTEGER" property="storeOwnerCalculMoney" />
+			<result column="STORE_CODE_NUM" jdbcType="VARCHAR" property="storeCodeNum" />
+		</resultMap>
+		
+		
+		
+		<insert id="joinJumju">
+			insert into STORE_OWNER ( <include refid="jumjuCol" /> )
+							 values ( #{storeOwnerId}, #{STORE_OWNER_PW}, #{storeOwnerName}, #{storeNo}, #{storeOwnerBank}, 
+							 		  #{storeOwnerAccount}, #{storeOwnerPhone}, #{storeOwnerAddr}, #{storeOwnerCalculMoney}, #{storeCodeNum} )
+		</insert>
+</mapper>
