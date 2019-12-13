@@ -39,7 +39,11 @@
 		select <include refid="basecolumn" /> from audition
 	</select>
 	
-	
+	<select parameterType="Model.DTO.AuditionDTO" resultMap="baseAud" id="selectOneAudition">
+		select <include refid="basecolumn" /> 
+		from audition
+		where audition_seq = #{auditionSeq}
+	</select>	
 	
 	
 

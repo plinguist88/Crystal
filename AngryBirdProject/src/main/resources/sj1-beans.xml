@@ -14,5 +14,5 @@
 		<bean class="Service.Audition.AuditionInsertService" id="auditionInsertService"/>
 		<bean class="Repository.Audition.AuditionRepository" id="auditionRepository"/>
 		<bean class="Service.Audition.AuditionSelectService" id="auditionSelectService"/>
-		
+		<bean class="Service.Audition.AudSelectOneService" id="audSelectOneService"/>
 </beans>

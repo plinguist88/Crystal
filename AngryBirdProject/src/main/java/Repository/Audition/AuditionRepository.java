@@ -32,4 +32,12 @@ public class AuditionRepository {
 		return auditions;
 	}
 	
+	//audition selectOne
+	public AuditionDTO auditionSelectOne(Integer auditionSeq){
+		String statement = namespace + ".selectOneAudition";
+		AuditionDTO oneAudition = sqlSession.selectOne(statement, auditionSeq);
+		
+		return oneAudition;
+	}
+	
 }

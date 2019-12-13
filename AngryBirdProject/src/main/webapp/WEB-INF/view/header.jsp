@@ -56,14 +56,14 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="company" class="navA"> COMPANY</a>
-		 		 <a href="artist" class="navA"> ARTIST</a> 
-		 		 <a href="news" class="navA"> NEWS</a> 
-		 		 <a href="schedule" class="navA"> SCHEDULE</a>
-		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="contactUs" class="navA"> CONTACT US</a>   
-		  		 <a href="login" class="navA"> LOGIN</a>   
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/company" class="navA"> COMPANY</a>
+		 		 <a href="/AngryBirdProject/artist" class="navA"> ARTIST</a> 
+		 		 <a href="/AngryBirdProject/news" class="navA"> NEWS</a> 
+		 		 <a href="/AngryBirdProject/schedule" class="navA"> SCHEDULE</a>
+		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
+		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>   
+		  		 <a href="/AngryBirdProject/login" class="navA"> LOGIN</a>   
 				</td>
 			</tr>
 		</table>
@@ -75,14 +75,14 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="company" class="navA"> COMPANY</a>
-		 		 <a href="artist" class="navA"> ARTIST</a> 
-		 		 <a href="news" class="navA"> NEWS</a> 
-		 		 <a href="schedule" class="navA"> SCHEDULE</a>
-		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="contactUs" class="navA"> CONTACT US</a>  
-		  		 <a href="logout" class="navA"> LOGOUT</a>   
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/company" class="navA"> COMPANY</a>
+		 		 <a href="/AngryBirdProject/artist" class="navA"> ARTIST</a> 
+		 		 <a href="/AngryBirdProject/news" class="navA"> NEWS</a> 
+		 		 <a href="/AngryBirdProject/schedule" class="navA"> SCHEDULE</a>
+		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
+		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>  
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="hr" class="navA"> HR</a>
 				</td>
 			</tr>
@@ -95,14 +95,14 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="company" class="navA"> COMPANY</a>
-		 		 <a href="artist" class="navA"> ARTIST</a> 
-		 		 <a href="news" class="navA"> NEWS</a> 
-		 		 <a href="schedule" class="navA"> SCHEDULE</a>
-		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="contactUs" class="navA"> CONTACT US</a>   
-		  		 <a href="logout" class="navA"> LOGOUT</a>   
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/company" class="navA"> COMPANY</a>
+		 		 <a href="/AngryBirdProject/artist" class="navA"> ARTIST</a> 
+		 		 <a href="/AngryBirdProject/news" class="navA"> NEWS</a> 
+		 		 <a href="/AngryBirdProject/schedule" class="navA"> SCHEDULE</a>
+		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
+		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>   
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="cafeteriaMain" class="navA"> CT</a>
 				</td>
 			</tr>
@@ -115,12 +115,12 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="audition" class="navA"> AUDITIONS</a>
-		 		 <a href="candidates" class="navA"> CANDIDATES</a>    
-		  		 <a href="initialContracts" class="navA"> INITIAL CONTRACTS</a>   
-		  		 <a href="contractors" class="navA"> CONTRACTORS</a>    
-		  		 <a href="logout" class="navA"> LOGOUT</a>   
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITIONS</a>
+		 		 <a href="/AngryBirdProject/candidates" class="navA"> CANDIDATES</a>    
+		  		 <a href="/AngryBirdProject/initialContracts" class="navA"> INITIAL CONTRACTS</a>   
+		  		 <a href="/AngryBirdProject/contractors" class="navA"> CONTRACTORS</a>    
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="gdMain" class="navA"> GD</a>
 				</td>
 			</tr>
@@ -133,12 +133,12 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="contractors" class="navA"> CONTRACTORS</a>
-		 		 <a href="trainings" class="navA"> TRAININGS</a> 
-		 		 <a href="trainingTFs" class="navA"> TRAINING TF</a> 
-		 		 <a href="trainees" class="navA"> TRAINEES</a> 
-		  		 <a href="logout" class="navA"> LOGOUT</a>   
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/contractors" class="navA"> CONTRACTORS</a>
+		 		 <a href="/AngryBirdProject/trainings" class="navA"> TRAININGS</a> 
+		 		 <a href="/AngryBirdProject/trainingTFs" class="navA"> TRAINING TF</a> 
+		 		 <a href="/AngryBirdProject/trainees" class="navA"> TRAINEES</a> 
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="gf" class="navA"> GF</a>
 				</td>
 			</tr>
@@ -151,10 +151,10 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="schedules" class="navA"> SCHEDULES</a>
-		 		 <a href="counseling" class="navA"> COUNSELING</a> 
-		  		 <a href="logout" class="navA"> LOGOUT</a>   
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/schedules" class="navA"> SCHEDULES</a>
+		 		 <a href="/AngryBirdProject/counseling" class="navA"> COUNSELING</a> 
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="gf" class="navA"> GF</a>
 				</td>
 			</tr>
@@ -167,10 +167,10 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="contractors" class="navA"> MY TF TEAMS</a> <!-- TF 리스트 나오고, TF 클릭하면 TF구성 멤버 나오도록 -->
-		 		 <a href="myTrainingsTrainer" class="navA"> MY TRAININGS</a> <!-- 트레이닝 안에 트레이니들 리스트 나오고, 트레이니 클릭하면 평가입력가능하게, 그동안의 평가리스트 및 차트 나오도록 -->
-		  		 <a href="logout" class="navA"> LOGOUT</a>   
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/contractors" class="navA"> MY TF TEAMS</a> <!-- TF 리스트 나오고, TF 클릭하면 TF구성 멤버 나오도록 -->
+		 		 <a href="/AngryBirdProject/myTrainingsTrainer" class="navA"> MY TRAININGS</a> <!-- 트레이닝 안에 트레이니들 리스트 나오고, 트레이니 클릭하면 평가입력가능하게, 그동안의 평가리스트 및 차트 나오도록 -->
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="gf" class="navA"> GF</a>
 				</td>
 			</tr>
@@ -183,10 +183,10 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="contractors" class="navA"> WLP-REQUESTS</a> <!-- 운동처방 신청목록(체중감량계획) 확인 , 처방하기-->
-		 		 <a href="artist" class="navA"> EXERCISE</a> <!-- 운동목록 업데이트/칼로리변경/ -->
-		  		 <a href="logout" class="navA"> LOGOUT</a>   
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/contractors" class="navA"> WLP-REQUESTS</a> <!-- 운동처방 신청목록(체중감량계획) 확인 , 처방하기-->
+		 		 <a href="/AngryBirdProject/artist" class="navA"> EXERCISE</a> <!-- 운동목록 업데이트/칼로리변경/ -->
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="gf" class="navA"> GF</a>
 				</td>
 			</tr>
@@ -199,14 +199,14 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="company" class="navA"> COMPANY</a>
-		 		 <a href="artist" class="navA"> ARTIST</a> 
-		 		 <a href="news" class="navA"> NEWS</a> 
-		 		 <a href="schedule" class="navA"> SCHEDULE</a>
-		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
-		  		 <a href="logout" class="navA"> LOGOUT</a>   
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/company" class="navA"> COMPANY</a>
+		 		 <a href="/AngryBirdProject/artist" class="navA"> ARTIST</a> 
+		 		 <a href="/AngryBirdProject/news" class="navA"> NEWS</a> 
+		 		 <a href="/AngryBirdProject/schedule" class="navA"> SCHEDULE</a>
+		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
+		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>    
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="gh" class="navA"> GH</a>
 				</td>
 			</tr>
@@ -219,14 +219,14 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="company" class="navA"> COMPANY</a>
-		 		 <a href="artist" class="navA"> ARTIST</a> 
-		 		 <a href="news" class="navA"> NEWS</a> 
-		 		 <a href="schedule" class="navA"> SCHEDULE</a>
-		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
-		  		 <a href="logout" class="navA"> LOGOUT</a>   
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/company" class="navA"> COMPANY</a>
+		 		 <a href="/AngryBirdProject/artist" class="navA"> ARTIST</a> 
+		 		 <a href="/AngryBirdProject/news" class="navA"> NEWS</a> 
+		 		 <a href="/AngryBirdProject/schedule" class="navA"> SCHEDULE</a>
+		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
+		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>    
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="ma" class="navA"> MA</a>
 				</td>
 			</tr>
@@ -239,14 +239,14 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="company" class="navA"> COMPANY</a>
-		 		 <a href="artist" class="navA"> ARTIST</a> 
-		 		 <a href="news" class="navA"> NEWS</a> 
-		 		 <a href="schedule" class="navA"> SCHEDULE</a>
-		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
-		  		 <a href="logout" class="navA"> LOGOUT</a>   
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/company" class="navA"> COMPANY</a>
+		 		 <a href="/AngryBirdProject/artist" class="navA"> ARTIST</a> 
+		 		 <a href="/AngryBirdProject/news" class="navA"> NEWS</a> 
+		 		 <a href="/AngryBirdProject/schedule" class="navA"> SCHEDULE</a>
+		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
+		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>    
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="admin" class="navA"> Admin</a>
 				</td>
 			</tr>
@@ -259,14 +259,14 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="company" class="navA"> COMPANY</a>
-		 		 <a href="artist" class="navA"> ARTIST</a> 
-		 		 <a href="news" class="navA"> NEWS</a> 
-		 		 <a href="schedule" class="navA"> SCHEDULE</a>
-		 		 <a href="audition" class="navA"> AUDITION</a>
-		  		 <a href="contactUs" class="navA"> CONTACT US</a>    
-		  		 <a href="logout" class="navA"> LOGOUT</a>   
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/company" class="navA"> COMPANY</a>
+		 		 <a href="/AngryBirdProject/artist" class="navA"> ARTIST</a> 
+		 		 <a href="/AngryBirdProject/news" class="navA"> NEWS</a> 
+		 		 <a href="/AngryBirdProject/schedule" class="navA"> SCHEDULE</a>
+		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
+		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>    
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="JumJu" class="navA"> JJ</a>
 				</td>
 			</tr>
@@ -279,13 +279,13 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="main"><img alt="logo" src="images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="company" class="navA"> MY CONTRACTS</a>
-		 		 <a href="artist" class="navA"> MY B-PROFILES</a> <!-- B-profile에 체중감량계획, 식단, 운동 모두 나올수 있도록 -->
-		 		 <a href="news" class="navA"> MY TRAININGS</a> 
-		 		 <a href="schedule" class="navA"> MY SCHEDULES</a>
-		 		 <a href="audition" class="navA"> MY COUNSELING</a>
-		  		 <a href="logout" class="navA"> LOGOUT</a>   
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/company" class="navA"> MY CONTRACTS</a>
+		 		 <a href="/AngryBirdProject/artist" class="navA"> MY B-PROFILES</a> <!-- B-profile에 체중감량계획, 식단, 운동 모두 나올수 있도록 -->
+		 		 <a href="/AngryBirdProject/news" class="navA"> MY TRAININGS</a> 
+		 		 <a href="/AngryBirdProject/schedule" class="navA"> MY SCHEDULES</a>
+		 		 <a href="/AngryBirdProject/audition" class="navA"> MY COUNSELING</a>
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="contractor" class="navA"> CONTRACTOR</a>
 				</td>
 			</tr>
