@@ -11,6 +11,7 @@
 	<!-- @AutoWired -->
 	<context:annotation-config/>
 			<bean class="Controller.Contractor.ContractorController" />
-
-	
+			<bean class="Controller.Audition.AuditionSelectController" />
+			<bean class="Controller.Candidates.CandidatesController" />			
+			<bean class="Controller.GD.GDController" />				
 </beans>

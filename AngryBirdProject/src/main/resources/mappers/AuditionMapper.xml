@@ -35,16 +35,25 @@
 				#{content},sysdate )
 	</insert>
 	
+	<!-- 오디션 전체보기 -->
 	<select parameterType="Model.DTO.AuditionDTO" resultMap="baseAud" id="selectAuditions">
 		select <include refid="basecolumn" /> from audition
 	</select>
 	
+	<!-- 오디션 상세보기 -->
 	<select parameterType="Model.DTO.AuditionDTO" resultMap="baseAud" id="selectOneAudition">
 		select <include refid="basecolumn" /> 
 		from audition
 		where audition_seq = #{auditionSeq}
 	</select>	
 	
+	<!-- 진행중인 오디션만 보기 (오늘날짜를 sysdate에서 char로 변환하여 시작일자와 종료일자 사이에 있는 것만 불러오기) -->
+	<select parameterType="Model.DTO.AuditionDTO" resultMap="baseAud" id="selectAuditionForGD">
+		select <include refid="basecolumn" /> 
+		from audition
+		where audition_startdate &lt;= to_char(sysdate,'yyyymmdd') 
+		and  audition_enddate &gt;= to_char(sysdate,'yyyymmdd')
+	</select>
 	
-
+	
 </mapper>

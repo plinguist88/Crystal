@@ -15,4 +15,9 @@
 		<bean class="Repository.Audition.AuditionRepository" id="auditionRepository"/>
 		<bean class="Service.Audition.AuditionSelectService" id="auditionSelectService"/>
 		<bean class="Service.Audition.AudSelectOneService" id="audSelectOneService"/>
+		<bean class="Repository.Candidates.CandidateRepository" id="candidateRepository"/>		
+		<bean class="Service.Candidates.CandidateRegisterService" id="candidateRegisterService"/>	
+		<bean class="Service.Candidates.CandidateSelectService" id="candidateSelectService"/>			
+		<bean class="Service.Candidates.CandidateOneSelectService" id="candidateOneSelectService"/>			
+		
 </beans>

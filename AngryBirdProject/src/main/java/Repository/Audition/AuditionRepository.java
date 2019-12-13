@@ -40,4 +40,12 @@ public class AuditionRepository {
 		return oneAudition;
 	}
 	
+	//audition - ongoing (진행중인 오디션만 보기)
+	public List<AuditionDTO> auditionSelectForGD() {
+		String statement = namespace + ".selectAuditionForGD";
+		List<AuditionDTO> ongoingAuds = sqlSession.selectList(statement);
+		
+		return ongoingAuds;
+	}
+	
 }

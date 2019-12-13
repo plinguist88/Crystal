@@ -16,44 +16,37 @@
 
 
 <title>audition_list.jsp</title>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" ></script>
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" ></script>
 <script type="text/javascript">
-$(function(){
-	$("#btn1").click(function(){
-		location.href="goAudition";
-	});
-});
-</script>
+
+</script> -->
 <style type="text/css">
 
 </style>
 </head>
 <body>
 <div class="container">
+<h2 align="center">진행 중인 오디션</h2>
 <table class="line">
 	<tr>
-		<th>번호</th><th>제목</th><th>등록일</th>
+		<th>번호</th><th>제목</th><th>시작일</th><th>종료일</th>
 	</tr>
-	<c:if test="${! empty auditions }">
-	<c:forEach var="aud" items="${auditions}" varStatus="status">
+	<c:if test="${! empty ongoingAuds }">
+	<c:forEach var="aud" items="${ongoingAuds}" varStatus="status">
 	<tr>
 		<td>${status.count }</td>
-		<td><a href="<c:url value='auditionDetail/${aud.auditionSeq }' />">${aud.title }</a></td> 
-		<td>${aud.uploadDate }</td>
+		<td><a href="<c:url value='showCandidates/${aud.auditionSeq }' />">${aud.title }</a></td> 
+		<td>${aud.startDate }</td><td>${aud.endDate }</td>
 	</tr>
 	</c:forEach>
 	</c:if>
-	<c:if test="${empty auditions }">
+	<c:if test="${empty ongoingAuds }">
 		<tr>
-			<td colspan="3" align="center">등록된 오디션 공고가 없습니다.</td>
+			<td colspan="3" align="center">진행중인 오디션 공고가 없습니다.</td>
 		</tr>
 	</c:if>
 </table>
-<c:if test="${employeeInfo.deptNum eq 'GD' }">
-			<div align="center"><br />
-				<button id="btn1">오디션 공고 등록</button>
-			</div>
-</c:if>
+
 </div>
 </body>
 </html>

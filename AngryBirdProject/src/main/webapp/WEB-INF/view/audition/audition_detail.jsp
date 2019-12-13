@@ -11,6 +11,23 @@
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/css/css/style.css" rel="stylesheet" >
 <title>audition_detail.jsp</title>
+<script type="text/javascript" 
+			src="http://code.jquery.com/jquery-latest.js" ></script>
+<script type="text/javascript">
+$(function(){
+	$("#btn1").click(function(){
+		location.href="/AngryBirdProject/apply/${oneAud.auditionSeq}";
+	});
+/* 	$("#btn2").click(function(){
+		location.href="";		
+	});
+	$("#btn3").click(function(){
+		location.href="";		
+	}); */
+	
+});
+
+</script>
 </head>
 <body>
 <div  class="container">
@@ -35,9 +52,16 @@
 		<td>모집인원</td><td>${oneAud.gather }</td>
 	</tr>
 	<tr>
-		<td>내용</td><td>${oneAud.content }</td>
+		<td>내용</td><td>${oneAud.content }
+		</td>
 	</tr>
-<c:if test="${empty employeeInfo }">
+<!-- 오늘날짜 출력하는 jstl -->
+		<jsp:useBean id="today" class="java.util.Date" />
+		<fmt:formatDate value="${today }" pattern="yyyyMMdd" var="today"/>
+		<tr><td colspan="2">${today }</td></tr>	
+		
+<!-- 종료일자가 지나지 않은 경우에만 지원할 수 있도록 -->	
+<c:if test="${(empty employeeInfo) && (oneAud.startDate <= today && oneAud.endDate >= today)}">
 	<tr>
 		<td colspan="2">
 		<div align="center"><br />
