@@ -27,9 +27,9 @@
 		
 		
 		
-		<insert id="joinJumju">
+		<insert id="joinJumju" parameterType="Model.DTO.JumjuDTO">
 			insert into STORE_OWNER ( <include refid="jumjuCol" /> )
-							 values ( #{storeOwnerId}, #{STORE_OWNER_PW}, #{storeOwnerName}, #{storeNo}, #{storeOwnerBank}, 
+							 values ( #{storeOwnerId}, #{storeOwnerPw}, #{storeOwnerName}, #{storeNo}, #{storeOwnerBank}, 
 							 		  #{storeOwnerAccount}, #{storeOwnerPhone}, #{storeOwnerAddr}, #{storeOwnerCalculMoney},
 							 		  #{storeCodeNum}, #{storeContractDay} )
 		</insert>

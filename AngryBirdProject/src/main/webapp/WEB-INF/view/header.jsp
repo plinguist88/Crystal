@@ -205,7 +205,7 @@
 		 		 <a href="/AngryBirdProject/news" class="navA"> NEWS</a> 
 		 		 <a href="/AngryBirdProject/schedule" class="navA"> SCHEDULE</a>
 		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
-		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>    
+		  		 <a href="/AngryBirdProject/jumju" class="navA"> STORE_OWNER_JOIN</a>    
 		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="gh" class="navA"> GH</a>
 				</td>
@@ -246,6 +246,7 @@
 		 		 <a href="/AngryBirdProject/schedule" class="navA"> SCHEDULE</a>
 		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
 		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>    
+		  		 <a href="/AngryBirdProject/join" class="navA"> JOIN</a>
 		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="admin" class="navA"> Admin</a>
 				</td>

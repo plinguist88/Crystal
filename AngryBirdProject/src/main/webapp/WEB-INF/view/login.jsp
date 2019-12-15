@@ -146,10 +146,11 @@ $(function() {
 			<div class="input-field col s12">
 				<button type="submit" class="btn waves-effect waves-light col s12">Login</button>
 			</div>
-			
+		<%-- <c:if test="${employeeInfo.deptNum eq 'SI' }"> --%>
 			<div class="input-field col s12">
 				<a href="join" class="btn waves-effect waves-light col s12 light-blue darken-4">Register Now!</a><!-- 회원가입 -->
 			</div>
+		<%-- </c:if> --%>
 		</div>
 
 		<div class="row" align="center">

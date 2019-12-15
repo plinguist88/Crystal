@@ -17,30 +17,11 @@
 		<table width=600 class="line">
 			<tr>
 				<td width="200">
-					점주 코드 번호
-				</td>
-				<td width="400">
-					<form:hidden path="storeCodeNum" id="storeCodeNum" size="30" maxlenght="5" />
-					<%-- <form:errors path="employeeNum" /> --%>
-				</td>
-			</tr>
-			
-			<tr>
-				<td width="200">
 					점주 ID
 				</td>
 				<td width="400">
 					<form:hidden path="storeOwnerId" id="storeOwnerId" size="30" maxlenght="30" />
-					<form:errors path="storeOwnerId" />
-				</td>
-			</tr>
-			<tr>
-				<td width="200">
-					점주 이름
-				</td>
-				<td width="400">
-					<form:input path="storeOwnerName" id="storeOwnerName" size="12" maxlenght="10" />
-					<form:errors path="storeOwnerName" />
+					<%-- <form:errors path="storeOwnerId" /> --%>
 				</td>
 			</tr>
 			
@@ -61,6 +42,16 @@
 				<td width="400">
 					<form:password path="jjPwCon" id="jjPwCon" size="12" maxlenght="15" />
 					<form:errors path="jjPwCon" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="200">
+					점주 이름
+				</td>
+				<td width="400">
+					<form:input path="storeOwnerName" id="storeOwnerName" size="12" maxlenght="10" />
+					<form:errors path="storeOwnerName" />
 				</td>
 			</tr>
 			
@@ -115,22 +106,32 @@
 			</tr>
 			
 			<tr>
-				<td width="200">
-					점주 계약일자
-				</td>
-				<td width="400">
-					<form:input path="storeContractDay" id="storeContractDay" size="12" maxlenght="255" />
-					<form:errors path="storeContractDay" />
-				</td>
-			</tr>
-			
-			<tr>
 				<td width="200 ">
 					점주 정산금액
 				</td>
 				<td width="400">
 					<form:hidden path="storeOwnerCalculMoney" id="storeOwnerCalculMoney" size="30" maxlenght="9" />
 					<%-- <form:errors path="jjCalMoney" /> --%>
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="200">
+					점주 코드 번호
+				</td>
+				<td width="400">
+					<form:input path="storeCodeNum" id="storeCodeNum" size="30" maxlenght="5" />
+					<form:errors path="storeCodeNum" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="200">
+					점주 계약일자
+				</td>
+				<td width="400">
+					<form:input path="storeContractDay" id="storeContractDay" size="12" maxlenght="255" />
+					<form:errors path="storeContractDay" />
 				</td>
 			</tr>
 			

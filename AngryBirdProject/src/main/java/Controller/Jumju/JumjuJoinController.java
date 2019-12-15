@@ -26,7 +26,7 @@ public class JumjuJoinController {
 	// 점주 가입 정보 처리
 	@RequestMapping(value = "/jjJoinAction", method = RequestMethod.POST)
 	public String jjJoinAction (JumjuJoinCommand jumjuJoinCommand, Errors errors) {
-		System.out.println("jjID : " + jumjuJoinCommand.getStoreOwnerId() );
+		System.out.println("jjID : " + jumjuJoinCommand.getStoreOwnerName() );
 		
 		new JumjuJoinCommandValidator().validate(jumjuJoinCommand, errors);
 		if (errors.hasErrors()) {
@@ -35,6 +35,7 @@ public class JumjuJoinController {
 		}
 		
 		Integer result = jumjuJoinService.jumjuJoinAction(jumjuJoinCommand);
+		System.out.println("jjID : " + jumjuJoinCommand.getStoreOwnerId() );
 		if (result == null) {
 			errors.rejectValue("storeOwnerId", "duplicate");
 			return "jumju/jumjuJoinForm";
