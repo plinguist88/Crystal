@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file ="../publicFile/taglib.jsp" %>
+<%@ include file ="../header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,7 @@
 <title>ctSupplyList</title>
 </head>
 <body>
+<br /><br /><br />
 <table align="center">
 	<tr>
 		<td colspan="3">
@@ -28,7 +30,12 @@
 		<td>등록된 업체가 없습니다.</td>
 	</tr>
 </c:if>
-<input type="button" value="등록하기" onclick="location.href='ctSupplyRegist'" />
+	<tr>
+		<td align="center">
+			<input type="button" value="등록하기" onclick="location.href='ctSupplyRegist'" />
+		</td>
+	</tr>
 </table>
 </body>
 </html>
+<%@ include file ="../footer.jsp" %>

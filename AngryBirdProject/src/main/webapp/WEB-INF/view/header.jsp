@@ -96,12 +96,12 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="/AngryBirdProject/ctSupplyList" class="navA"> 업체관리</a>
-		 		 <a href="/AngryBirdProject/artist" class="navA"> 발주/입고</a> 
-		 		 <a href="/AngryBirdProject/news" class="navA"> 식단관리</a> 
-		 		 <a href="/AngryBirdProject/schedule" class="navA"> 도시락관리</a> 
-		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
-		  		 <a href="cafeteriaMain" class="navA"> CT</a>
+		 		 <a href="/AngryBirdProject/ctSupplyList" class="navA"> Supply</a>
+		 		 <a href="/AngryBirdProject/artist" class="navA"> In&Out</a> 
+		 		 <a href="/AngryBirdProject/news" class="navA"> Mealplan</a> 
+		 		 <a href="/AngryBirdProject/schedule" class="navA"> Lunchbox</a> 
+		  		 <a href="/AngryBirdProject/logout" class="navA"> Logout</a>   
+		  		 <a href="cafeteriaMain" class="navA"> ct</a>
 				</td>
 			</tr>
 		</table>
