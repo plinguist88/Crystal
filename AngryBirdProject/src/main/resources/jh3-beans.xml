@@ -11,10 +11,12 @@
 	<!-- @Autowired 사용하려고 context 추가 -->
 	<context:annotation-config/>
 <!-- 	<bean id="" class="" />컨트롤러에서 갖다쓰는 beans -->
-	<bean class="Service.Cafeteria.SupplyCompanyService" id="supplyCompanyService"/>
+	<bean class="Service.CtSupply.CtSupplyListService" id="ctSupplyListService"/>
 	
-	<bean class="Service.SupplyCompanyRegist.SupplyCompanyRegistService" id="supplyCompanyRegesitService"/>
+	<bean class="Service.CtSupply.CtSupplyRegistService" id="ctSupplyRegistService"/>
 
-	<bean class="Repository.Cafeteria.SupplyCompanyRepository" id="supplyCompanyRepository"/>
+	<bean class="Repository.CtSupply.CtSupplyListRepository" id="ctSupplyListRepository"/>
+	
+	<bean class="Repository.CtSupply.CtSupplyRegistRepository" id="ctSupplyRegistRepository"/>
 
 </beans>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	
-	<mapper namespace="supplyCompanyMapper">
+	<mapper namespace="ctSupplyMapper">
 		
 	<cache />
 	
-	<sql id="supplyCompanyColumn">
+	<sql id="ctSupplyColumn">
 		sc_no, sc_license, sc_name1, sc_name2, sc_sort, sc_addr, sc_ph
 	</sql>
 	
-	<resultMap type="Model.DTO.SupplyCompanyDTO" id="supplyCompanyMap">
+	<resultMap type="Model.DTO.CtSupplyDTO" id="ctSupplyMap">
 		<id property="scNo" column="sc_no" />
 		<result property="scLicense" column="sc_license" />
 		<result property="scName1" column="sc_name1" />
@@ -19,8 +19,13 @@
 		<result property="scPh" column="sc_ph" />
 	</resultMap>
 	
-	<select id="supplyCompanyList" resultMap="supplyCompanyMap">
+	<select id="ctSupplyList" resultMap="ctSupplyMap">
 		select * from supply_company
 	</select>
+	
+	<insert id="ctSupplyRegist" parameterType="Model.DTO.CtSupplyDTO">
+		insert into supply_company (<include refid="ctSupplyColumn" />)
+		values (#{scNo}, #{scLicense}, #{scName1}, #{scName2}, #{scSort}, #{scAddr}, #{scPh})
+	</insert>
 	
 </mapper>

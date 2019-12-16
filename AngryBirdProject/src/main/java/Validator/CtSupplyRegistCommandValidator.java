@@ -7,16 +7,16 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import Command.SupplyCompanyRegistCommand;
+import Command.CtSupplyRegistCommand;
 
 
 
-public class SupplyCompanyCommandValidator implements Validator{
+public class CtSupplyRegistCommandValidator implements Validator{
 	private static final String LicenseRegExp=
-			"^\\d{3}-\\d{2}-\\d{6}$";
+			"^\\d{3}\\d{2}\\d{6}$";
 	private Pattern licensePattern;
 	
-	public SupplyCompanyCommandValidator() {
+	public CtSupplyRegistCommandValidator() {
 		licensePattern = Pattern.compile(LicenseRegExp);
 	}
 	public boolean supports(Class<?> clazz) {
@@ -24,14 +24,14 @@ public class SupplyCompanyCommandValidator implements Validator{
 	}
 
 	public void validate(Object target, Errors errors) {
-		SupplyCompanyRegistCommand supplyCompanyRegistCommand = (SupplyCompanyRegistCommand)target;
-		if(supplyCompanyRegistCommand.getScLicense() == null ||
-				supplyCompanyRegistCommand.getScLicense().toString().trim().isEmpty()) {
+		CtSupplyRegistCommand ctSupplyRegistCommand = (CtSupplyRegistCommand)target;
+		if(ctSupplyRegistCommand.getScLicense() == null ||
+				ctSupplyRegistCommand.getScLicense().toString().trim().isEmpty()) {
 			errors.rejectValue("scLicense", "required");
 		} else {
-			Matcher matcher = licensePattern.matcher(supplyCompanyRegistCommand.getScLicense().toString());
+			Matcher matcher = licensePattern.matcher(ctSupplyRegistCommand.getScLicense().toString());
 			if(!matcher.matches()) {
-				errors.rejectValue("scLicense", "bad" );
+				errors.rejectValue("scLicense", "badLicense" );
 			}
 		}
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "scName1", "required");
