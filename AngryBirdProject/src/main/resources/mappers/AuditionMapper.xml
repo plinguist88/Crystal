@@ -55,5 +55,12 @@
 		and  audition_enddate &gt;= to_char(sysdate,'yyyymmdd')
 	</select>
 	
+	<!-- 진행완료 오디션만 보기 (오늘날짜를 sysdate에서 char로 변환하여 시작일자와 종료일자 사이에 있는 것만 불러오기) -->
+	<select parameterType="Model.DTO.AuditionDTO" resultMap="baseAud" id="selectAuditionFinished">
+		select <include refid="basecolumn" /> 
+		from audition
+		where audition_enddate &lt;= to_char(sysdate,'yyyymmdd')
+	</select>
+	
 	
 </mapper>

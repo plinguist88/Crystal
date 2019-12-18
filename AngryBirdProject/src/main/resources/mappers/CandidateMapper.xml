@@ -6,8 +6,17 @@
 	<!-- 여기저기서 편하게 쓰려고 -->
 	<sql id="basecolumn1">
 		participant_num, participant_name, participant_birth, participant_gender, participant_phone, 
-		participant_addr, participant_date, audition_seq, original_file_name, store_file_name, file_size
+		participant_addr, participant_date, audition_seq, original_file_name, store_file_name, file_size, total_score
 	</sql>
+	
+	<sql id="basecolumn2">
+		participant_num, participant_name, participant_birth, participant_gender, participant_phone, 
+		participant_addr, participant_date, audition_seq, original_file_name, store_file_name, file_size,
+		video_score, dance_diff_score, dance_rythm_score, dance_stage_score, song_choice_score,
+		song_pitch_score, song_vib_score, appearance_score, strength_score, global_score, total_score, 
+		employee_num
+	</sql>
+
 	
 		<!-- select할 때 쓰는 문구 -->
 	<resultMap type="Model.DTO.CandidateDTO" id="baseCan">
@@ -35,41 +44,46 @@
 		<result column="total_score" jdbcType="VARCHAR" property="totalScore"/>
 		<result column="employee_num" jdbcType="VARCHAR" property="employeeNum"/>
 	</resultMap>
-	
-	<resultMap type="Model.DTO.AuditionDTO" id="baseAud">
-	    <id column="AUDITION_SEQ" jdbcType="INTEGER" property="auditionSeq" />
-		<result column="AUDITION_NUM" jdbcType="INTEGER" property="auditionNo"/>
-		<result column="EMPLOYEE_NUM" jdbcType="VARCHAR" property="employeeNum"/>
-		<result column="AUDITION_STARTDATE" jdbcType = "VARCHAR" property="startDate"/>
-		<result column="AUDITION_ENDDATE" jdbcType="VARCHAR" property="endDate"/>
-		<result column="AUDITION_GATHER" jdbcType="INTEGER" property="gather"/>
-		<result column="AUDITION_PASSED" jdbcType="INTEGER" property="passed"/>
-		<result column="AUDITION_TYPE" jdbcType="VARCHAR" property="type"/>
-		<result column="AUDITION_TITLE" jdbcType="VARCHAR" property="title"/>
-		<result column="AUDITION_CONTENT" jdbcType="VARCHAR" property="content"/>
-		<result column="AUDITION_UPLOAD_DATE" jdbcType="TIMESTAMP" property="uploadDate"/>
-	</resultMap>	
-	
-	
-	
-	
-	<insert id="registerCandidate" >
+
+	<insert id="registerCandidate" parameterType="Model.DTO.CandidateDTO">
 		insert into PARTICIPANT( <include refid="basecolumn1" /> ) 
 		values( #{candidateNum}, #{candidateName},#{candidateBirth},#{candidateGender},#{candidatePh},
 				#{candidateAddr}, sysdate, #{auditionSeq}, #{originalFilename}, #{storeFilename}, #{fileSize})
 	</insert>
 	
-	<!-- join 하다 말음 -->
-	<select id = "candidateList" parameterType= "Model.DTO.CandidateDTO" resultMap="baseCan">
-		select 	
-		p.participant_num, p.participant_name, p.participant_birth, p.participant_gender, p.participant_phone, 
-		p.participant_addr, p.participant_date, p.audition_seq, p.original_file_name, p.store_file_name, p.file_size,
-		a.AUDITION_STARTDATE, a.AUDITION_ENDDATE, a.AUDITION_GATHER, a.AUDITION_TYPE, a.AUDITION_TITLE. a.AUDITION_CONTENT
-
-		from PARTICIPANT p, AUDITION a
-		where p.audition_seq = a.audition_seq 
-		and a.audition_seq = #{auditionSeq}	
+	<!-- 지원자보기 -->
+	<select parameterType="Model.DTO.CandidateDTO" resultMap="baseCan" id="candidateList">
+		select <include refid="basecolumn1" /> 
+		from participant 
+		where audition_seq = #{auditionSeq}
+		order by total_score desc
 	</select>
+	
+	<!-- 지원자 상세보기 -->
+	<select parameterType="Model.DTO.CandidateDTO" resultMap="baseCan" id="oneCandidate">
+		select <include refid="basecolumn1" /> 
+		from participant 
+		where participant_num = #{candidateNum}
+	</select>
+	
+	<!-- 지원자 평가정보 업데이트하기 -->
+	<update id="candidateForEval" parameterType="Model.DTO.CandidateDTO">
+		update participant
+		set 
+		video_score = #{videoScore}, 
+		dance_diff_score = #{danceDiffScore}, 
+		dance_rythm_score = #{danceRythmScore}, 
+		dance_stage_score = #{danceStageScore}, 
+		song_choice_score = #{songChoiceScore},
+		song_pitch_score = #{songPitchScore}, 
+		song_vib_score = #{songVibScore}, 
+		appearance_score = #{appScore}, 
+		strength_score = #{strengthScore}, 
+		global_score = #{globalScore}, 
+		total_score = #{totalScore}, 
+		employee_num = #{employeeNum}
+		where  participant_num = #{candidateNum}
+	</update>
 	
 	
 	

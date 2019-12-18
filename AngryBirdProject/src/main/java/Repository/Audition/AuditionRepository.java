@@ -48,4 +48,13 @@ public class AuditionRepository {
 		return ongoingAuds;
 	}
 	
+	//audition - finished (진행 완료 오디션만 보기)
+	public List<AuditionDTO> auditionSelectFinished() {
+		String statement = namespace + ".selectAuditionFinished";
+		List<AuditionDTO> finishedAud = sqlSession.selectList(statement);
+		
+		return finishedAud;
+	}
+	
+	
 }

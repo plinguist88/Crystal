@@ -13,7 +13,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import Command.CandidatesCommand;
 import Model.DTO.CandidateDTO;
-import Model.DTO.CandidateInfo;
 import Repository.Candidates.CandidateRepository;
 
 @Service

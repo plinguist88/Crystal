@@ -17,7 +17,7 @@ h2 {
 
 table.bottom {
 	border-collapse: collapse;
-	width: 800px;
+	width: 1100px;
 	margin-left:auto;  /* 테이블 자동으로 가운데 정렬 */
 	margin-right:auto; /* 테이블 자동으로 가운데 정렬 */
 }
@@ -34,7 +34,7 @@ table.bottom th, table.bottom td {
 /* 테이블 칸마다 라인 */
 table.line {
 	border-collapse: collapse;
-	width: 800px;
+	width: 1100px;
 	margin-left:auto;  /* 테이블 자동으로 가운데 정렬 */
 	margin-right:auto; /* 테이블 자동으로 가운데 정렬 */
 }

@@ -115,7 +115,7 @@
 				<td width="1400px" >
 				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
 		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITIONS</a>
-		 		 <a href="/AngryBirdProject/candidates" class="navA"> CANDIDATES</a>    
+		 		 <a href="/AngryBirdProject/candidates" class="navA"> EVALUATION</a>    
 		  		 <a href="/AngryBirdProject/initialContracts" class="navA"> INITIAL CONTRACTS</a>   
 		  		 <a href="/AngryBirdProject/contractors" class="navA"> CONTRACTORS</a>    
 		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   

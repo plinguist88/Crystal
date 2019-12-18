@@ -20,9 +20,11 @@ public class AuditionSelectService {
 		model.addAttribute("auditions", auditions);
 	}
 	
-	//오디션 공고 - 진행중인 오디션만 보기
+	//오디션 공고 - 진행중인 오디션 + 완료오디션 보기
 	public void selectAuditionForGD(Model model){
 		List<AuditionDTO> ongoingAuds = auditionRepository.auditionSelectForGD();
+		List<AuditionDTO> finishedAuds = auditionRepository.auditionSelectFinished();		
 		model.addAttribute("ongoingAuds", ongoingAuds);
+		model.addAttribute("finishedAuds", finishedAuds);		
 	}
 }

@@ -30,5 +30,22 @@ public class CandidateRepository {
 		List<CandidateDTO> candidates = sqlSession.selectList(statement, auditionSeq);
 		return candidates;
 	}
+	//candidate 상세보기
+	public CandidateDTO oneCandidate(String candidateNum) {
+		// TODO Auto-generated method stub
+		
+		String statement = namespace + ".oneCandidate";
+		CandidateDTO cdto = sqlSession.selectOne(statement, candidateNum);
+
+		return cdto;
+	}
+
+	//평가 점수 등록하기 - DB에는 업데이트임!
+	public void InsertEvaluation(CandidateDTO cdto) {
+		// TODO Auto-generated method stub
+		
+		String statement = namespace + ".candidateForEval";
+		sqlSession.update(statement, cdto);
+	}
 
 }
