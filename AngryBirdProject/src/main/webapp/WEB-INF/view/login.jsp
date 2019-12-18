@@ -107,7 +107,7 @@ $(function() {
 <body>
 	
 	
-	<div id="login-page" class="row">
+<div id="login-page" class="row">
 	<div class="col s12 z-depth-4 card-panel">
 		<form:form method="post" action="loginAction" commandName="loginCommand">
 		<div class="row">
@@ -136,9 +136,9 @@ $(function() {
 		</div>
 
 		<div class="row">
-			<div class="input-field col s12 login-text" align="center">
+			<div class="input-field col s12 login-text">
 				<form:checkbox path="idStore" id="test6" checked="checked"/>
-				<label for="test6" class="pointer-events">auto Remember me</label>
+				<label for="test6" class="pointer-events">Auto Remember me</label>
 			</div>
 		</div>
 
@@ -146,11 +146,11 @@ $(function() {
 			<div class="input-field col s12">
 				<button type="submit" class="btn waves-effect waves-light col s12">Login</button>
 			</div>
-		<%-- <c:if test="${employeeInfo.deptNum eq 'SI' }"> --%>
+		<c:if test="${employeeInfo.deptNum eq 'SI' }">
 			<div class="input-field col s12">
-				<a href="join" class="btn waves-effect waves-light col s12 light-blue darken-4">Register Now!</a><!-- 회원가입 -->
+				<a href="si/join" class="btn waves-effect waves-light col s12 light-blue darken-4">Register Now!</a><!-- 회원가입 -->
 			</div>
-		<%-- </c:if> --%>
+		</c:if>
 		</div>
 
 		<div class="row" align="center">
@@ -163,7 +163,7 @@ $(function() {
 		</div>
 		</form:form>
 	</div>
-	</div>
+</div>
 	
 </body>
 </html>

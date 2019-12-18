@@ -27,7 +27,18 @@
 			<result column="dept_num" jdbcType="VARCHAR" property="deptNum" />
 			<result column="job_type_num" jdbcType="VARCHAR" property="jopTypeNum" />
 		</resultMap>
-			
+		
+		<!-- 직원 가입 시 직종 선택 -->
+		<select id="employeeJopt" resultMap="emplRs">
+			select job_type_num
+			  from job_role
+		</select>
+		<!-- 직원 가입 시 부서 선택 -->
+		<select id="employeeDept" resultMap="emplRs">
+			select dept_num 
+			  from department
+		</select>
+		
 		<!-- 직원 로그인 -->
 		<select id="employeeCheck" parameterType="Model.DTO.EmployeeDTO" resultMap="emplRs">
 			select *

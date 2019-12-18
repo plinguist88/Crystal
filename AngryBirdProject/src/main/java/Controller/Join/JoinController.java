@@ -18,17 +18,30 @@ public class JoinController {
 	JoinService joinService;
 
 	// 가입 화면
-	@RequestMapping(value = "/join")
-	public String join (JoinCommand joinCommand) {
+	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	public String join (JoinCommand joinCommand, Model model) {
+		joinService.dept(model);
+		joinService.jopt(model);
+		/*EmployeeInfo info = (EmployeeInfo)session.getAttribute("employeeInfo");
+		if (info != null) {
+			return "join/joinForm";
+			
+		} else {
+			return "main";
+			
+		}*/
 		
 		return "join/joinForm";
+		
 	}
 	
 	// 가입 정보 처리
 	@RequestMapping(value = "/joinAction", method = RequestMethod.POST)
-	public String joinAction (JoinCommand joinCommand, Errors errors) {
+	public String joinAction (JoinCommand joinCommand, Errors errors, Model model) {
 		System.out.println(joinCommand.getEmployeeName() );
 		
+		joinService.dept(model);
+		joinService.jopt(model);
 		new JoinCommandValidator().validate(joinCommand, errors);
 		if (errors.hasErrors() ) {
 			
@@ -42,5 +55,18 @@ public class JoinController {
 		}
 		return "redirect:/main";
 	}
+	// 가입 정보 처리 되돌아가기
+	@RequestMapping(value = "/joinAction", method = RequestMethod.GET)
+	public String joinAction () {
+		
+		return "redirect:/main";
+	}
+	
+	// 직원 가입 시 부서 가져오기
+	/*@RequestMapping()
+	public void detp () {
+		
+		joinService.dept();
+	}*/
 	
 }

@@ -53,11 +53,11 @@ public class EmployeeLoginService {
 		
 		Cookie cookie = new Cookie("idStore", loginCommand.getEmployeeNum() );
 		if (loginCommand.getIdStore() ) {
-			
 			cookie.setMaxAge(60 * 60 * 24 * 30); // 쿠키 수명
-		} else {
 			
+		} else {
 			cookie.setMaxAge(0);
+			
 		}
 		
 		/*

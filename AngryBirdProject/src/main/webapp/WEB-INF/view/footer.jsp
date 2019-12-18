@@ -24,9 +24,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 </style>
 </head>
-<body >
+<body>
+
 <div class="footer" align="center">
 		<p> Copyrightⓒ2019 CRYSTAL ENTERTAINMENT Co., Ltd. All rights reserved. <t />  |   <a href="#">개인정보처리방침</a>   |    <a href="#">내부정보관리규정</a></p>
 </div>
+
 </body>
 </html>

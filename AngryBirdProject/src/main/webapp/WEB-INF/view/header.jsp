@@ -51,7 +51,7 @@
 </style>
 </head>
 <body class="body_header">
-<c:if test="${empty employeeInfo }">
+<c:if test="${empty employeeInfo && empty jumjuInfo}">
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>
@@ -62,8 +62,9 @@
 		 		 <a href="/AngryBirdProject/news" class="navA"> NEWS</a> 
 		 		 <a href="/AngryBirdProject/schedule" class="navA"> SCHEDULE</a>
 		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
-		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>   
-		  		 <a href="/AngryBirdProject/login" class="navA"> LOGIN</a>   
+		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>
+		  		 <a href="/AngryBirdProject/login" class="navA"> LOGIN</a>
+		  		 <a href="/AngryBirdProject/jumjuLogin" class="navA"> STORE_LOGIN</a>
 				</td>
 			</tr>
 		</table>
@@ -96,12 +97,14 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="/AngryBirdProject/ctSupplyList" class="navA"> Supply</a>
-		 		 <a href="/AngryBirdProject/artist" class="navA"> In&Out</a> 
-		 		 <a href="/AngryBirdProject/news" class="navA"> Mealplan</a> 
-		 		 <a href="/AngryBirdProject/schedule" class="navA"> Lunchbox</a> 
-		  		 <a href="/AngryBirdProject/logout" class="navA"> Logout</a>   
-		  		 <a href="cafeteriaMain" class="navA"> ct</a>
+		 		 <a href="/AngryBirdProject/company" class="navA"> COMPANY</a>
+		 		 <a href="/AngryBirdProject/artist" class="navA"> ARTIST</a> 
+		 		 <a href="/AngryBirdProject/news" class="navA"> NEWS</a> 
+		 		 <a href="/AngryBirdProject/schedule" class="navA"> SCHEDULE</a>
+		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
+		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>   
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
+		  		 <a href="cafeteriaMain" class="navA"> CT</a>
 				</td>
 			</tr>
 		</table>
@@ -115,7 +118,7 @@
 				<td width="1400px" >
 				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
 		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITIONS</a>
-		 		 <a href="/AngryBirdProject/candidates" class="navA"> EVALUATION</a>    
+		 		 <a href="/AngryBirdProject/candidates" class="navA"> CANDIDATES</a>    
 		  		 <a href="/AngryBirdProject/initialContracts" class="navA"> INITIAL CONTRACTS</a>   
 		  		 <a href="/AngryBirdProject/contractors" class="navA"> CONTRACTORS</a>    
 		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
@@ -253,7 +256,7 @@
 	</div>
 </c:if>
 
-<c:if test="${jumjuInfo.codeNum eq 'JJ' }">
+<c:if test="${jumjuInfo.storeCodeNum eq 'JJ' }">
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>
@@ -266,7 +269,7 @@
 		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
 		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>    
 		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
-		  		 <a href="JumJu" class="navA"> JJ</a>
+		  		 <a href="/AngryBirdProject/jumjuLogin" class="navA"> JJ</a>
 				</td>
 			</tr>
 		</table>

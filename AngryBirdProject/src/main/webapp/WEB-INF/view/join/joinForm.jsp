@@ -171,7 +171,12 @@
 					부서 코드 번호
 				</td>
 				<td width="400">
-					<form:input path="deptNum" id="deptNum" size="30" maxlenght="28" />
+					<form:select path="deptNum" id="deptNum">
+						<form:option value=""><b>--부서 선택--</b></form:option>
+							<c:forEach var="dept" items="${selectDept }" varStatus="i">
+								<form:option value="${dept.deptNum }">${dept.deptNum }</form:option>
+							</c:forEach>
+					</form:select>
 					<form:errors path="deptNum" />
 				</td>
 			</tr>
@@ -181,7 +186,13 @@
 					직종 코드 번호
 				</td>
 				<td width="400">
-					<form:input path="jopTypeNum" id="jopTypeNum" size="30" maxlenght="28" />
+					<form:select path="jopTypeNum" id="jopTypeNum">
+						<form:option value=""><b>--직종 선택--</b></form:option>
+							<c:forEach var="jopt" items="${selectJopt }" varStatus="i">
+								<form:option value="${jopt.jopTypeNum }">${jopt.jopTypeNum }</form:option>
+							</c:forEach>
+					</form:select>
+					
 					<form:errors path="jopTypeNum" />
 				</td>
 			</tr>

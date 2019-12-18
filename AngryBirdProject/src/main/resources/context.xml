@@ -18,6 +18,16 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd"
 	<mvc:jsp prefix="/WEB-INF/view/" />
 </mvc:view-resolvers>
 
+<!-- interceptor 설정 -->
+<mvc:interceptors>
+	<mvc:interceptor>
+		<mvc:mapping path="/edit/**" />
+		
+		
+		<bean class="Interceptor.AuthCheckInterceptor" />
+	</mvc:interceptor>
+</mvc:interceptors>
+
 <!-- css파일 접근시 -->
 <mvc:resources mapping="/css/**" location="/css/" cache-period="31556926"/>
 

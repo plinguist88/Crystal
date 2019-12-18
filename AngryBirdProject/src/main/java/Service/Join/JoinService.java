@@ -1,7 +1,10 @@
 package Service.Join;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import Command.JoinCommand;
 import Encrypt.Encrypt;
@@ -13,6 +16,24 @@ public class JoinService {
 	
 	@Autowired
 	EmployeeRepository employeeRepository;
+	
+	public void jopt (Model model) {
+		
+		List<EmployeeDTO> dto = employeeRepository.selectJopt();
+		if (dto != null) {
+			model.addAttribute("selectJopt", dto);
+			
+		}
+	}
+	
+	public void dept (Model model) {
+		
+		List<EmployeeDTO> dto = employeeRepository.selectDept();
+		if (dto != null) {
+			model.addAttribute("selectDept", dto);
+			
+		}
+	}
 	
 	public Integer join (JoinCommand joinCommand) {
 		
@@ -47,4 +68,6 @@ public class JoinService {
 		}
 		return result;
 	}
+	
+	
 }

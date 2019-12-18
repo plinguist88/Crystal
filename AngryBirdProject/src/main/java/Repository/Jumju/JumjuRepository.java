@@ -14,6 +14,14 @@ public class JumjuRepository {
 	
 	private final String namespace = "Jumju.";
 	
+	// 점주 로그인
+	public JumjuDTO jumjuLogin(JumjuDTO jumjuDTO) {
+		
+		String stmt = namespace + "jumjuCheck";
+		jumjuDTO = sqlSession.selectOne(stmt, jumjuDTO);
+		return jumjuDTO;
+	}
+	
 	// 점주 회원 가입
 	public Integer joinJumju(JumjuDTO jumjuDTO) {
 		

@@ -20,7 +20,7 @@ public class JumjuJoinCommandValidator implements Validator{
 	private static final String phoneRegExp = "^01(?:0|1|[6-9])(\\d{3}|\\d{4})(\\d{4})$";
 	private Pattern phonePattern;
 	
-	private static final String birthRegExp = "^\\d{2}({2}[0-1][0-9])({2}[0-3][0-3])$";
+	private static final String birthRegExp = "^\\d{2}({2}0[0-9]|1[012])({2}0[0-9]|1[0-9]|2[0-9]|3[0-1])$";
 	private Pattern contractDayPattern;
 	
 	public JumjuJoinCommandValidator() {

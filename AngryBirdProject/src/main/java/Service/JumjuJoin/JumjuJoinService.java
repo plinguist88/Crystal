@@ -12,7 +12,7 @@ import Repository.Jumju.JumjuRepository;
 public class JumjuJoinService {
 
 	@Autowired
-	JumjuRepository jumjuRepository;
+	private JumjuRepository jumjuRepository;
 	
 	public Integer jumjuJoinAction (JumjuJoinCommand jumjuJoinCommand) {
 		
@@ -27,7 +27,7 @@ public class JumjuJoinService {
 			jumjuDTO.setStoreOwnerAccount(jumjuJoinCommand.getStoreOwnerAccount() );
 			jumjuDTO.setStoreOwnerPhone(jumjuJoinCommand.getStoreOwnerPhone() );
 			jumjuDTO.setStoreOwnerAddr(jumjuJoinCommand.getStoreOwnerAddr() );
-			jumjuDTO.setStoreOwnerCalculMoney(0/* jumjuJoinCommand.getStoreOwnerCalculMoney() */ );
+			jumjuDTO.setStoreOwnerCalculMoney(0);/* jumjuJoinCommand.getStoreOwnerCalculMoney() */ 
 			jumjuDTO.setStoreCodeNum(jumjuJoinCommand.getStoreCodeNum() );
 			jumjuDTO.setStoreContractDay(jumjuJoinCommand.getStoreContractDay() );
 			

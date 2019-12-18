@@ -24,9 +24,14 @@
 			<result column="STORE_CONTRACT_DAY" jdbcType="VARCHAR" property="storeContractDay" />
 		</resultMap>
 		
+		<!-- 점주 로그인 -->
+		<select id="jumjuCheck" parameterType="Model.DTO.JumjuDTO" resultMap="jumjuRs">
+			select <include refid="jumjuCol" />
+			  from STORE_OWNER
+			 where STORE_OWNER_ID = #{storeOwnerId}
+		</select>
 		
-		
-		
+		<!-- 점주 가입 -->
 		<insert id="joinJumju" parameterType="Model.DTO.JumjuDTO">
 			insert into STORE_OWNER ( <include refid="jumjuCol" /> )
 							 values ( #{storeOwnerId}, #{storeOwnerPw}, #{storeOwnerName}, #{storeNo}, #{storeOwnerBank}, 

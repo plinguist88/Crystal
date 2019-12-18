@@ -11,6 +11,9 @@ public class JumjuJoinCommand {
 	private String storeOwnerAccount;
 	private String storeOwnerPhone;
 	private String storeOwnerAddr;
+	private String storeOwnerAddr1;
+	private String storeOwnerAddr2;
+	private String storeOwnerAddr3;
 	private Integer storeOwnerCalculMoney;
 	private String storeCodeNum;
 	private String storeContractDay;
@@ -141,6 +144,36 @@ public class JumjuJoinCommand {
 
 	public void setStoreContractDay(String storeContractDay) {
 		this.storeContractDay = storeContractDay;
+	}
+
+
+	public String getStoreOwnerAddr1() {
+		return storeOwnerAddr1;
+	}
+
+
+	public void setStoreOwnerAddr1(String storeOwnerAddr1) {
+		this.storeOwnerAddr1 = storeOwnerAddr1;
+	}
+
+
+	public String getStoreOwnerAddr2() {
+		return storeOwnerAddr2;
+	}
+
+
+	public void setStoreOwnerAddr2(String storeOwnerAddr2) {
+		this.storeOwnerAddr2 = storeOwnerAddr2;
+	}
+
+
+	public String getStoreOwnerAddr3() {
+		return storeOwnerAddr3;
+	}
+
+
+	public void setStoreOwnerAddr3(String storeOwnerAddr3) {
+		this.storeOwnerAddr3 = storeOwnerAddr3;
 	}
 
 

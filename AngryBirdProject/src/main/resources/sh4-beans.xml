@@ -12,6 +12,7 @@
 	<context:annotation-config/>
 	<bean id="jumjuJoinService" class="Service.JumjuJoin.JumjuJoinService" />
 	
+	<bean id="jumjuLoginService" class="Service.JumjuJoin.JumjuLoginService" />
 	
 	<bean id="jumjuRepository" class="Repository.Jumju.JumjuRepository" />
 </beans>
