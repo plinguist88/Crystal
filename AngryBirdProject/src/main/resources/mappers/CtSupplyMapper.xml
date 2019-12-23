@@ -10,17 +10,34 @@
 	</sql>
 	
 	<resultMap type="Model.DTO.CtSupplyDTO" id="ctSupplyMap">
-		<id property="scNo" column="sc_no" />
-		<result property="scLicense" column="sc_license" />
-		<result property="scName1" column="sc_name1" />
-		<result property="scName2" column="sc_name2" />
-		<result property="scSort" column="sc_sort" />
-		<result property="scAddr" column="sc_addr" />
-		<result property="scPh" column="sc_ph" />
+		<id property="scNo" column="sc_no" jdbcType="VARCHAR"/>
+		<result property="scLicense" column="sc_license" jdbcType="INTEGER"/>
+		<result property="scName1" column="sc_name1" jdbcType="VARCHAR"/>
+		<result property="scName2" column="sc_name2" jdbcType="VARCHAR"/>
+		<result property="scSort" column="sc_sort" jdbcType="VARCHAR" />
+		<result property="scAddr" column="sc_addr" jdbcType="VARCHAR"/>
+		<result property="scPh" column="sc_ph" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<resultMap type="Model.DTO.CtContSupplyDTO" id="ctContSupplyMap">
+		<id property="ccNo" column="cc_no" jdbcType="VARCHAR"/>
+		<result property="ccDay" column="cc_day" jdbcType="VARCHAR"/>
+		<result property="ccPeriod" column="cc_period" jdbcType="INTEGER"/>
+		<result property="ccExtention" column="ccExtention" jdbcType="INTEGER" />
+		<result property="scNo" column="sc_no" jdbcType="VARCHAR"/>
+		<result property="employeeNum" column="employee_num" jdbcType="VARCHAR"/>
 	</resultMap>
 	
 	<select id="ctSupplyList" resultMap="ctSupplyMap">
 		select * from supply_company
+	</select>
+	
+	<select id="ctContSupplyList" resultMap="ctContSupplyMap">
+		select * from contract_company
+	</select>
+	
+	<select id="ctSupplyDetail" parameterType="Model.DTO.CtSupplyDTO" resultMap="ctSupplyMap">
+		select <include refid="ctSupplyColumn" /> from supply_company where sc_no = #{scNo}
 	</select>
 	
 	<insert id="ctSupplyRegist" parameterType="Model.DTO.CtSupplyDTO">

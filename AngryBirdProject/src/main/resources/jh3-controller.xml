@@ -18,5 +18,8 @@
 
 	<bean class="Controller.CtSupply.CtSupplyRegistController"/>
 	
+	<bean class="Controller.CtSupply.CtSupplyDetailController"/>
+	
+	<bean class="Controller.CtSupply.CtContSupplyListController"/>
 	
 </beans>
