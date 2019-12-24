@@ -9,6 +9,10 @@
 		sc_no, sc_license, sc_name1, sc_name2, sc_sort, sc_addr, sc_ph
 	</sql>
 	
+	<sql id="ctContSupplyColumn">
+		cc_no, cc_day, cc_period, cc_extention, sc_no, employee_num
+	</sql>
+	
 	<resultMap type="Model.DTO.CtSupplyDTO" id="ctSupplyMap">
 		<id property="scNo" column="sc_no" jdbcType="VARCHAR"/>
 		<result property="scLicense" column="sc_license" jdbcType="INTEGER"/>
@@ -43,6 +47,11 @@
 	<insert id="ctSupplyRegist" parameterType="Model.DTO.CtSupplyDTO">
 		insert into supply_company (<include refid="ctSupplyColumn" />)
 		values (#{scNo}, #{scLicense}, #{scName1}, #{scName2}, #{scSort}, #{scAddr}, #{scPh})
+	</insert>
+	
+	<insert id="ctContSupplyRegist" parameterType="Model.DTO.CtContSupplyDTO">
+		insert into contract_company (<include refid="ctContSupplyColumn" />)
+		values (#{ccNo}, #{ccDay}, #{ccPeriod}, #{ccExtention}, #{scNo}, #{employeeNum})
 	</insert>
 	
 </mapper>

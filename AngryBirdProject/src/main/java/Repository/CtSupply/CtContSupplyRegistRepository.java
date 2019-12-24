@@ -4,20 +4,20 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import Model.DTO.CtSupplyDTO;
+import Model.DTO.CtContSupplyDTO;
 
 @Repository
-public class CtSupplyRegistRepository {
+public class CtContSupplyRegistRepository {
 	@Autowired
 	private SqlSession sqlSession;
 	
 	private final String namespace = "ctSupplyMapper";
-
-	public Integer getCtSupplyRegist(CtSupplyDTO ctSupplyDTO) {
-
-		String statement = namespace + ".ctSupplyRegist";
+	
+	public Integer getCtContSupplyRegist(CtContSupplyDTO ctContSupplyDTO) {
 		
-		return sqlSession.insert(statement, ctSupplyDTO);
+		String statement = namespace + ".ctContSupplyRegist";
+		
+		return sqlSession.insert(statement, ctContSupplyDTO);
+		
 	}
-
 }

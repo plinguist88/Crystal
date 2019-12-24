@@ -36,7 +36,7 @@ public class CtSupplyRegistService {
 		ctSupplyDTO.setScAddr(ctSupplyRegistCommand.getScAddr());
 		ctSupplyDTO.setScPh(ctSupplyRegistCommand.getScPh());
 		
-		Integer result = ctSupplyRegistRepository.setCtSupplyRegist(ctSupplyDTO);
+		Integer result = ctSupplyRegistRepository.getCtSupplyRegist(ctSupplyDTO);
 	
 		
 		return result;

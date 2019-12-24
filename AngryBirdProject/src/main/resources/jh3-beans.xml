@@ -18,6 +18,8 @@
 	<bean class="Service.CtSupply.CtSupplyDetailService" id="ctSupplyDetailService"/>
 	
 	<bean class="Service.CtSupply.CtContSupplyListService" id="ctContSupplyDetailService"/>
+	
+	<bean class="Service.CtSupply.CtContSupplyRegistService" id="ctContSupplyRegistService"/>
 
 	<bean class="Repository.CtSupply.CtSupplyListRepository" id="ctSupplyListRepository"/>
 	
@@ -26,4 +28,6 @@
 	<bean class="Repository.CtSupply.CtSupplyDetailRepository" id="ctSupplyDetailRepository"/>
 
 	<bean class="Repository.CtSupply.CtContSupplyListRepository" id="ctContSupplyListRepository"/>
+	
+	<bean class="Repository.CtSupply.CtContSupplyRegistRepository" id="ctContSupplyRegistRepository"/>
 </beans>

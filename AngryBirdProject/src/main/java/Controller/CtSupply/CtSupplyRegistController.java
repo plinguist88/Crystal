@@ -19,7 +19,7 @@ public class CtSupplyRegistController {
 		return "ctSupply/ctSupplyRegist";
 	}
 	@RequestMapping("/ctSupplyRegistPro")
-	public String supplyCompanyRegistPro(CtSupplyRegistCommand ctSupplyRegistCommand, Errors errors) {
+	public String ctSupplyRegistPro(CtSupplyRegistCommand ctSupplyRegistCommand, Errors errors) {
 		System.out.println("ctSupplyRegistPro...");
 		new CtSupplyRegistCommandValidator().validate(ctSupplyRegistCommand, errors);
 		System.out.println("ctSupplyRegistCommandValidator...");

@@ -22,4 +22,6 @@
 	
 	<bean class="Controller.CtSupply.CtContSupplyListController"/>
 	
+	<bean class="Controller.CtSupply.CtContSupplyRegistController"/>
+	
 </beans>

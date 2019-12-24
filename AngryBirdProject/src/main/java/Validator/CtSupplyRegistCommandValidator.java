@@ -13,7 +13,7 @@ import Command.CtSupplyRegistCommand;
 
 public class CtSupplyRegistCommandValidator implements Validator{
 	private static final String LicenseRegExp=
-			"^\\d{3}\\d{2}\\d{6}$";
+			"^\\d{3}\\d{2}\\d{5}$";
 	private Pattern licensePattern;
 	
 	public CtSupplyRegistCommandValidator() {

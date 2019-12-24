@@ -44,7 +44,7 @@
 </c:if>
 	<tr>
 		<td colspan="3" align="center">
-			<input type="button" value="등록하기" onclick="location.href='ctContSupplyRegist'" />
+			<input type="button" value="등록하기" onclick="location.href='ctSupplyRegist'" />
 		</td>
 	</tr>
 </table>
