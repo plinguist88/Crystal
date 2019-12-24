@@ -6,17 +6,18 @@ import java.util.List;
 @SuppressWarnings("serial")
 public class AudCandidatesDTO implements Serializable {
 	private AuditionDTO auditionDTO;
-	private List<CandidateDTO> candidateDTOs;
+	private CandidateDTO candidateDTO;
+	
 	public AuditionDTO getAuditionDTO() {
 		return auditionDTO;
 	}
 	public void setAuditionDTO(AuditionDTO auditionDTO) {
 		this.auditionDTO = auditionDTO;
 	}
-	public List<CandidateDTO> getCandidateDTOs() {
-		return candidateDTOs;
+	public CandidateDTO getCandidateDTO() {
+		return candidateDTO;
 	}
-	public void setCandidateDTOs(List<CandidateDTO> candidateDTOs) {
-		this.candidateDTOs = candidateDTOs;
+	public void setCandidateDTO(CandidateDTO candidateDTO) {
+		this.candidateDTO = candidateDTO;
 	}
 }

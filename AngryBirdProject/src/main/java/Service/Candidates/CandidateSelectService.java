@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import Model.DTO.AudCandidatesDTO;
 import Model.DTO.CandidateDTO;
 import Repository.Candidates.CandidateRepository;
 
@@ -16,8 +17,8 @@ public class CandidateSelectService {
 
 	public void selectAll(Integer auditionSeq, Model model) {
 		// TODO Auto-generated method stub
-		List<CandidateDTO> candidates = candidateRepository.selectAllperAud(auditionSeq);
-		model.addAttribute("candidates", candidates);
+		List<AudCandidatesDTO> audCandidatesDTO = candidateRepository.selectAllperAud(auditionSeq);
+		model.addAttribute("audCandidatesDTO", audCandidatesDTO);
 	}
 
 	public void candidateDetail(String candidateNum, Model model) {

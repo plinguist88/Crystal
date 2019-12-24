@@ -6,14 +6,14 @@
 	<!-- 여기저기서 편하게 쓰려고 -->
 	<sql id="basecolumn1">
 		participant_num, participant_name, participant_birth, participant_gender, participant_phone, 
-		participant_addr, participant_date, audition_seq, original_file_name, store_file_name, file_size, total_score
+		participant_addr, participant_date, audition_seq, original_file_name, store_file_name, file_size
 	</sql>
 	
 	<sql id="basecolumn2">
 		participant_num, participant_name, participant_birth, participant_gender, participant_phone, 
 		participant_addr, participant_date, audition_seq, original_file_name, store_file_name, file_size,
 		video_score, dance_diff_score, dance_rythm_score, dance_stage_score, song_choice_score,
-		song_pitch_score, song_vib_score, appearance_score, strength_score, global_score, total_score, 
+		song_pitch_score, song_vib_score, appearance_score, strength_score, global_score, total_score, passed
 		employee_num
 	</sql>
 
@@ -42,29 +42,26 @@
 		<result column="strength_score" jdbcType="VARCHAR" property="strengthScore"/>
 		<result column="global_score" jdbcType="VARCHAR" property="globalScore"/>
 		<result column="total_score" jdbcType="VARCHAR" property="totalScore"/>
+		<result column="passed" jdbcType="INTEGER" property="passed"/>
 		<result column="employee_num" jdbcType="VARCHAR" property="employeeNum"/>
 	</resultMap>
 
+	<!-- 지원자 신청 -->
 	<insert id="registerCandidate" parameterType="Model.DTO.CandidateDTO">
 		insert into PARTICIPANT( <include refid="basecolumn1" /> ) 
 		values( #{candidateNum}, #{candidateName},#{candidateBirth},#{candidateGender},#{candidatePh},
 				#{candidateAddr}, sysdate, #{auditionSeq}, #{originalFilename}, #{storeFilename}, #{fileSize})
 	</insert>
 	
-	<!-- 지원자보기 -->
-	<select parameterType="Model.DTO.CandidateDTO" resultMap="baseCan" id="candidateList">
-		select <include refid="basecolumn1" /> 
-		from participant 
-		where audition_seq = #{auditionSeq}
-		order by total_score desc
-	</select>
+
 	
 	<!-- 지원자 상세보기 -->
 	<select parameterType="Model.DTO.CandidateDTO" resultMap="baseCan" id="oneCandidate">
-		select <include refid="basecolumn1" /> 
+		select <include refid="basecolumn1" /> , total_score
 		from participant 
 		where participant_num = #{candidateNum}
 	</select>
+	
 	
 	<!-- 지원자 평가정보 업데이트하기 -->
 	<update id="candidateForEval" parameterType="Model.DTO.CandidateDTO">
@@ -84,6 +81,68 @@
 		employee_num = #{employeeNum}
 		where  participant_num = #{candidateNum}
 	</update>
+	
+	
+	<!-- 오디션 모집인원 및 지원자 정보 볼때 쓰는 문구 -->
+	<resultMap type="Model.DTO.AuditionDTO" id="baseAud">
+	    <id column="AUDITION_SEQ" jdbcType="INTEGER" property="auditionSeq" />
+		<result column="AUDITION_NUM" jdbcType="INTEGER" property="auditionNo"/>
+		<result column="EMPLOYEE_NUM" jdbcType="VARCHAR" property="employeeNum"/>
+		<result column="AUDITION_STARTDATE" jdbcType = "VARCHAR" property="startDate"/>
+		<result column="AUDITION_ENDDATE" jdbcType="VARCHAR" property="endDate"/>
+		<result column="AUDITION_GATHER" jdbcType="INTEGER" property="gather"/>
+		<result column="AUDITION_PASSED" jdbcType="INTEGER" property="passed"/>
+		<result column="AUDITION_TYPE" jdbcType="VARCHAR" property="type"/>
+		<result column="AUDITION_TITLE" jdbcType="VARCHAR" property="title"/>
+		<result column="AUDITION_CONTENT" jdbcType="VARCHAR" property="content"/>
+		<result column="AUDITION_UPLOAD_DATE" jdbcType="TIMESTAMP" property="uploadDate"/>
+	</resultMap>
+
+	<resultMap type="Model.DTO.AudCandidatesDTO" id="baseCan111"><!-- 두 개 이상의 dto를 하나의 dto에 담으려고 할 때. 만약 받아올 데이터가 1개 이상이면 association 사용할 수 없고 아래처럼 필드명으로 사용해야함. 그리고 association일 때는 repository에서 selectList 메서드 사용할 수 없음-->
+			<id column="participant_num" jdbcType="VARCHAR" property="candidateDTO.candidateNum" /><!-- id는 result보다 위에 와야함 -->
+			<id column="AUDITION_SEQ" jdbcType="INTEGER" property="auditionDTO.auditionSeq" />
+			<result column="AUDITION_TITLE" jdbcType="VARCHAR" property="auditionDTO.title"/>
+			<result column="AUDITION_PASSED" jdbcType="INTEGER" property="auditionDTO.passed"/>
+			<result column="participant_name" jdbcType="VARCHAR" property="candidateDTO.candidateName"/>
+			<result column="participant_birth" jdbcType="VARCHAR" property="candidateDTO.candidateBirth"/>
+			<result column="participant_gender" jdbcType = "VARCHAR" property="candidateDTO.candidateGender"/>
+			<result column="participant_phone" jdbcType="VARCHAR" property="candidateDTO.candidatePh"/>
+			<result column="participant_addr" jdbcType="VARCHAR" property="candidateDTO.candidateAddr"/>
+			<result column="participant_date" jdbcType="TIMESTAMP" property="candidateDTO.candidateDate"/>		
+			<result column="audition_seq" jdbcType="INTEGER" property="candidateDTO.auditionSeq"/>		
+			<result column="original_file_name" jdbcType="VARCHAR" property="candidateDTO.originalFilename"/>
+			<result column="store_file_name" jdbcType="VARCHAR" property="candidateDTO.storeFilename"/>
+			<result column="file_size" jdbcType="INTEGER" property="candidateDTO.fileSize"/>
+			<result column="total_score" jdbcType="INTEGER" property="candidateDTO.totalScore"/>		
+	</resultMap>
+	
+	
+	<!-- 지원자보기 + 합격자 인원 및 시퀀스도 보기 -->
+	<select parameterType="Model.DTO.AudCandidatesDTO" resultMap="baseCan111" id="candidateList">
+		select p.participant_num, p.participant_name, p.participant_birth, p.participant_gender, 
+				p.participant_phone, p.participant_addr, p.participant_date, p.audition_seq, p.original_file_name, 
+				p.store_file_name, p.file_size , p.total_score, 
+				a.AUDITION_SEQ, a.AUDITION_PASSED
+		from participant p
+		left join audition a
+		on p.audition_seq = a.audition_seq
+		where p.audition_seq = #{auditionSeq}
+		order by p.total_score desc
+	</select>
+	
+
+	<!-- 합격자를 지원번호로 조회하기 -->
+	<select parameterType="Model.DTO.AudCandidatesDTO" resultMap="baseCan111" id="checkPassed">
+		select p.participant_num, p.participant_name, p.participant_birth, p.participant_gender, 
+				p.participant_phone, p.participant_addr, p.participant_date, p.audition_seq, p.original_file_name, 
+				p.store_file_name, p.file_size , p.total_score, 
+				a.AUDITION_SEQ, a.AUDITION_PASSED, a.AUDITION_TITLE
+		from participant p
+		left join audition a
+		on p.audition_seq = a.audition_seq
+		where participant_num = #{candidateNum}
+				and passed = 1
+	</select>
 	
 	
 	

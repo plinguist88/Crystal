@@ -15,9 +15,9 @@ public class CandidateEvaluationService {
 	@Autowired
 	CandidateRepository candidateRepository;
 
-	public void evaluate(String candidateNum, EvalCommand evalCommand, HttpSession session) {
+	public void evaluate(EvalCommand evalCommand, HttpSession session) {
 		CandidateDTO cdto = new CandidateDTO();
-		cdto.setCandidateNum(candidateNum);
+		cdto.setCandidateNum(evalCommand.getCandidateNum());
 		cdto.setVideoScore(evalCommand.getQ1());
 		cdto.setDanceDiffScore(evalCommand.getQ2());
 		cdto.setDanceStageScore(evalCommand.getQ3());

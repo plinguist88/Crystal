@@ -12,6 +12,7 @@ public class EvalCommand {
 	Integer q8;	
 	Integer q9;	
 	Integer q10;
+	String candidateNum;
 	
 	public Integer getEvalScore() {
 		return evalScore;
@@ -78,6 +79,12 @@ public class EvalCommand {
 	}
 	public void setQ10(Integer q10) {
 		this.q10 = q10;
+	}
+	public String getCandidateNum() {
+		return candidateNum;
+	}
+	public void setCandidateNum(String candidateNum) {
+		this.candidateNum = candidateNum;
 	}
 	
 	

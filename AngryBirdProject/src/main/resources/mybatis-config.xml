@@ -4,7 +4,7 @@
 	
 <configuration>
 	<typeAliases>
-
-		
+				<typeAlias type="Model.DTO.CandidateDTO" alias ="CandidateDTO"/>
+				<typeAlias type="Model.DTO.AuditionDTO" alias ="AuditionDTO"/>
 	</typeAliases>
 </configuration>	

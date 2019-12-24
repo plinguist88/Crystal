@@ -21,9 +21,8 @@ public class AuditionInsertService {
 		aud.setAuditionNo(Integer.parseInt(auditionCommand.getAuditionNum()));
 		aud.setStartDate(auditionCommand.getStartDate());
 		aud.setEndDate(auditionCommand.getEndDate());
-		aud.setGather(Integer.parseInt(auditionCommand.getAuditionGather()));
-		//합격인원은 나중에 update로 변경하기
-		aud.setPassed(0);
+		aud.setGather(auditionCommand.getAuditionGather());
+		aud.setPassed(auditionCommand.getAuditionPassed());
 		aud.setType(auditionCommand.getAuditionType());
 		aud.setContent(auditionCommand.getAuditionContent());
 		//session에서 employeeNum을 넣기로

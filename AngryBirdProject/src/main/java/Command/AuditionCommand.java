@@ -6,8 +6,11 @@ public class AuditionCommand {
 	private String startDate;	
 	private String endDate;
 	private String auditionType;
-	private String auditionGather;
+	private Integer auditionGather;
+	private Integer auditionPassed;
 	private String auditionContent;
+	
+	
 	public String getAuditionTitle() {
 		return auditionTitle;
 	}
@@ -38,10 +41,10 @@ public class AuditionCommand {
 	public void setAuditionType(String auditionType) {
 		this.auditionType = auditionType;
 	}
-	public String getAuditionGather() {
+	public Integer getAuditionGather() {
 		return auditionGather;
 	}
-	public void setAuditionGather(String auditionGather) {
+	public void setAuditionGather(Integer auditionGather) {
 		this.auditionGather = auditionGather;
 	}
 	public String getAuditionContent() {
@@ -49,6 +52,12 @@ public class AuditionCommand {
 	}
 	public void setAuditionContent(String auditionContent) {
 		this.auditionContent = auditionContent;
+	}
+	public Integer getAuditionPassed() {
+		return auditionPassed;
+	}
+	public void setAuditionPassed(Integer auditionPassed) {
+		this.auditionPassed = auditionPassed;
 	}
 
 }

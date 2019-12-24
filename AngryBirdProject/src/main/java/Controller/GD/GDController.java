@@ -7,11 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import Command.EvalCommand;
 import Service.Audition.AuditionSelectService;
 import Service.Candidates.CandidateSelectService;
 import Service.GD.CandidateEvaluationService;
+import Service.GD.CandidatePassedService;
 
 @Controller
 public class GDController {
@@ -21,6 +23,8 @@ public class GDController {
 	CandidateSelectService candidateSelectService;
 	@Autowired
 	CandidateEvaluationService candidateEvaluationService;
+	@Autowired
+	CandidatePassedService candidatePassedService;
 	
 	//진행중인 오디션 보기
 	@RequestMapping("/candidates")
@@ -50,12 +54,19 @@ public class GDController {
 	}	
 	
 	
-	
 	//지원자 평가 저장
-	 @RequestMapping("/evaluationRegister/{id}") 
-	 public String evaluate(@PathVariable("id") String candidateNum, EvalCommand evalCommand, HttpSession session) {
-	 candidateEvaluationService.evaluate(candidateNum, evalCommand, session); 
-	 return "redirect:candidates"; 
+	 @RequestMapping("/evaluationRegister") 
+	 public String evaluate(EvalCommand evalCommand, HttpSession session) {
+		 candidateEvaluationService.evaluate(evalCommand, session); 
+		 return "redirect:candidates"; 
+	 }
+	 
+	 
+	 //합격자 저장
+	 @RequestMapping("/goPass") 
+	 public String goPass(@RequestParam(value="passedCan") String[] passedCan) {
+		 candidatePassedService.savePassed(passedCan); 
+		 return "redirect:candidates"; 
 	 }
 	 
 	 

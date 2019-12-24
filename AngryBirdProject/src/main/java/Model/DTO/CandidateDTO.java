@@ -29,6 +29,18 @@ public class CandidateDTO implements Serializable{
 	Integer globalScore;
 	Integer totalScore;
 	String employeeNum;
+	Integer passed;
+	
+	AuditionDTO auditionDTO;
+	
+	
+	public AuditionDTO getAuditionDTO() {
+		return auditionDTO;
+	}
+	public void setAuditionDTO(AuditionDTO auditionDTO) {
+		this.auditionDTO = auditionDTO;
+	}
+	
 	
 	public Integer getVideoScore() {
 		return videoScore;
@@ -167,6 +179,12 @@ public class CandidateDTO implements Serializable{
 	}
 	public void setEmployeeNum(String employeeNum) {
 		this.employeeNum = employeeNum;
+	}
+	public Integer getPassed() {
+		return passed;
+	}
+	public void setPassed(Integer passed) {
+		this.passed = passed;
 	}
 	
 	

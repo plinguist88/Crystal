@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="GDMapper">
+<cache />
+
+	<!-- 합격자에 1 이라는 값 넣기 / 리스트 -> Hashmap에 담아서 가져옴 /forEach문으로 update ==> 실패함. mybatis에서는 세미콜론 사용할 수 없어서 여러개의 sql문을 작동시킬수가 없음. 이 경우 repository에서 sqlSession.update를 for문으로 돌려서 실행-->
+<!-- 	<update id="updatePassedCan" parameterType="hashMap">
+		<foreach collection="cdtos" item="cdto" index="index" >
+			<![CDATA[
+			update PARTICIPANT 
+			set PASSED = #{cdto.passed}
+			where participant_num = #{cdto.candidateNum}			
+			]]>
+		</foreach>
+	</update> -->
+	
+	<update id="updatePassedCan" parameterType="Model.DTO.CandidateDTO">
+			update PARTICIPANT 
+			set PASSED = #{passed}
+			where participant_num = #{candidateNum}		
+	</update> 
+</mapper>

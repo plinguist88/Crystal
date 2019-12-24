@@ -31,7 +31,7 @@ $(function(){
 <div  class="container">
 <h2>지원자 평가</h2>
 
-<form:form action="/AngryBirdProject/evaluationRegister/${cdto.candidateNum}" method="post" commandName="evalCommand"> 
+<form:form action="/AngryBirdProject/evaluationRegister" method="post" commandName="evalCommand"> 
 <table class="line">
 	<tr>
 		<td width="200">지원자 번호</td><td width="800">${cdto.candidateNum }</td>
@@ -69,7 +69,7 @@ $(function(){
 	<tr>
 		<td width="200">평가 총점</td>
 		<td width="800">
-
+		<form:hidden path="candidateNum" value="${cdto.candidateNum}"/>
  		<form:input path="evalScore"  id="evalScore" size="2" readonly="readonly" /> <!-- readonly라고만 치면 안됨. form태그는 반드시 ..=..라고 쳐야함. -->
  		<form:hidden path="q1" id="q1"/>		
 		<form:hidden path="q2" id="q2"/>			

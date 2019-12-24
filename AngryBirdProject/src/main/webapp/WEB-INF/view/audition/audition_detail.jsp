@@ -24,6 +24,9 @@ $(function(){
 	$("#btn3").click(function(){
 		location.href="";		
 	}); */
+	$("#btn4").click(function(){
+		location.href="/AngryBirdProject/passedCheckGo";
+	});
 	
 });
 
@@ -52,6 +55,9 @@ $(function(){
 		<td>모집인원</td><td>${oneAud.gather }</td>
 	</tr>
 	<tr>
+		<td>선발인원</td><td>${oneAud.passed }</td>
+	</tr>
+	<tr>
 		<td>내용</td><td>${oneAud.content }
 		</td>
 	</tr>
@@ -71,6 +77,20 @@ $(function(){
 	</tr>
 </c:if>		
 </table>
+
+<!-- 종료일자가 지난 경우이면서 합격여부가 db에 등록이 된 경우 검색해서 자기 아이디 조회할 수 있도록 -->	
+<c:if test="${(empty employeeInfo) && (oneAud.endDate < today)}">
+	<tr>
+		<td colspan="2">
+		<div align="center"><br />
+			<button id="btn4" >합격자 확인하기</button> 
+		</div>
+		</td>
+	</tr>
+</c:if>		
+</table>
+
+
 <c:if test="${!empty employeeInfo }">
 	<div align="center"><br />
 		<button id="btn2" >수정</button> 

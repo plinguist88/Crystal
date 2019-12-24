@@ -67,6 +67,9 @@ public class CandidateRegisterService {
 		cdto.setStoreFilename(store);
 		cdto.setFileSize(fileSize);
 		
+		//지원자 총점은 null인경우 화면에서 출력될 때 상위에 위치하므로, 값을 0점으로 먼저 주기.
+		cdto.setTotalScore(0);
+		
 		System.out.println("Name: "+cdto.getCandidateName());
 		System.out.println("Gender: "+cdto.getCandidateGender());
 		System.out.println("Birth: "+cdto.getCandidateBirth());

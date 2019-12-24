@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ContractorMapper">
+<cache />
+
+<sql id="basecolum">
+	contractor_ID , contractor_pw ,contractor_name ,contractor_gender ,contractor_birth,
+	contractor_phone, contractor_addr , participant_num , contractor_level
+</sql>
+
+<insert id="insertContractor" parameterMap="Model.DTO.ContractorDTO">
+	insert into CONTRACTORS
+	values(#{contractorId}, #{contractorPw}, #{contractorName}, #{contractorGender}, #{contractorBirth}, 
+	#{contractorPhone}, #{contractorAddr}, #{participantNum}, #{contractorLevel})
+</insert>
+
+</mapper>

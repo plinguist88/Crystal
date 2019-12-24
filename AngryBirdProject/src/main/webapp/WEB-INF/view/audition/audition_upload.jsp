@@ -91,6 +91,20 @@ $(function(){
 		        }
 	        } 
 	    });
+	   $("#auditionPassed").blur(function(){
+	        if($("#auditionPassed").val()==""){
+	        	$("#passedCheck").text("선발인원을 입력하세요.");
+	        	$("#passedCheck").css('color','red');
+	        }else {
+		        if(numJ.test($(this).val())){
+		        	console.log(numJ.test($(this).val()));
+		        	$("#passedCheck").text('');
+		        } else {
+		        	$("#gpassedCheck").text('숫자로만 입력 가능합니다.');
+		        	$("#passedCheck").css('color','red');
+		        }
+	        } 
+	    });
 	   $("#auditionContent").blur(function(){
 	        if($("#auditionContent").val()==""){
 	        	$("#contentCheck").text("내용을 입력하세요.");
@@ -142,6 +156,9 @@ $(function(){
 	</tr>
 	<tr>
 		<td>모집인원</td><td><form:input path="auditionGather" id="auditionGather" /><div id="gatherCheck"></div></td>
+	</tr>
+	<tr>
+		<td>선발인원</td><td><form:input path="auditionPassed" id="auditionPassed" /><div id="passedCheck"></div></td>
 	</tr>
 	<tr>
 		<td>내용</td><td><form:textarea path="auditionContent" id="auditionContent" /><div id="contentCheck"></div></td>

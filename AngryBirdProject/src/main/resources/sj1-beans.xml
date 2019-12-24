@@ -20,4 +20,9 @@
 		<bean class="Service.Candidates.CandidateSelectService" id="candidateSelectService"/>			
 		<bean class="Service.Candidates.CandidateOneSelectService" id="candidateOneSelectService"/>			
 		<bean class="Service.GD.CandidateEvaluationService" id="candidateEvaluationService"/>			
+		<bean class="Service.GD.CandidatePassedService" id="candidatePassedService"/>			
+		<bean class="Repository.GD.GDRepository" id="gdRepository"/>		
+		<bean class="Service.Candidates.CandidateCheckService" id="candidateCheckService"/>				
+		<bean class="Service.Contractor.RegContractorService" id="regContractorService"/>				
+		<bean class="Repository.Contractor.ContractorRepository" id="contractorRepository"/>					
 </beans>

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import Model.DTO.AudCandidatesDTO;
 import Model.DTO.CandidateDTO;
 
 public class CandidateRepository {
@@ -23,11 +24,11 @@ public class CandidateRepository {
 	}
 
 	//candidate selectAll per audition
-	public List<CandidateDTO> selectAllperAud(Integer auditionSeq) {
+	public List<AudCandidatesDTO> selectAllperAud(Integer auditionSeq) {
 		// TODO Auto-generated method stub
 		
 		String statement = namespace + ".candidateList";
-		List<CandidateDTO> candidates = sqlSession.selectList(statement, auditionSeq);
+		List<AudCandidatesDTO> candidates = sqlSession.selectList(statement, auditionSeq);
 		return candidates;
 	}
 	//candidate 상세보기
@@ -46,6 +47,15 @@ public class CandidateRepository {
 		
 		String statement = namespace + ".candidateForEval";
 		sqlSession.update(statement, cdto);
+	}
+
+	//합격자 조회하기
+	public AudCandidatesDTO checkPassed(String candidateNum) {
+		// TODO Auto-generated method stub
+		String statement = namespace + ".checkPassed";
+		AudCandidatesDTO audC = sqlSession.selectOne(statement, candidateNum);	
+		
+		return audC;
 	}
 
 }
