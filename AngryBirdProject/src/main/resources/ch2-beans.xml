@@ -9,7 +9,10 @@
 	   <!-- 의존객체 생성 xml -->
 
 	<!-- @Autowired 사용하려고 context 추가 -->
-	<context:annotation-config/>
-<!-- 	<bean id="" class="" />컨트롤러에서 갖다쓰는 beans -->
+	<context:annotation-config/>	
+	<bean id="shopService" class="Service.Shop.ShopService" />
+	<bean id="shopRepository" class="Repository.Shop.ShopRepository" />
+	<bean id="carReqService" class="Service.Car.CarReqService" />
+	<bean id="carReqRepository" class="Repository.Car.CarReqRepository" />
 	
 </beans>

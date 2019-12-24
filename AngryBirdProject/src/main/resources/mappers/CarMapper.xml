@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CarMapper">
+<cache />
+	<sql id="carRequest">
+		CAR_REQUEST_RENTAL_NUM,CAR_REQUEST_RENTAL_DATE,CAR_REQUEST_RETURN_DATE,
+		CAR_REQUEST_TYPE,CAR_REQUEST_PASSENGER_NUM,CAR_REG_NUM,EMPLOYEE_NUM
+	</sql>
+
+	<insert id="carReq" parameterType="Model.DTO.CarRequestDTO">
+		insert into CAR_REQUEST(<include refid="carRequest"/>)
+		VALUES(#{carRequestRentalNum},#{carRequestRentalDate},#{carRequestReturnDate},
+			#{carRequestType},#{carRequestPassengerNum},#{carRegNum},#{employeeNum})
+	
+	</insert>
+</mapper>

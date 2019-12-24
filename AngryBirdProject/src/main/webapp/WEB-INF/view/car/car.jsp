@@ -18,7 +18,6 @@
   background-color: white;
   overflow: auto;
   font-weight: bold;
-
 } 
 
 .navbar a.navA{
@@ -29,11 +28,9 @@
   font-size: 22px;
 }
 
-
 .navbar a.navA:hover {
   color: #800000;
 }
-
 
 @media screen and (max-width: 500px) {
   .navbar a {
@@ -42,12 +39,12 @@
   }
 }  
 
-
 .table1 {
 	border-bottom: 1px solid #ddd;
 	border-collapse: collapse;
 	border-spacing: 0px;
 }
+
 </style>
 </head>
 <body class="body_header">
@@ -97,13 +94,14 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
-				 <a href="/AngryBirdProject/company" class="navA"> CAFETERIA</a>
-		 		 <a href="ctSupplyList" class="navA"> SUPPLY</a>
-		 		 <a href="/AngryBirdProject/artist" class="navA"> FOOD</a> 
-		 		 <a href="/AngryBirdProject/news" class="navA"> MEALPLAN</a> 
-		 		 <a href="/AngryBirdProject/schedule" class="navA"> LUNCHBOX</a>
+		 		 <a href="/AngryBirdProject/company" class="navA"> COMPANY</a>
+		 		 <a href="/AngryBirdProject/artist" class="navA"> ARTIST</a> 
+		 		 <a href="/AngryBirdProject/news" class="navA"> NEWS</a> 
+		 		 <a href="/AngryBirdProject/schedule" class="navA"> SCHEDULE</a>
+		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
+		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>   
 		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
-		  		 <a href="#" class="navA"> CT</a>
+		  		 <a href="cafeteriaMain" class="navA"> CT</a>
 				</td>
 			</tr>
 		</table>
@@ -219,10 +217,13 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="500" align="left" /></a>
-		 		 <a href="/AngryBirdProject/shopRequest" class="navA"> SHOP RESERV.</a>
-		 		 <a href="/AngryBirdProject/carRequest" class="navA"> CAR RESERV.</a> 
-		 		 <a href="/AngryBirdProject/calendar" class="navA"> CALENDAR</a> 
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+		 		 <a href="/AngryBirdProject/shopMain" class="navA"> SHOP RESERV.</a>
+		 		 <a href="/AngryBirdProject/artist" class="navA"> CAR RESERV.</a> 
+		 		 <a href="/AngryBirdProject/news" class="navA"> #</a> 
+		 		 <a href="/AngryBirdProject/schedule" class="navA"> #</a>
+		 		 <a href="/AngryBirdProject/audition" class="navA"> #</a>
+		  		 <a href="/AngryBirdProject/contactUs" class="navA"> #</a>    
 		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="ma" class="navA"> MA</a>
 				</td>
