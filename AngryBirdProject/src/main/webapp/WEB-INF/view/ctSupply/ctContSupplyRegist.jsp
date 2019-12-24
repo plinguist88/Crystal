@@ -15,12 +15,14 @@ function scSerch(){
 	window.open(url,"",popupOption);
 }
 </script>
-<link href="${pageContext.request.contextPath}/css/css/style.css" rel="stylesheet" >
+
+<style type="text/css">
+:lang(ko) {font-family:nanum gothic, sans-serif;}
+</style>
 
 <title>ctSupplyRegist</title>
 </head>
 <body>
-<div="container">
 <form:form action="ctContSupplyRegistPro" name="frm" id="frm" method="post" commandName="ctContSupplyRegistCommand" >
 	<table width="600" align="center" border="1">
 		<tr>
@@ -55,6 +57,5 @@ function scSerch(){
 		</tr>
 	</table>
 </form:form>
-</div>
 </body>
 </html>

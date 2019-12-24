@@ -10,24 +10,24 @@
 
 	<!-- @Autowired 사용하려고 context 추가 -->
 	<context:annotation-config/>
-<!-- 	<bean id="" class="" />컨트롤러에서 갖다쓰는 beans -->
+	
+	<!-- 	<bean id="" class="" /> 컨트롤러에서 갖다쓰는 beans -->
+	
+	<!-- CtSupply Beans Service/Repository -->
 	<bean class="Service.CtSupply.CtSupplyListService" id="ctSupplyListService"/>
-	
 	<bean class="Service.CtSupply.CtSupplyRegistService" id="ctSupplyRegistService"/>
-	
 	<bean class="Service.CtSupply.CtSupplyDetailService" id="ctSupplyDetailService"/>
-	
 	<bean class="Service.CtSupply.CtContSupplyListService" id="ctContSupplyDetailService"/>
-	
 	<bean class="Service.CtSupply.CtContSupplyRegistService" id="ctContSupplyRegistService"/>
 
 	<bean class="Repository.CtSupply.CtSupplyListRepository" id="ctSupplyListRepository"/>
-	
 	<bean class="Repository.CtSupply.CtSupplyRegistRepository" id="ctSupplyRegistRepository"/>
-
 	<bean class="Repository.CtSupply.CtSupplyDetailRepository" id="ctSupplyDetailRepository"/>
-
 	<bean class="Repository.CtSupply.CtContSupplyListRepository" id="ctContSupplyListRepository"/>
-	
 	<bean class="Repository.CtSupply.CtContSupplyRegistRepository" id="ctContSupplyRegistRepository"/>
+	
+	<!-- CtFood Beans Service/Repository -->
+	<bean class="Service.CtFood.CtFoodListService" id="ctFoodListService"/>
+	
+	<bean class="Repository.CtFood.CtFoodListRepository" id="ctFoodListRepository"/>
 </beans>

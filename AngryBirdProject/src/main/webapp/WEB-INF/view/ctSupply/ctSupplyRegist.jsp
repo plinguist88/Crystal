@@ -6,12 +6,13 @@
 <head>
 <meta charset="UTF-8">
 
-<link href="${pageContext.request.contextPath}/css/css/style.css" rel="stylesheet" >
+<style type="text/css">
+:lang(ko) {font-family:nanum gothic, sans-serif;}
+</style>
 
 <title>ctSupplyRegist</title>
 </head>
 <body>
-<div="container">
 <form:form action="ctSupplyRegistPro" name="frm" id="frm" method="post" commandName="ctSupplyRegistCommand" >
 	<table width="600" align="center" border="1">
 		<tr>
@@ -56,6 +57,5 @@
 		</tr>
 	</table>
 </form:form>
-</div>
 </body>
 </html>

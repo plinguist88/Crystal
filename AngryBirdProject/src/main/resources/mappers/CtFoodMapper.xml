@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="ctFoodMapper">
+		
+	<cache />
+
+	<sql id="ctFoodColumn">
+		food_no, food_name, food_origin, food_qty, food_unit, food_price, food_period, food_kcal, cc_no
+	</sql>
+	
+	<resultMap type="Model.DTO.CtFoodDTO" id="ctFoodMap">
+		<id property="foodNo" column="food_no" jdbcType="VARCHAR"/>
+		<result property="foodName" column="food_name" jdbcType="VARCHAR"/>
+		<result property="foodOrigin" column="food_origin" jdbcType="VARCHAR"/>
+		<result property="foodQty" column="food_qty" jdbcType="INTEGER"/>
+		<result property="foodUnit" column="food_unit" jdbcType="VARCHAR"/>
+		<result property="foodPrice" column="food_price" jdbcType="INTEGER"/>
+		<result property="foodPeriod" column="food_period" jdbcType="INTEGER"/>
+		<result property="foodKcal" column="food_kcal" jdbcType="INTEGER"/>
+		<result property="ccNo" column="cc_no" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<select id="ctFoodList" resultMap="ctFoodMap">
+		select * from food
+	</select>
+</mapper>

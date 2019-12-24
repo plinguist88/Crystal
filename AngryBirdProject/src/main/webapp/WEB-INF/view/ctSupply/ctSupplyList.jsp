@@ -7,14 +7,14 @@
 <head>
 <meta charset="UTF-8">
 
-<link href="${pageContext.request.contextPath}/css/css/style.css" rel="stylesheet" >
+<style type="text/css">
+:lang(ko) {font-family:nanum gothic, sans-serif;}
+</style>
 
 <title>ctSupplyList</title>
 </head>
 <body>
-<div class="container">
-<br /><br /><br />
-<table class="line" align="center">
+<table align="center">
 	<tr>
 		<td width="20%">
 		</td>
@@ -48,7 +48,6 @@
 		</td>
 	</tr>
 </table>
-</div>
 </body>
 </html>
 <%@ include file ="../footer.jsp" %>

@@ -7,19 +7,19 @@
 <head>
 <meta charset="UTF-8">
 
-<link href="${pageContext.request.contextPath}/css/css/style.css" rel="stylesheet" >
+<style type="text/css">
+:lang(ko) {font-family:nanum gothic, sans-serif;}
+</style>
 
 <title>ctContSupplyList</title>
 </head>
 <body>
-<div class="container">
-<br /><br /><br />
-<table class="line" align="center">
+<table align="center">
 	<tr>
 		<td width="20%" align="center">
 						<a href="ctSupplyList"><img src="/AngryBirdProject/images/leftArrow.png" alt="ctSupplyList" width="100"/></a>
 		</td>
-		<td width="60%" >
+		<td colspan="2" width="60%" >
 			<h1 align="center">ContSupply List</h1>
 		</td>
 		<td width="20%" >
@@ -44,12 +44,11 @@
 	</tr>
 </c:if>
 	<tr>
-		<td colspan="3" align="center">
+		<td colspan="4" align="center">
 			<input type="button" value="등록하기" onclick="location.href='ctContSupplyRegist'" />
 		</td>
 	</tr>
 </table>
-</div>
 </body>
 </html>
 <%@ include file ="../footer.jsp" %>
