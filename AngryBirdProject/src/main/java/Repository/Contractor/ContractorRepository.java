@@ -10,14 +10,20 @@ public class ContractorRepository {
 	SqlSession sqlSession;
 	private final String namespace= "ContractorMapper";
 
-	public Integer saveContractor(ContractorDTO conDTO) {
+	public ContractorDTO saveContractor(ContractorDTO conDTO) {
 		// TODO Auto-generated method stub
-		int result = 0;
 		
 		String statement = namespace + ".insertContractor";
+		
+		//계약자 ID 저장
 		sqlSession.insert(statement, conDTO);
 		
-		return result;
+		//저장한 ID정보를 가져오기
+		statement = namespace + ".selectOneContractor";
+		String contractorId = conDTO.getContractorId();
+		ContractorDTO cdtoForDetail = sqlSession.selectOne(statement, contractorId);
+		
+		return cdtoForDetail;
 	}
 
 }

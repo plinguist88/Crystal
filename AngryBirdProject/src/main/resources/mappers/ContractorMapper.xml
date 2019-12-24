@@ -4,15 +4,35 @@
 <mapper namespace="ContractorMapper">
 <cache />
 
-<sql id="basecolum">
+<sql id="basecolumn">
 	contractor_ID , contractor_pw ,contractor_name ,contractor_gender ,contractor_birth,
 	contractor_phone, contractor_addr , participant_num , contractor_level
 </sql>
 
-<insert id="insertContractor" parameterMap="Model.DTO.ContractorDTO">
+<insert id="insertContractor" parameterType="Model.DTO.ContractorDTO">
 	insert into CONTRACTORS
 	values(#{contractorId}, #{contractorPw}, #{contractorName}, #{contractorGender}, #{contractorBirth}, 
 	#{contractorPhone}, #{contractorAddr}, #{participantNum}, #{contractorLevel})
 </insert>
+
+<resultMap type="Model.DTO.ContractorDTO" id="conMap">
+	    <id column="contractor_ID" jdbcType="VARCHAR" property="contractorId" />
+		<result column="contractor_pw" jdbcType="VARCHAR" property="contractorPw"/>
+		<result column="contractor_name" jdbcType="VARCHAR" property="contractorName"/>
+		<result column="contractor_gender" jdbcType = "VARCHAR" property="contractorGender"/>
+		<result column="contractor_birth" jdbcType="VARCHAR" property="contractorBirth"/>
+		<result column="contractor_phone" jdbcType="VARCHAR" property="contractorPhone"/>
+		<result column="contractor_addr" jdbcType="VARCHAR" property="contractorAddr"/>		
+		<result column="participant_num" jdbcType="VARCHAR" property="participantNum"/>		
+		<result column="contractor_level" jdbcType="INTEGER" property="contractorLevel"/>
+</resultMap>
+
+<select id="selectOneContractor" resultMap="conMap">
+	select <include refid="basecolumn" />
+	from CONTRACTORS
+	where contractor_ID = #{contractorId}
+</select>
+
+
 
 </mapper>

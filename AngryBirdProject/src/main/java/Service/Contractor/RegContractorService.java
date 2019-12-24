@@ -6,6 +6,7 @@ import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import Command.RegContractorCommand;
 import Model.DTO.ContractorDTO;
@@ -16,7 +17,7 @@ public class RegContractorService {
 	@Autowired
 	ContractorRepository contractorRepository;
 
-	public void insertContractor(RegContractorCommand regContractorCommand) {
+	public void insertContractor(RegContractorCommand regContractorCommand, Model model) {
 		// TODO Auto-generated method stub
 		ContractorDTO conDTO = new ContractorDTO();
 	
@@ -37,7 +38,8 @@ public class RegContractorService {
 		conDTO.setParticipantNum(regContractorCommand.getParticipantNum());
 		conDTO.setContractorLevel(regContractorCommand.getContractorLevel());
 		
-		contractorRepository.saveContractor(conDTO);
+		ContractorDTO conDTOforDetail =  contractorRepository.saveContractor(conDTO);
+		model.addAttribute("conDTO", conDTOforDetail);
 	}
 
 }

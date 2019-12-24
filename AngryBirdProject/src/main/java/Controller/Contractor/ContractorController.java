@@ -2,6 +2,7 @@ package Controller.Contractor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,11 +23,14 @@ public class ContractorController {
 	
 	//계약자 계정 생성
 	@RequestMapping(value="/registerContractor", method = RequestMethod.POST )
-	public String registerContracts(RegContractorCommand regContractorCommand) {
+	public String registerContracts(RegContractorCommand regContractorCommand, Model model) {
 		
-		regContractorService.insertContractor(regContractorCommand);
-		
-		
-		return "contractor/contractor_register"; 
+		regContractorService.insertContractor(regContractorCommand, model);
+				
+		return "contractor/contractor_detail"; 
 	}	
+	
+
+	
+	
 }
