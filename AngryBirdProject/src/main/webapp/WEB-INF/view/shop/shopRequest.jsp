@@ -8,36 +8,45 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="${pageContext.request.contextPath}/css/css/style.css" rel="stylesheet" >
-<title>SHOP RESERV. 페이지</title>
+<title>SHOP 예약신청 페이지</title>
 </head>
 <body>
-	<div class="container">
-			<form:form action="###" name="frm" id="frm" method="post" commandName="###">
-				<div class="form-group">
-					<form:hidden class="form-control" path="goodsNum" id="goodsNum" />
-					<label for="selectDate"><h3>▶ 선택날짜</h3></label> 
-					<input type="date" class="forcontrol" name="selectDate" id="selectDate">
-					<input type="submit" class="btn btn-dark" />
-				</div>
+		<div class="container">
+			<form:form action="shopRequestPro" name="frm" id="frm" method="post" commandName="shopRequestCommand">
 				<table width=600 class="line">
 					<tr>
-						<td width="200 ">
-							직원 번호
-						</td>
+						<td width="200" >직원 번호</td>
+						<td width="400"><form:input path="employeeNum" id="employeeNum" size="30" maxlenght="28" /></td>
+					</tr>
+					<tr>
+						<td width="200">담당 연예인 이름</td>
+						<td width="400"><form:input path="managerCelebrity" id="managerCelebrity" size="30" maxlenght="28" /></td>
+					</tr>
+					<tr>
+						<td width="200">직원 연락처</td>
 						<td width="400">
-							<form:hidden path="#" id="#" size="30" maxlenght="28" />
+							<form:input path="employeePh" id="employeePh" size="30" maxlenght="28" />
+							<form:errors path="employeePh" />
 						</td>
 					</tr>
 					<tr>
-						<td width="200 ">
-							담당 연예인 이름
-						</td>
-						<td width="400">
-							<form:hidden path="#" id="#" size="30" maxlenght="28" />
-						</td>
+						<td width="200">예약시작일자</td>
+						<td width="400"><input type='date' name='startDate' /></td>
 					</tr>
+					<tr>
+						<td width="200">예약종료일자</td>
+						<td width="400"><input type='date' name='endDate' /></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+						<div align="center">
+							<input type="submit" value="신청하기" />
+							<input type="reset" value="다시입력" />
+							<button>가입취소</button>
+						</div>
+						</td>
 				</table>
 			</form:form>
-	</div>
+		</div>
 </body>
 </html>
