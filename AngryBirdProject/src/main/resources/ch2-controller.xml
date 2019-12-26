@@ -12,5 +12,5 @@
 	<context:annotation-config/>
 	<!-- controller는 id가 필요없음. 가져다가 쓸일이 없기 때문 -->
 	<bean class="Controller.Shop.ShopController"/>
-	<bean class="Controller.Car.CarReqController"/>
+	<bean class="Controller.Car.CarController"/>
 </beans>

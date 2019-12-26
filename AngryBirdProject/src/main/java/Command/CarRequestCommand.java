@@ -1,10 +1,18 @@
 package Command;
 
-public class CarReqCommand {
+public class CarRequestCommand {
+	private String employeeNum;	
 	private String carRequestRentalDate;
 	private String carRequestReturnDate;
 	private String carRequestType;
-	private String employeeNum;
+
+	
+	public String getEmployeeNum() {
+		return employeeNum;
+	}
+	public void setEmployeeNum(String employeeNum) {
+		this.employeeNum = employeeNum;
+	}
 	public String getCarRequestRentalDate() {
 		return carRequestRentalDate;
 	}
@@ -23,11 +31,4 @@ public class CarReqCommand {
 	public void setCarRequestType(String carRequestType) {
 		this.carRequestType = carRequestType;
 	}
-	public String getEmployeeNum() {
-		return employeeNum;
-	}
-	public void setEmployeeNum(String employeeNum) {
-		this.employeeNum = employeeNum;
-	}
-	
 }

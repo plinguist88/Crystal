@@ -12,7 +12,5 @@
 	<context:annotation-config/>	
 	<bean id="shopRequestService" class="Service.Shop.ShopRequestService" />
 	<bean id="shopRepository" class="Repository.Shop.ShopRepository" />
-	<bean id="carReqService" class="Service.Car.CarReqService" />
-	<bean id="carReqRepository" class="Repository.Car.CarReqRepository" />
-	
+	<bean id="carRequestService" class="Service.Car.CarRequestService" />
 </beans>

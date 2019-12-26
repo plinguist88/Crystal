@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>  
+<%@ taglib prefix="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ include file="/WEB-INF/view/header.jsp"%>
@@ -7,9 +8,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="${pageContext.request.contextPath}/css/css/style.css" rel="stylesheet" >
 <title>SHOP 예약신청 확인 페이지</title>
 </head>
 <body>
-
+	<div class="container">
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<div align="center"><a href="/AngryBirdProject/main"><img src="/AngryBirdProject/images/member.JPG" width="500" /></a></div>
+		<h2>[ 예약이 완료되었습니다 ]</h2>
+	</div>
 </body>
 </html>

@@ -8,12 +8,13 @@ public class CarRequestDTO implements Serializable {
 	private String carRequestRentalDate;
 	private String carRequestReturnDate;
 	private String carRequestType;
-	private Long carRequestPassengerNum;
+	private Integer carRequestPassengerNum;
 	private String carRegNum;
 	private String employeeNum;
+	private String carRequestRealDate;
 	
 	public CarRequestDTO(String carRequestRentalNum, String carRequestRentalDate, String carRequestReturnDate,
-			String carRequestType, Long carRequestPassengerNum, String carRegNum, String employeeNum) {
+			String carRequestType, Integer carRequestPassengerNum, String carRegNum, String employeeNum, String carRequestRealDate) {
 		super();
 		this.carRequestRentalNum = carRequestRentalNum;
 		this.carRequestRentalDate = carRequestRentalDate;
@@ -22,6 +23,7 @@ public class CarRequestDTO implements Serializable {
 		this.carRequestPassengerNum = carRequestPassengerNum;
 		this.carRegNum = carRegNum;
 		this.employeeNum = employeeNum;
+		this.carRequestRealDate = carRequestRealDate;
 	}
 
 	public String getCarRequestRentalNum() {
@@ -56,11 +58,11 @@ public class CarRequestDTO implements Serializable {
 		this.carRequestType = carRequestType;
 	}
 
-	public Long getCarRequestPassengerNum() {
+	public Integer getCarRequestPassengerNum() {
 		return carRequestPassengerNum;
 	}
 
-	public void setCarRequestPassengerNum(Long carRequestPassengerNum) {
+	public void setCarRequestPassengerNum(Integer carRequestPassengerNum) {
 		this.carRequestPassengerNum = carRequestPassengerNum;
 	}
 
@@ -78,5 +80,13 @@ public class CarRequestDTO implements Serializable {
 
 	public void setEmployeeNum(String employeeNum) {
 		this.employeeNum = employeeNum;
+	}
+
+	public String getCarRequestRealDate() {
+		return carRequestRealDate;
+	}
+
+	public void setCarRequestRealDate(String carRequestRealDate) {
+		this.carRequestRealDate = carRequestRealDate;
 	}
 }

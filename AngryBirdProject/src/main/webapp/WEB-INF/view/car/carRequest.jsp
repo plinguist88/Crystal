@@ -8,7 +8,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="${pageContext.request.contextPath}/css/css/style.css" rel="stylesheet" >
-<title>SHOP 예약신청 페이지</title>
+<meta charset="UTF-8">
+<title>CAR 예약신청 페이지</title>
 <style>
 div {
 	border-right-style : none;
@@ -25,40 +26,41 @@ div {
 			<br />
 		</div>
 		<div class="a" align="center">
-			<h2>SHOP 예약신청</h2>
+			<h2>CAR 예약신청</h2>
 		</div>
-		
 			<br />
 		
-		<div>
-			<form:form action="shopRequestPro" name="frm" id="frm" meEthod="post" commandName="shopRequestCommand">
+		<div class="container">
+			<form:form action="carRequestPro" name="frm" id="frm" method="post" commandName="carRequestCommand">
 				<table width=600 class="line">
 					<tr>
-						<td width="200" >직원 번호</td>
+						<td width="200" >직원번호</td>
 						<td width="400">
 							<form:input path="employeeNum" id="employeeNum" size="30" maxlenght="28" />
 						</td>
 					</tr>
 					<tr>
-						<td width="200">담당 연예인 이름</td>
-						<td width="400">
-							<form:input path="managerCelebrity" id="managerCelebrity" size="30" maxlenght="28" />
+						<td width="200" >신청 대여일자</td>
+						<td width="400"><input type='date' name='startDate' />
 						</td>
 					</tr>
 					<tr>
-						<td width="200">직원 연락처</td>
-						<td width="400">
-							<form:input path="employeePh" id="employeePh" size="30" maxlenght="28" />
-							<form:errors path="employeePh" />
+						<td width="200">신청 반납일자</td>
+						<td width="400"><input type='date' name='startDate' />
 						</td>
 					</tr>
 					<tr>
-						<td width="200">예약시작일자</td>
-						<td width="400"><input type='date' name='startDate' /></td>
-					</tr>
-					<tr>
-						<td width="200">예약종료일자</td>
-						<td width="400"><input type='date' name='endDate' /></td>
+						<td width="200">차량종류</td>
+						<td width="400">
+						
+						<form:select path="carRequestType" id="carRequestType">
+						<form:option value=""><b>--차량선택--</b></form:option>
+							<c:forEach var="carReq" items="${selectCarReq }" varStatus="i">
+								<form:option value="${carReq.carRequestType }">${carReq.carRequestType }</form:option>
+							</c:forEach>
+					</form:select>
+						<form:errors path="carRequestType" />
+						</td>
 					</tr>
 					<tr>
 						<td colspan="2">
