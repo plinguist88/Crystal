@@ -97,13 +97,13 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
-				 <a href="/AngryBirdProject/company" class="navA"> CAFETERIA</a>
+				 <a href="ctCafeteria" class="navA"> CAFETERIA</a>
 		 		 <a href="ctSupplyList" class="navA"> SUPPLY</a>
 		 		 <a href="ctFoodList" class="navA"> FOOD</a> 
-		 		 <a href="/AngryBirdProject/news" class="navA"> MEALPLAN</a> 
-		 		 <a href="/AngryBirdProject/schedule" class="navA"> LUNCHBOX</a>
+		 		 <a href="ctMealplanList" class="navA"> MEALPLAN</a> 
+		 		 <a href="ctLunchboxList" class="navA"> LUNCHBOX</a>
 		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
-		  		 <a href="/AngryBirdProject/CT" class="navA"> CT</a>
+		  		 <a href="/AngryBirdProject/main" class="navA"> CT</a>
 				</td>
 			</tr>
 		</table>

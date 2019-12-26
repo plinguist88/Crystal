@@ -13,6 +13,8 @@
 	<!-- controller는 id가 필요없음. 가져다가 쓸일이 없기 때문 -->
 <!-- 	<bean class=""/> -->
 
+	<bean class="Controller.CtMain.CtCafeteriaController"/>
+	
 
 	<bean class="Controller.CtSupply.CtSupplyListController"/>
 
@@ -26,5 +28,10 @@
 	
 	
 	<bean class="Controller.CtFood.CtFoodListController"/>
+	
+	
+	<bean class="Controller.CtMealplan.CtMealplanListController"/>
+	
+
 	
 </beans>
