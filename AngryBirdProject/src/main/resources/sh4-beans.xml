@@ -11,8 +11,12 @@
 	<!-- @Autowired 사용하려고 context 추가 -->
 	<context:annotation-config/>
 	<bean id="jumjuJoinService" class="Service.JumjuJoin.JumjuJoinService" />
-	
 	<bean id="jumjuLoginService" class="Service.JumjuJoin.JumjuLoginService" />
-	
 	<bean id="jumjuRepository" class="Repository.Jumju.JumjuRepository" />
+	
+	<bean id="goodsService" class="Service.Goods.GoodsService" />
+	<bean id="paymentService" class="Service.Goods.PaymentService" />
+	<bean id="goodsRepository" class="Repository.Goods.GoodsRepository" />
+	<bean id="paymentRepository" class="Repository.Goods.PaymentRepository" />
+	
 </beans>

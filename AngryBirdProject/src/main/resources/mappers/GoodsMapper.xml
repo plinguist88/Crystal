@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Goods">
+
+	<cache/>
+	
+		<!-- Items col -->
+		<sql id="itemsCol">
+			ITEMS_NO, ITEMS_NAME, ITEMS_SORT, ITEMS_COUNT, ITEMS_PRICE, ITEMS_UNIT_PRICE, ITEMS_PROTRAIT, ITEMS_MARJIN,
+			contractor_num, contractor_type, contractor_name, contractor_ID
+		</sql>
+		
+		<resultMap type="Model.DTO.ItemsDTO" id="itemsRs">
+			<id column="ITEMS_NO" jdbcType="VARCHAR" property="itemsNo" />
+			<result column="ITEMS_NAME" jdbcType="VARCHAR" property="itemsName" />
+			<result column="ITEMS_SORT_NAME" jdbcType="VARCHAR" property="itemsSort" />
+			<result column="ITEMS_COUNT" jdbcType="INTEGER" property="itemsCount" />
+			<result column="ITEMS_PRICE" jdbcType="INTEGER" property="itemsPrice" />
+			<result column="ITEMS_UNIT_PRICE" jdbcType="INTEGER" property="itemsUnitPrice" />
+			<result column="ITEMS_PROTRAIT" jdbcType="INTEGER" property="itemsProtrait" />
+			<result column="ITEMS_MARJIN" jdbcType="INTEGER" property="itemsMarjin" />
+			<result column="contractor_num" jdbcType="VARCHAR" property="contractorNum" />
+			<result column="contractor_type" jdbcType="VARCHAR" property="contractorType" />
+			<result column="contractor_name" jdbcType="VARCHAR" property="contractorName" />
+			<result column="contractor_ID" jdbcType="VARCHAR" property="contractorId" />
+		</resultMap>
+		
+		<select id="goodsList" resultMap="itemsRs">
+			select <include refid="itemsCol"/>
+			  from items
+		</select>
+		
+		<insert id="insertGoods" parameterType="Model.DTO.ItemsDTO">
+			insert into ITEMS ( <include refid="itemsCol" />)
+					   values ( goods_seq.nextval, #{itemsNo}, #{itemsNo}, #{itemsName}, #{itemsSort}, #{itemsCount}, #{itemsPrice},
+					   			#{itemsUnitPrice}, #{itemsProtrait}, #{itemsMarjin}, 
+					   			#{contractorNum}, #{contractorType}, #{contractorName}, #{contractorId} )
+		</insert>
+		
+		<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+		
+		<!-- sales_record col -->
+		<sql id="salesRecordCol">
+			ITEMS_NO, ITEMS_NAME, ITEMS_TRANSACTION, ITEMS_TOTAL_PRICE
+		</sql>
+		
+		<resultMap type="Model.DTO.SalesRecordDTO" id="salesRs">
+			<id column="ITEMS_NO" jdbcType="VARCHAR" property="itemsNo" />
+			<result column="ITEMS_NAME" jdbcType="VARCHAR" property="itemsName" />
+			<result column="ITEMS_TRANSACTION" jdbcType="INTEGER" property="itemsTransaction" />
+			<result column="ITEMS_TOTAL_PRICE" jdbcType="INTEGER" property="itemsTotalPrice" />
+			<!-- <result column="ITEMS_PRICE" jdbcType="INTEGER" property="itemsPrice" />
+			<result column="ITEMS_UNIT_PRICE" jdbcType="INTEGER" property="itemsUnitPrice" />
+			<result column="ITEMS_PROTRAIT" jdbcType="INTEGER" property="itemsProtrait" />
+			<result column="ITEMS_MARJIN" jdbcType="INTEGER" property="itemsMarjin" />
+			<result column="contractor_num" jdbcType="VARCHAR" property="contractorNum" />
+			<result column="contractor_type" jdbcType="VARCHAR" property="contractorType" />
+			<result column="contractor_name" jdbcType="VARCHAR" property="contractorName" />
+			<result column="contractor_ID" jdbcType="VARCHAR" property="contractorId" />  -->
+		</resultMap>
+		
+		<insert id="payment" parameterType="Model.DTO.SalesRecordDTO">
+			insert into sales_record ( <include refid="salesRecordCol" /> )
+							  values ( #{itemsNo}, #{itemsName}, #{itemsTransaction}, #{itemsTotalPrice} )
+		</insert>
+</mapper>

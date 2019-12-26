@@ -15,5 +15,9 @@
 	
 	<bean class="Controller.Jumju.JumjuLoginController"/>
 	
+	<bean class="Controller.Pos.PosController"/>
 	
+	<bean class="Controller.Pos.GoodsController"/>
+	
+	<bean class="Controller.Pos.PaymentController"/>
 </beans>

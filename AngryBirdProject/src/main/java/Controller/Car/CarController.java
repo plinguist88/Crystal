@@ -23,7 +23,7 @@ public class CarController {
 		return "car/carRequest";
 	}
 	
-	@RequestMapping(value = "/joinAction", method = RequestMethod.POST)
+	@RequestMapping(value = "/carRequestPro", method = RequestMethod.POST)
 	public String joinAction (CarRequestCommand carRequestCommand, Model model) {
 		
 		carRequestService.cars(model);
