@@ -17,7 +17,7 @@ public class RegContractorService {
 	@Autowired
 	ContractorRepository contractorRepository;
 
-	public void insertContractor(RegContractorCommand regContractorCommand, Model model) {
+	public void insertContractor(RegContractorCommand regContractorCommand) {
 		// TODO Auto-generated method stub
 		ContractorDTO conDTO = new ContractorDTO();
 	
@@ -28,18 +28,21 @@ public class RegContractorService {
 		Date date = new Date();
 		String today = formatter.format(date.getTime()) ;
 		
-		conDTO.setContractorId("C"+ today);
-		conDTO.setContractorPw(conDTO.getContractorId());
 		conDTO.setContractorName(regContractorCommand.getContractorName());
 		conDTO.setContractorBirth(regContractorCommand.getContractorBirth());
+		//ID 조합
+		conDTO.setContractorId("C"+ today + "B" + conDTO.getContractorBirth()); /*substring에서는 뒤의 인덱스는 포함하지 않으므로 두개 갖고 싶으면 끝나는 인덱스를 2로*/
+		//초기 PW는 ID와 동일
+		conDTO.setContractorPw(conDTO.getContractorId());
+		System.out.println("::"+conDTO.getContractorId());
+		System.out.println("::"+conDTO.getContractorPw());
 		conDTO.setContractorPhone(regContractorCommand.getContractorPhone());
 		conDTO.setContractorAddr(regContractorCommand.getContractorAddr());
 		conDTO.setContractorGender(regContractorCommand.getContractorGender());
 		conDTO.setParticipantNum(regContractorCommand.getParticipantNum());
 		conDTO.setContractorLevel(regContractorCommand.getContractorLevel());
 		
-		ContractorDTO conDTOforDetail =  contractorRepository.saveContractor(conDTO);
-		model.addAttribute("conDTO", conDTOforDetail);
+		contractorRepository.saveContractor(conDTO);
 	}
 
 }

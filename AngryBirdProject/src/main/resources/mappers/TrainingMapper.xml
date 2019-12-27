@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="TrainingMapper">
+<cache />
+
+	<sql id="basecolumn1">
+		training_num, training_level, training_startdate, training_enddate, training_curriculum 
+	</sql>
+
+	<insert id="insertTraining" parameterType="Model.DTO.TrainingDTO">
+		insert into Training(<include refid="basecolumn1" />) 
+		values(#{trainingNum},#{trainingLevel},#{trainingStartDate},#{trainingEndDate},#{trainingCurriculum})
+	</insert>
+
+	<resultMap type="Model.DTO.TrainingDTO" id="trainingMap">
+		<id column="TRAINING_NUM" jdbcType="VARCHAR" property="trainingNum"/>
+		<result column="TRAINING_LEVEL" jdbcType="VARCHAR" property="trainingLevel"/>		
+		<result column="TRAINING_STARTDATE" jdbcType="VARCHAR" property="trainingStartDate"/>		
+		<result column="TRAINING_ENDDATE" jdbcType="VARCHAR" property="trainingEndDate"/>		
+		<result column="TRAINING_CURRICULUM" jdbcType="CLOB" property="trainingCurriculum"/>		
+	</resultMap>
+
+	<select id="selectAllTrainings" resultMap="trainingMap">
+		select <include refid="basecolumn1" />
+		from training
+	</select>
+
+	<select id="oneTraining" resultMap="trainingMap">
+		select <include refid="basecolumn1" />
+		from training
+		where TRAINING_NUM = #{trainingNum}
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+

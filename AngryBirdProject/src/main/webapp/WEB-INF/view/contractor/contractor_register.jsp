@@ -14,7 +14,7 @@
 <script type="text/javascript">
 
 /* 생년월일 정규식*/
-var dateJ = /\d{6}/;
+var dateJ = /^([0-9][0-9])(0[0-9]|1[0-2])(0[0-9]|[1-2][0-9]|3[0-1])/;
 /* 숫자만 */
 var numJ = /\d/;
 /* 전화번호 */
@@ -34,11 +34,11 @@ $(function(){
 	        	$("#contractorBirthCheck").text("계약자 생년월일을 입력하세요.");
 	        	$("#contractorBirthCheck").css('color','red');
 	        }else {
-		        if(numJ.test($(this).val())){
+		        if(dateJ.test($(this).val())){
 		        	console.log(dateJ.test($(this).val()));
 		        	$("#contractorBirthCheck").text('');
 		        } else {
-		        	$("#contractorBirthCheck").text('숫자 6자리로만 입력 가능합니다.');
+		        	$("#contractorBirthCheck").text('날짜형식이 맞지 않습니다. 생년월일은 숫자 6자리로만 입력 가능합니다.');
 		        	$("#contractorBirthCheck").css('color','red');
 		        }
 	        } 
@@ -48,7 +48,7 @@ $(function(){
 	        	$("#contractorPhoneCheck").text("계약자 휴대폰 번호를 입력하세요.");
 	        	$("#contractorPhoneCheck").css('color','red');
 	        }else {
-		        if(dateJ.test($(this).val())){
+		        if(phoneJ.test($(this).val())){
 		        	console.log(phoneJ.test($(this).val()));
 		        	$("#contractorPhoneCheck").text('');
 		        } else {

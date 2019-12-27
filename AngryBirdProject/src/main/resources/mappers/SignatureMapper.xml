@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="SignatureMapper">
+<cache />
+
+	<sql id="basecolumn1">
+		contract_num, contract_type, contractor_name, contract_startdate, contract_enddate, employee_num, signature, contractor_ID, contract_regdate  
+	</sql>
+
+	<insert id="insertSignature" parameterType="Model.DTO.ContractsDTO">
+		insert into contracts(<include refid="basecolumn1" />)
+		values (#{contractNum},#{contractType},#{contractorName},#{contractStartDate},#{contractEndDate},#{employeeId},#{signature},#{contractorId}, sysdate )
+	</insert>
+	
+	
+	<resultMap type="Model.DTO.ContractsDTO" id="contractsMap">
+	    <id column="CONTRACT_NUM" jdbcType="VARCHAR" property="contractNum" />
+		<result column="CONTRACT_TYPE" jdbcType="VARCHAR" property="contractType"/>
+		<result column="CONTRACTOR_NAME" jdbcType="VARCHAR" property="contractorName"/>		
+		<result column="CONTRACT_STARTDATE" jdbcType="VARCHAR" property="contractStartDate"/>		
+		<result column="CONTRACT_ENDDATE" jdbcType="VARCHAR" property="contractEndDate"/>		
+		<result column="EMPLOYEE_NUM" jdbcType="VARCHAR" property="employeeId"/>
+		<result column="CONTRACTOR_ID" jdbcType="VARCHAR" property="contractorId"/>
+		<result column="SIGNATURE" jdbcType="CLOB" property="signature"/>	
+		<result column="CONTRACT_REGDATE" jdbcType="TIMESTAMP" property="contractRegDate"/>										
+	</resultMap>
+
+	<select id="selectAllContracts" resultMap="contractsMap">
+		select <include refid="basecolumn1" />
+		from contracts
+	</select>
+	
+	<select id="selectOneContract" resultMap="contractsMap">
+		select <include refid="basecolumn1" />
+		from contracts
+		where contract_num = #{contractNum}
+	</select>
+
+
+</mapper>

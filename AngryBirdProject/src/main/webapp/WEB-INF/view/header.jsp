@@ -128,7 +128,7 @@
 	</div>
 </c:if>
 
-<c:if test="${employeeInfo.deptNum eq 'GF' && employeeInfo.jobTypeNum eq 'NM' }"> <!-- 인재육성팀 일반사무직 -->
+<c:if test="${employeeInfo.deptNum eq 'GF' }"> <!-- 인재육성팀 일반사무직 -->
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>
@@ -146,7 +146,7 @@
 	</div>
 </c:if>
 
-<c:if test="${employeeInfo.deptNum eq 'GF' && employeeInfo.jobTypeNum eq 'CT' }"> <!-- 인재육성팀 상담사-->
+<%-- <c:if test="${employeeInfo.deptNum eq 'GF' && employeeInfo.jobTypeNum eq 'CT' }"> <!-- 인재육성팀 상담사-->
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>
@@ -192,7 +192,7 @@
 			</tr>
 		</table>
 	</div>
-</c:if>
+</c:if> --%>
 
 <c:if test="${employeeInfo.deptNum eq 'GH' }">
 	<div class="navbar" align="center">

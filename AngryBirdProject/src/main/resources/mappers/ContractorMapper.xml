@@ -33,6 +33,12 @@
 	where contractor_ID = #{contractorId}
 </select>
 
+<select id="selectAllContractors" resultMap="conMap">
+	select <include refid="basecolumn" />
+	from CONTRACTORS
+</select>
+
+
 
 
 </mapper>

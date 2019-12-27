@@ -22,7 +22,7 @@ var phoneJ = /\d{11}/;
 
 $(function(){
 	$("#btn").click(function(){
-		location.href="/AngryBirdProject/${conDTO.contractorId }";
+		location.href="/AngryBirdProject/contractGo/${conDTO.contractorId }";
 	});
 });
 
@@ -31,11 +31,11 @@ $(function(){
 </head>
 <body>
 <div class="container">
-	<h2>계약자 계정 생성</h2>
+	<h2>계약자 계정 상세보기</h2>
 		<c:if test="${!empty conDTO }">
 		<table class="line">
 			<tr>
-				<td>
+				<td width="200">
 					계약자 ID <%-- 비밀번호는 계약자 ID로 자동생성하고 나중에 계약자가 변경하도록 함. --%>
 				</td>
 				<td>
@@ -43,15 +43,15 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td width="200">
 					계약자 비밀번호 <%-- 비밀번호는 계약자 ID로 자동생성하고 나중에 계약자가 변경하도록 함. --%>
 				</td>
 				<td>
-					초기 비밀번호는 ID와 동일합니다. 변경 필요합니다.
+					
 				</td>
 			</tr>			
 			<tr>
-				<td>
+				<td width="200">
 					계약자 이름
 				</td>
 				<td >
@@ -59,15 +59,22 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td >
+				<td width="200">
 					계약자 성별
 				</td>
 				<td >
-					${conDTO.contractorGender }
+					<c:choose>
+						<c:when test="${conDTO.contractorGender eq 'M'}">
+							남자
+						</c:when>
+						<c:when test="${conDTO.contractorGender eq 'F'}">
+							여자
+						</c:when>
+					</c:choose>		
 				</td>
 			</tr>			
 			<tr>
-				<td >
+				<td width="200">
 					계약자 생년월일
 				</td>
 				<td >
@@ -76,7 +83,7 @@ $(function(){
 			</tr>
 			
 			<tr>
-				<td >
+				<td width="200">
 					계약자 전화번호
 				</td>
 				<td >
@@ -85,7 +92,7 @@ $(function(){
 			</tr>
 			
 			<tr>
-				<td>
+				<td width="200">
 					계약자 주소
 				</td>
 				<td>
@@ -94,7 +101,7 @@ $(function(){
 			</tr>
 			
 			<tr>
-				<td>
+				<td width="200">
 					지원번호   <!-- 필수항목 아님 -->
 				</td>
 				<td>
@@ -102,7 +109,7 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td width="200">
 					계약자 권한레벨 <%-- 권한레벨은 계약종류에 따라 다르게, 연습생은 0, 연예인은 1 --%>
 				</td>
 				<td>
@@ -113,8 +120,7 @@ $(function(){
 						<c:when test="${conDTO.contractorLevel ==1}">
 							연예인
 						</c:when>
-					</c:choose>
-					
+					</c:choose>		
 				</td>
 			</tr>
 		

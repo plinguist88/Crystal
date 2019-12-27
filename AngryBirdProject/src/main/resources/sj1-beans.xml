@@ -24,5 +24,18 @@
 		<bean class="Repository.GD.GDRepository" id="gdRepository"/>		
 		<bean class="Service.Candidates.CandidateCheckService" id="candidateCheckService"/>				
 		<bean class="Service.Contractor.RegContractorService" id="regContractorService"/>				
-		<bean class="Repository.Contractor.ContractorRepository" id="contractorRepository"/>					
+		<bean class="Repository.Contractor.ContractorRepository" id="contractorRepository"/>	
+		<bean class="Service.Contractor.SelectContractorService" id="selectContractorService"/>			
+		<bean class="Service.Contractor.SelectContractorOne" id="selectContractorOne"/>			
+		<bean class="Service.Contracts.ContractGoService" id="contractGoService"/>			
+		<bean class="Service.ContractSave.ContractSaveService" id="contractSaveService"/>			
+		<bean class="Repository.Contracts.ContractsRepository" id="contractsRepository"/>		
+		<bean class="Service.Contracts.ContractSelectAllService" id="contractSelectAllService"/>			
+		<bean class="Service.Contracts.ContractOneService" id="contractOneService"/>				
+		<bean class="Service.Training.TrainingUploadService" id="trainingUploadService"/>
+		<bean class="Repository.Training.TrainingRepository" id="trainingRepository"/>	
+		<bean class="Service.Training.TrainingSelectService" id="trainingSelectService"/>		
+			
+		
+			
 </beans>
