@@ -258,13 +258,13 @@
 			<tr>
 				<td width="1400px" >
 				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="/AngryBirdProject/company" class="navA"> COMPANY</a>
-		 		 <a href="/AngryBirdProject/artist" class="navA"> ARTIST</a> 
-		 		 <a href="/AngryBirdProject/news" class="navA"> NEWS</a> 
-		 		 <a href="/AngryBirdProject/schedule" class="navA"> SCHEDULE</a>
-		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
-		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>    
-		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
+		 		 <a href="/AngryBirdProject/pos" class="navA"> POS</a>
+		 		 <!-- <a href="/AngryBirdProject/goods" class="navA"> GOODS</a>  -->
+		 		 <!-- <a href="/AngryBirdProject/sales" class="navA"> SALES_RECORD</a> --> 
+		 		 <a href="/AngryBirdProject/manufacturer" class="navA"> MANUFACTURER</a>
+		 		 <a href="/AngryBirdProject/tax" class="navA"> TAX</a>
+		  		 <!-- <a href="/AngryBirdProject/" class="navA"> </a> -->
+		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>
 		  		 <a href="/AngryBirdProject/jumjuLogin" class="navA"> JJ</a>
 				</td>
 			</tr>
