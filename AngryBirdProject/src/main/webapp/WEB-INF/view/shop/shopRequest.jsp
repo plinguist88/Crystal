@@ -8,7 +8,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="${pageContext.request.contextPath}/css/css/style.css" rel="stylesheet" >
-<title>SHOP 예약신청 페이지</title>
+<meta charset="UTF-8">
+<title>숍 예약신청 페이지</title>
 <style>
 div {
 	border-right-style : none;
@@ -25,7 +26,7 @@ div {
 			<br />
 		</div>
 		<div class="a" align="center">
-			<h2>SHOP 예약신청</h2>
+			<h2>숍 예약신청</h2>
 		</div>
 		
 			<br />

@@ -7,24 +7,38 @@
 	<!-- sql tag는 table에 컬럼명을 넣어서 반복적으로 쓰기위해 만듦 -->
 	<sql id="carRequest">
 		CAR_REQUEST_RENTAL_NUM, CAR_REQUEST_RENTAL_DATE, CAR_REQUEST_RETURN_DATE,
-		CAR_REQUEST_TYPE, CAR_REQUEST_PASSENGER_NUM, CAR_REG_NUM, EMPLOYEE_NUM, 
+		CAR_TYPE, CAR_REQUEST_PASSENGER_NUM, CAR_REG_NUM, EMPLOYEE_NUM, 
 		CAR_REQUEST_REAL_DATE
 	</sql>
 
 	<resultMap type="Model.DTO.CarRequestDTO" id="carReqRs">
 		<id column="car_request_rental_num" jdbcType="VARCHAR" property="carRequestRentalNum" />
-		<result column="car_request_rental_date" jdbcType="VARCHAR" property="CarRequestRentalDate" />
-		<result column="car_request_return_date" jdbcType="VARCHAR" property="CarRequestRetrunDate" />
-		<result column="car_request_type" jdbcType="VARCHAR" property="CarRequestType" />
+		<result column="car_request_rental_date" jdbcType="VARCHAR" property="carRequestRentalDate" />
+		<result column="car_request_return_date" jdbcType="VARCHAR" property="carRequestReturnDate" />
+		<result column="car_type" jdbcType="VARCHAR" property="carType" />
 		<result column="car_request_passenger_num" jdbcType="INTEGER" property="carRequestPassengerNum" />
-		<result column="car_reg_num" jdbcType="VARCHAR" property="CarRegNum" />
+		<result column="car_reg_num" jdbcType="VARCHAR" property="carRegNum" />
 		<result column="employee_num" jdbcType="VARCHAR" property="employeeNum" />
 		<result column="car_request_real_date" jdbcType="VARCHAR" property="carRequestRealDate" />
 	</resultMap>
-
+	
+	<resultMap type="Model.DTO.CarsDTO" id="carRs">
+		<id column="car_reg_num" jdbcType="VARCHAR" property="carRegNum" />
+		<result column="car_type" jdbcType="VARCHAR" property="carType" />
+		<result column="car_passenger_num" jdbcType="INTEGER" property="carPassengerNum" />
+	</resultMap>
+	
+	<!-- 배차요청시 차량 선택 -->
+	<select id="carSel" resultMap="carRs">
+		select car_type, car_passenger_num
+		  from cars
+	</select>
+	
 	<insert id="carReq" parameterType="Model.DTO.CarRequestDTO">
 		insert into CAR_REQUEST(<include refid="carRequest"/>)
 		VALUES(#{carRequestRentalNum},#{carRequestRentalDate},#{carRequestReturnDate},
-			#{carRequestType},#{carRequestPassengerNum},#{carRegNum},#{employeeNum},#{carRequestRealNum})
+			#{carType},#{carRequestPassengerNum},#{carRegNum},#{employeeNum},#{carRequestRealNum})
 	</insert>
+	
+	
 </mapper>

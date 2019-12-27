@@ -6,36 +6,33 @@ import java.io.Serializable;
 public class CarsDTO implements Serializable{
 	private String carRegNum;
 	private String carType;
-	private Long carPassengerNum;
+	private Integer carPassengerNum;
 	
-	public CarsDTO(String carRegNum, String carType, Long carPassengerNum) {
+	public CarsDTO () {
+		
+	}
+	public CarsDTO(String carRegNum, String carType, Integer carPassengerNum) {
 		super();
 		this.carRegNum = carRegNum;
 		this.carType = carType;
 		this.carPassengerNum = carPassengerNum;
 	}
-
 	public String getCarRegNum() {
 		return carRegNum;
 	}
-
 	public void setCarRegNum(String carRegNum) {
 		this.carRegNum = carRegNum;
 	}
-
 	public String getCarType() {
 		return carType;
 	}
-
 	public void setCarType(String carType) {
 		this.carType = carType;
 	}
-
-	public Long getCarPassengerNum() {
+	public Integer getCarPassengerNum() {
 		return carPassengerNum;
 	}
-
-	public void setCarPassengerNum(Long carPassengerNum) {
+	public void setCarPassengerNum(Integer carPassengerNum) {
 		this.carPassengerNum = carPassengerNum;
 	}
 }

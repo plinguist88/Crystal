@@ -13,4 +13,5 @@
 	<bean id="shopRequestService" class="Service.Shop.ShopRequestService" />
 	<bean id="shopRepository" class="Repository.Shop.ShopRepository" />
 	<bean id="carRequestService" class="Service.Car.CarRequestService" />
+	<bean id="carRepository" class="Repository.Car.CarRepository" />
 </beans>

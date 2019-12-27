@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/css/css/style.css" rel="stylesheet" >
-<title>숍 예약신청 확인 페이지</title>
+<title>차량 예약신청 확인 페이지</title>
 </head>
 <body>
 	<div class="container">
@@ -20,7 +20,7 @@
 	<br />
 	<br />
 	<div align="center"><a href="/AngryBirdProject/main"><img src="/AngryBirdProject/images/member.JPG" width="500" /></a></div>
-		<h2>[ 숍 예약이 완료되었습니다 ]</h2>
+		<h2>[ 차량 예약이 완료되었습니다 ]</h2>
 	</div>
 	<div align="center">
 		<input type="submit" value="예약내역확인" />

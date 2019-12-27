@@ -20,6 +20,8 @@ public class CarController {
 	//CAR 예약신청서 작성 페이지
 	@RequestMapping(value = "/carRequest", method = RequestMethod.GET)
 	public String carRequest(CarRequestCommand carRequestCommand, Model model) {
+		
+		carRequestService.cars(model);
 		return "car/carRequest";
 	}
 	
@@ -40,6 +42,6 @@ public class CarController {
 			errors.rejectValue("employeeNum", "duplicate");
 			return "join/joinForm";
 		}*/
-		return "redirect:/main";
+		return "car/carRequestPro";
 	}
 }
