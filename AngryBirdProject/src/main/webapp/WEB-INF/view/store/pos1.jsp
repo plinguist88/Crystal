@@ -35,10 +35,6 @@
 			switch (menuId) {
 				case "0":
 					console.log("초기화");
-					delete obj.itemsNo;
-					delete obj.itemsName;
-					delete obj.itemsCount;
-					delete obj.itemsPrice;
 					break;
 					
 				case "1":

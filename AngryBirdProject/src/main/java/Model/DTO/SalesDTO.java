@@ -7,6 +7,17 @@ public class SalesDTO {
 	private String itemsCount;
 	private String itemsPrice;
 	
+	public SalesDTO () {
+		
+	}
+	
+	public SalesDTO(String itemsNo, String itemsName, String itemsCount, String itemsPrice) {
+		super();
+		this.itemsNo = itemsNo;
+		this.itemsName = itemsName;
+		this.itemsCount = itemsCount;
+		this.itemsPrice = itemsPrice;
+	}
 	public String getItemsNo() {
 		return itemsNo;
 	}

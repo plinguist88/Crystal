@@ -1,5 +1,10 @@
 package Service.Goods;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -17,14 +22,18 @@ public class PaymentService {
 	PaymentRepository paymentRepository;
 	
 	public void payment(SalesDTO salesDTO, HttpSession session, HttpServletRequest request) {
+		List<SalesDTO> list = new ArrayList<SalesDTO>();
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
 		
 		SalesRecordDTO recordDTO = new SalesRecordDTO();
 		
 		try {
-			recordDTO.setItemsNo(salesDTO.getItemsNo().split(",") );
-			recordDTO.setItemsName(salesDTO.getItemsName().split(",") );
-		//	recordDTO.setItemsTransaction(Integer.parseInt(salesDTO.getItemsCount().split(",") ) );
-		//	recordDTO.setItemsTotalPrice(Integer.parseInt(salesDTO.getItemsNo().split(",") ) );
+	/*		recordDTO.setItemsNo(salesDTO.getItemsNo() );
+			recordDTO.setItemsName(salesDTO.getItemsName() );
+			recordDTO.setItemsTransaction(Integer.parseInt(salesDTO.getItemsCount() ) );
+			recordDTO.setItemsTotalPrice(Integer.parseInt(salesDTO.getItemsNo() ) ); */
 			
 			paymentRepository.payment(recordDTO);
 			
