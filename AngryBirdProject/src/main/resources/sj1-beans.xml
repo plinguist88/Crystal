@@ -35,7 +35,7 @@
 		<bean class="Service.Training.TrainingUploadService" id="trainingUploadService"/>
 		<bean class="Repository.Training.TrainingRepository" id="trainingRepository"/>	
 		<bean class="Service.Training.TrainingSelectService" id="trainingSelectService"/>		
-			
+		<bean class="Service.ContractorLogin.ContractorLoginService" id="contractorLoginService"/>			
 		
 			
 </beans>

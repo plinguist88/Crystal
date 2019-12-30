@@ -51,7 +51,7 @@
 </style>
 </head>
 <body class="body_header">
-<c:if test="${empty employeeInfo && empty jumjuInfo}">
+<c:if test="${empty employeeInfo && empty jumjuInfo && empty contractorInfo}">
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>
@@ -272,7 +272,7 @@
 	</div>
 </c:if>
 
-<c:if test="${contractorInfo.levelNum == 0 || contractorInfo.levelNum == 1}">
+<c:if test="${contractorInfo.contractorLevel == 0 || contractorInfo.contractorLevel == 1}">
 	<div class="navbar" align="center">
 		<table class="table1" > 
 			<tr>

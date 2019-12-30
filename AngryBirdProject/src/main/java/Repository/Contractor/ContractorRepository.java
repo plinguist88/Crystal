@@ -38,5 +38,5 @@ public class ContractorRepository {
 		
 		return cdtoForDetail;
 	}
-
+	
 }

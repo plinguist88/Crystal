@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import Command.RegContractorCommand;
+import Encrypt.Encrypt;
 import Model.DTO.ContractorDTO;
 import Repository.Contractor.ContractorRepository;
 
@@ -32,8 +33,10 @@ public class RegContractorService {
 		conDTO.setContractorBirth(regContractorCommand.getContractorBirth());
 		//ID 조합
 		conDTO.setContractorId("C"+ today + "B" + conDTO.getContractorBirth()); /*substring에서는 뒤의 인덱스는 포함하지 않으므로 두개 갖고 싶으면 끝나는 인덱스를 2로*/
-		//초기 PW는 ID와 동일
-		conDTO.setContractorPw(conDTO.getContractorId());
+		
+		//초기 PW는 ID와 동일 + 비밀번호 암호화
+		conDTO.setContractorPw(Encrypt.getEncryption(conDTO.getContractorId()));
+		
 		System.out.println("::"+conDTO.getContractorId());
 		System.out.println("::"+conDTO.getContractorPw());
 		conDTO.setContractorPhone(regContractorCommand.getContractorPhone());
