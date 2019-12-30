@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import Model.DTO.ContractorDTO;
+import Model.DTO.ContractsDTO;
 
 public class ContractorRepository {
 	@Autowired
@@ -37,6 +38,14 @@ public class ContractorRepository {
 		ContractorDTO cdtoForDetail = sqlSession.selectOne(statement, contractorId);
 		
 		return cdtoForDetail;
+	}
+
+	//계약자 ID로 로그인했을 때 해당 계약자의 계약서 리스트 불러오기
+	public List<ContractsDTO> selectAllMyContracts(String contractorId) {
+		// TODO Auto-generated method stub
+		String statement = namespace + ".selectMyContracts";
+		List<ContractsDTO> list = sqlSession.selectList(statement, contractorId);
+		return list;
 	}
 	
 }

@@ -18,5 +18,6 @@
 			<bean class="Controller.Contracts.ContractsController" />				
 			<bean class="Controller.Training.TrainingController" />	
 			<bean class="Controller.TrainingSchedular.TrainingSchedularController" />				
+			<bean class="Controller.Contractor.ContractorAsUserController" />	
 								
 </beans>

@@ -14,12 +14,7 @@
 <title>계약서 상세보기</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" ></script>
 <script type="text/javascript">
-	$(function(){
-		$("#btn").click(function(){
-			location.href="/AngryBirdProject/initialContracts";
-		});
-		
-	});
+
 </script>
 </head>
 <body>
@@ -99,7 +94,7 @@
 			<tr>
 				<td colspan="2">
 				<div align="center"><br />
-					<button id="btn">목록으로</button>
+					<button id="btn" onclick="history.go(-1);">목록으로</button>
 				</div>
 				</td>
 			</tr>

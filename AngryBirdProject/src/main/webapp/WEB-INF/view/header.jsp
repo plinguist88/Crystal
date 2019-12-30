@@ -277,14 +277,12 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
-		 		 <a href="/AngryBirdProject/company" class="navA"> MY CONTRACTS</a>
-		 		 <a href="/AngryBirdProject/artist" class="navA"> MY B-PROFILES</a> <!-- B-profile에 체중감량계획, 식단, 운동 모두 나올수 있도록 -->
-		 		 <a href="/AngryBirdProject/news" class="navA"> MY TRAININGS</a> 
-		 		 <a href="/AngryBirdProject/schedule" class="navA"> MY SCHEDULES</a>
-		 		 <a href="/AngryBirdProject/audition" class="navA"> MY COUNSELING</a>
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>  
+		 		 <a href="/AngryBirdProject/myContract/${contractorInfo.contractorId }" class="navA"> MY CONTRACTS</a>  
+		 		 <a href="/AngryBirdProject/myBodyProfile" class="navA"> MY B-PROFILES</a> <!-- B-profile에 체중감량계획, 식단, 운동 모두 나올수 있도록 -->
+		 		 <a href="/AngryBirdProject/myTraining" class="navA"> MY TRAININGS</a> 
 		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
-		  		 <a href="contractor" class="navA"> CONTRACTOR</a>
+		  		 <a href="contractor" class="navA"> CONTRACTOR</a>  
 				</td>
 			</tr>
 		</table>

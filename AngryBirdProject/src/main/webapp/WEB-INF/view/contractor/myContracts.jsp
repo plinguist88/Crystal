@@ -15,12 +15,12 @@
 <link href="${pageContext.request.contextPath}/css/css/style.css" rel="stylesheet" >
 
 
-<title>계약서 리스트</title>
+<title>내 계약서 리스트</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" ></script>
 <script type="text/javascript">
 $(function(){
 	$("#btn1").click(function(){
-		location.href="main";
+		location.href="/AngryBirdProject/main";
 	});
 });	
 </script>
@@ -30,16 +30,16 @@ $(function(){
 </head>
 <body>
 <div class="container">
+<h2>나의 계약서 리스트</h2>
 <table class="bottom">
 	<tr>
-		<th>번호</th><th>계약서 번호</th><th>계약자 ID</th><th>계약종류</th><th>계약서 등록일</th>
+		<th>번호</th><th>계약서 번호</th><th>계약종류</th><th>계약서 등록일</th>
 	</tr>
-	<c:if test="${! empty ctDTOs }">
-		<c:forEach var="cDTO" items="${ctDTOs}" varStatus="status"> <!-- 처음 el을 통해서 items에 받아올때는 model에서 넣은 큰 dto만 넣고, forEach에서 돌릴 때 큰 DTO.필드명(작은dto).필드명(작은 dto의 멤버변수) 형식으로 해야함 -->
+	<c:if test="${! empty contractList }">
+		<c:forEach var="cDTO" items="${contractList}" varStatus="status"> <!-- 처음 el을 통해서 items에 받아올때는 model에서 넣은 큰 dto만 넣고, forEach에서 돌릴 때 큰 DTO.필드명(작은dto).필드명(작은 dto의 멤버변수) 형식으로 해야함 -->
 			<tr>
 				<td>${status.count }</td>
-				<td><a href="<c:url value='contractDetail/${cDTO.contractNum }' />">${cDTO.contractNum }</a></td>
-				<td>${cDTO.contractorId }</td> 
+				<td><a href="<c:url value='/contractDetail/${cDTO.contractNum }' />">${cDTO.contractNum }</a></td>
 				<td>
 					<c:choose>
 						<c:when test="${cDTO.contractType eq 'trainee'}">
