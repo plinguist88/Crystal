@@ -1,5 +1,7 @@
 package Service.Car;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,18 +21,30 @@ public class CarRequestService {
 	
 	public void cars(Model model) {
 		
-		
 		List<CarsDTO> dto = carRepository.cars();
 		
 		if(dto != null) {
 			model.addAttribute("cars", dto);
 		}
-		
 	}
 	
 	public void join(CarRequestCommand carRequestCommand) {
+		CarRequestDTO cad = new CarRequestDTO();
 		
-		//CarRequestDTO dto = new CarRequestDTO();
-		//dto.setEmployeeNum(carRequestCommand.getEmployeeNum());
+		//sysdate를 date로 변환 및 자동생성 cad.setCarRequestRentalNum(carRequestCommand.getEmployeeNum() + today);
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+		String today = sdf.format(date);
+		
+		cad.setCarRegNum(carRequestCommand.getCarRegNum1());
+		cad.setCarRequestRentalNum(carRequestCommand.getEmployeeNum() +'-'+ today);
+		cad.setEmployeeNum(carRequestCommand.getEmployeeNum());
+		cad.setCarType(carRequestCommand.getCarType());
+		cad.setCarRequestPassengerNum(Integer.parseInt(carRequestCommand.getCarPassengerNum()));
+		cad.setFrom(carRequestCommand.getFrom());
+		cad.setTo(carRequestCommand.getTo());
+		
+		carRepository.insertCarRequest(cad);
+		
 	}
 }

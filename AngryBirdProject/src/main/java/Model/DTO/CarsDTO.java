@@ -9,7 +9,6 @@ public class CarsDTO implements Serializable{
 	private Integer carPassengerNum;
 	
 	public CarsDTO () {
-		
 	}
 	public CarsDTO(String carRegNum, String carType, Integer carPassengerNum) {
 		super();

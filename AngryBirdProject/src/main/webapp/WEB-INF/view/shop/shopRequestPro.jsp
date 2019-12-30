@@ -19,7 +19,7 @@
 	<br />
 	<br />
 	<br />
-	<div align="center"><a href="/AngryBirdProject/main"><img src="/AngryBirdProject/images/member.JPG" width="500" /></a></div>
+	<div align="center"><a href="/AngryBirdProject/main"><img src="/AngryBirdProject/images/member.JPG" width="400" /></a></div>
 		<h2>[ 숍 예약이 완료되었습니다 ]</h2>
 	</div>
 	<div align="center">
