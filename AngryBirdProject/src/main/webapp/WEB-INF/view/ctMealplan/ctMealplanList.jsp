@@ -1,21 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <%@ include file ="../publicFile/taglib.jsp" %>
 <%@ include file ="../header.jsp" %>
+<%@ page import="java.util.Date" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 
-<c:set var="now" value="<%=new java.util.Date() %>" />
-<c:set var="sysDay"><fmt:formatDate value="${now}" pattern="dd" /></c:set>
+<c:set var="today" value="<%=new Date() %>" />
+<fmt:formatDate value="${today }" pattern="dd" var="day"/>
+
+<c:set var="ds1" value="<%=new Date(new Date().getTime()-1000*60*60*24*1) %>" />
+<c:set var="ds2" value="<%=new Date(new Date().getTime()-1000*60*60*24*2) %>" />
+<c:set var="ds3" value="<%=new Date(new Date().getTime()-1000*60*60*24*3) %>" />
+<c:set var="ds4" value="<%=new Date(new Date().getTime()-1000*60*60*24*4) %>" />
+<c:set var="ds5" value="<%=new Date(new Date().getTime()-1000*60*60*24*5) %>" />
+
+<c:set var="da1" value="<%=new Date(new Date().getTime()+1000*60*60*24*1) %>" />
+<c:set var="da2" value="<%=new Date(new Date().getTime()+1000*60*60*24*2) %>" />
+<c:set var="da3" value="<%=new Date(new Date().getTime()+1000*60*60*24*3) %>" />
+<c:set var="da4" value="<%=new Date(new Date().getTime()+1000*60*60*24*4) %>" />
+<c:set var="da5" value="<%=new Date(new Date().getTime()+1000*60*60*24*5) %>" />
+
+<fmt:formatDate value="${ds1 }" pattern="dd" var="ds1"/>
+<fmt:formatDate value="${ds2 }" pattern="dd" var="ds2"/>
+<fmt:formatDate value="${ds3 }" pattern="dd" var="ds3"/>
+<fmt:formatDate value="${ds4 }" pattern="dd" var="ds4"/>
+<fmt:formatDate value="${ds5 }" pattern="dd" var="ds5"/>
+
+<fmt:formatDate value="${da1 }" pattern="dd" var="da1"/>
+<fmt:formatDate value="${da2 }" pattern="dd" var="da2"/>
+<fmt:formatDate value="${da3 }" pattern="dd" var="da3"/>
+<fmt:formatDate value="${da4 }" pattern="dd" var="da4"/>
+<fmt:formatDate value="${da5 }" pattern="dd" var="da5"/>
 
 <link href="${pageContext.request.contextPath}/css/css/ctMain.css" rel="stylesheet" >
-
-<script type="text/javascript">
-	
-</script>
 
 <style type="text/css">
 :lang(ko) {font-family:nanum gothic, sans-serif;}
@@ -68,21 +88,21 @@ a {
 			Today
 		</div>
 		<span class="beforeDay"">
-			<a href="#"><c:out value="${sysDay-5 }" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="#"><c:out value="${sysDay-4 }" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="#"><c:out value="${sysDay-3 }" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="#"><c:out value="${sysDay-2 }" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="#"><c:out value="${sysDay-1 }" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#"><c:out value="${ds5 }" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#"><c:out value="${ds4 }" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#"><c:out value="${ds3 }" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#"><c:out value="${ds2 }" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#"><c:out value="${ds1 }"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
 		</span>
 		<span class="day"">
-			<a href="#">&nbsp;<c:out value="${sysDay}" /></a>
+			<a href="#">&nbsp;<c:out value="${day }" /></a>
 		</span>
 		<span class="afterDay"">
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${ sysDay+1}" />
-			&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${ sysDay+2}" />
-			&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${ sysDay+3}" />
-			&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${ sysDay+4}" />
-			&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${ sysDay+5}" />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${ da1}" />
+			&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${ da2}" />
+			&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${ da3}" />
+			&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${ da4}" />
+			&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${ da5}" />
 		</span>
 	</div>
 	<div class="mealplanList">

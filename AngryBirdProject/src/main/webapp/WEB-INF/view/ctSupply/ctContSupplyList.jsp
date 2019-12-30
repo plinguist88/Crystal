@@ -7,14 +7,21 @@
 <head>
 <meta charset="UTF-8">
 
+<link href="${pageContext.request.contextPath}/css/css/ctMain.css" rel="stylesheet" >
+
 <style type="text/css">
 :lang(ko) {font-family:nanum gothic, sans-serif;}
+
+.main{
+	border-style: none;
+}
 </style>
 
 <title>ctContSupplyList</title>
 </head>
 <body>
-<table align="center">
+<div class="main">
+<table align="center" width="50%">
 	<tr>
 		<td width="20%" align="center">
 						<a href="ctSupplyList"><img src="/AngryBirdProject/images/leftArrow.png" alt="ctSupplyList" width="100"/></a>
@@ -49,6 +56,7 @@
 		</td>
 	</tr>
 </table>
+</div>
 </body>
 </html>
 <%@ include file ="../footer.jsp" %>

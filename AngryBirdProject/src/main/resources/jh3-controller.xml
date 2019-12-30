@@ -27,6 +27,8 @@
 	<bean class="Controller.CtSupply.CtContSupplyRegistController"/>
 	
 	
+	<bean class="Controller.CtFood.CtFoodController"/>
+	
 	<bean class="Controller.CtFood.CtFoodListController"/>
 	
 	

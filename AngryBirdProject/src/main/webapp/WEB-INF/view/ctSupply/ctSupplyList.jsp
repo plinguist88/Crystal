@@ -7,14 +7,21 @@
 <head>
 <meta charset="UTF-8">
 
+<link href="${pageContext.request.contextPath}/css/css/ctMain.css" rel="stylesheet" >
+
 <style type="text/css">
 :lang(ko) {font-family:nanum gothic, sans-serif;}
+
+.main{
+	border-style: none;
+}
 </style>
 
 <title>ctSupplyList</title>
 </head>
 <body>
-<table align="center">
+<div class="main">
+<table align="center" width="50%">
 	<tr>
 		<td width="20%">
 		</td>
@@ -47,6 +54,7 @@
 			<input type="button" value="등록하기" onclick="location.href='ctSupplyRegist'" />
 		</td>
 	</tr>
+</div>
 </table>
 </body>
 </html>
