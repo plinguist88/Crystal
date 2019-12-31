@@ -7,6 +7,26 @@
 <head>
 <meta charset="UTF-8">
 
+<script type="text/JavaScript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#search").keyup(function(){
+		var selectN = $("#selectN").val();
+		var n = 2;
+		if(selectN == 1){
+			var n = 1;
+		} else if(selectN == 2){
+			var n = 2;
+		}
+		var k = $(this).val();
+		$(".ctFoodList").hide();
+		var temp = $(".ctFoodList > td:nth-child("+n+"):contains('"+ k +"')");
+		
+		$(temp).parent().show();
+	});
+});
+</script>
+
 <link href="${pageContext.request.contextPath}/css/css/ctMain.css" rel="stylesheet" >
 
 <style type="text/css">
@@ -75,7 +95,7 @@
 	</tr>
 <c:if test="${!empty ctFoodDTO }">
 <c:forEach var="ctFood" items="${ctFoodDTO }">
-	<tr align="center">
+	<tr align="center" class="ctFoodList">
 		<td>${ctFood.foodNo }</td><td>${ctFood.foodName }</td><td>${ctFood.ccNo }</td><td>${ctFood.foodQty }${ctFood.foodUnit }</td>
 	</tr>
 </c:forEach>
@@ -87,8 +107,16 @@
 </c:if>
 	<tr>
 		<td colspan="4" align="center">
-			<input type="button" value="등록">
-			<input type="button" value="뒤로">
+			<select id="selectN">
+				<option value=1>번호</option>
+				<option value=2>이름</option>
+			</select> : <input type="text" id="search" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4" align="center">
+			<input type="button" value="등록" />
+			<input type="button" value="뒤로" />
 		</td>
 	</tr>
 </table>

@@ -34,6 +34,6 @@
 	
 	<bean class="Controller.CtMealplan.CtMealplanListController"/>
 	
-
+	<bean class="Controller.CtMealplan.CtMealplanRegistController"/>
 	
 </beans>

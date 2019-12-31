@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 
 <c:set var="today" value="<%=new Date() %>" />
+<fmt:formatDate value="${today }" pattern="yyMMdd" var="mpNo"/>
 <fmt:formatDate value="${today }" pattern="dd" var="day"/>
 
 <c:set var="ds1" value="<%=new Date(new Date().getTime()-1000*60*60*24*1) %>" />
@@ -77,6 +78,23 @@ a {
 .afterDay{
 	color: #bfbfbf;
 }
+
+.ctMealplanRegist{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	border: 1px solid red;
+}
+
+.ctMealplanRegistBtn{
+	background-color: green;
+	color: white;
+	font-size: 40px;
+}
+
+.ctMealplanRegistBtn:hover{
+	color: red;
+} 
 </style>
 
 <title>ctMealplanList</title>
@@ -105,7 +123,10 @@ a {
 			&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${ da5}" />
 		</span>
 	</div>
-	<div class="mealplanList">
+	<div class="ctMealplanRegist">
+		<a href="ctMealplanRegist"><button class="ctMealplanRegistBtn">식단등록</button></a>
+	</div>
+	<div class="ctMealplanList">
 		<table>
 			<tr>
 				<td>
