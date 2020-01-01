@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file ="../publicFile/taglib.jsp" %>
+<%@ include file ="../header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,3 +100,4 @@ $(function(){
 </form:form>
 </body>
 </html>
+<%@ include file ="../footer.jsp" %>

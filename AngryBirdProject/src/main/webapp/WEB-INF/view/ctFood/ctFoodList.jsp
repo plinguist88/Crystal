@@ -37,6 +37,12 @@ $(function(){
 	border-style: none;
 }
 
+.title{
+	font-size: 60px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 .quickBar{
   position: fixed;
   top: 150px;
@@ -44,7 +50,6 @@ $(function(){
   z-index: 99;
   
   border: 3px solid black;
-  border-radius: 20px;
 }
 
 .quickBar a{
@@ -53,18 +58,16 @@ $(function(){
 }
 
 .orderBtn{
-	font-size: 30px;
+	font-size: 40px;
 	padding: 10px;
 	border: 1px solid black;
-	border-radius: 10px;
 	background-color: white;
 }
 
 .importBtn{
-	font-size: 30px;
+	font-size: 40px;
 	padding: 10px;
 	border: 1px solid black;
-	border-radius: 10px;
 	background-color: white;
 }
 
@@ -77,25 +80,43 @@ $(function(){
 	background-color: red;
 	color: white; 
 }
+th{
+	font-size: 40px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
 
+#selectN{
+	font-size: 20px;
+}
+
+#search{
+	height: 30px;
+}
+
+.qm{
+	background-color: black;
+	color: white;
+	font-size: 30px;
+}
 </style>
 
 <title>ctFoodList</title>
 </head>
 <body>
 <div class="main">
-<table align="center" width="50%">
+<table align="center" width="60%">
 	<tr>
-		<td colspan="4">
-			<h1 align="center">Food List</h1>
+		<td colspan="4" class="title" align="center">
+			Food List
 		</td>
 	</tr>
 	<tr>
-		<th width="20%">번호</th><th width="30%">이름</th><th width="30%">업체</th><th width="20%">수량</th>
+		<th width="20%">번호</th><th width="30%">이름</th><th width="30%">계약번호</th><th width="20%">수량</th>
 	</tr>
 <c:if test="${!empty ctFoodDTO }">
 <c:forEach var="ctFood" items="${ctFoodDTO }">
-	<tr align="center" class="ctFoodList">
+	<tr align="center" class="ctFoodList" style="font-size: 20px;">
 		<td>${ctFood.foodNo }</td><td>${ctFood.foodName }</td><td>${ctFood.ccNo }</td><td>${ctFood.foodQty }${ctFood.foodUnit }</td>
 	</tr>
 </c:forEach>
@@ -106,7 +127,7 @@ $(function(){
 	</tr>
 </c:if>
 	<tr>
-		<td colspan="4" align="center">
+		<td colspan="4" align="center" style="padding-top: 10px;">
 			<select id="selectN">
 				<option value=1>번호</option>
 				<option value=2>이름</option>
@@ -114,14 +135,15 @@ $(function(){
 		</td>
 	</tr>
 	<tr>
-		<td colspan="4" align="center">
-			<input type="button" value="등록" />
-			<input type="button" value="뒤로" />
+		<td colspan="4" align="center" style="padding-top: 10px;">
+			<input type="button" value="등록" style="font-size : 20px; width: 15%; height: 50px;"/>
+			<input type="button" value="뒤로" style="font-size : 20px; width: 15%; height: 50px;"/>
 		</td>
 	</tr>
 </table>
 </div>
 <aside class="quickBar">
+	<div align="center" class="qm">Quick Menu</div>
     <a href="ctFoodOrder"><button class="orderBtn">발주신청</button></a>
     <a href="ctFoodImport"><button class="importBtn">입고확인</button></a>
 </aside>

@@ -9,7 +9,9 @@
 <meta charset="UTF-8">
 
 <c:set var="today" value="<%=new Date() %>" />
-<fmt:formatDate value="${today }" pattern="yyMMdd" var="mpNo"/>
+<fmt:formatDate value="${today }" pattern="yyMMdd" var="ymd"/>
+<fmt:formatDate value="${today }" pattern="yyyy" var="year"/>
+<fmt:formatDate value="${today }" pattern="MM" var="month"/>
 <fmt:formatDate value="${today }" pattern="dd" var="day"/>
 
 <c:set var="ds1" value="<%=new Date(new Date().getTime()-1000*60*60*24*1) %>" />
@@ -37,6 +39,8 @@
 <fmt:formatDate value="${da5 }" pattern="dd" var="da5"/>
 
 <link href="${pageContext.request.contextPath}/css/css/ctMain.css" rel="stylesheet" >
+<link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap" rel="stylesheet">
 
 <style type="text/css">
 :lang(ko) {font-family:nanum gothic, sans-serif;}
@@ -54,7 +58,7 @@
 	padding-right: 20px;
 	padding-bottom: 20px;
 	border-radius: 30px;
-	background-color: white;
+	background-color: #f2f2f2;
 	text-align: center;
 	font-size: 20px;
 	margin-top: 5px;
@@ -79,28 +83,81 @@ a {
 	color: #bfbfbf;
 }
 
-.ctMealplanRegist{
+.ctMealplanLink1{
 	position: absolute;
-	top: 10px;
-	right: 10px;
-	border: 1px solid red;
+	top: 300px;
+	left: 10px;
+	border: 10px solid black;
+	border-radius: 20px;
 }
 
-.ctMealplanRegistBtn{
-	background-color: green;
+.ctMealplanLink2{
+	position: absolute;
+	top: 400px;
+	left: 10px;
+	border: 10px solid black;
+	border-radius: 20px;
+}
+
+.ctMealplanLink3{
+	position: absolute;
+	top: 500px;
+	left: 10px;
+	border: 10px solid black;
+	border-radius: 20px;
+}
+
+
+.Links{
+	color: black;
+	font-size: 50px;
+	font-family: 'Sunflower', sans-serif;
+}
+
+.Links:hover{
+	background-color: black;
 	color: white;
-	font-size: 40px;
+	font-size: 60px;
+} 
+
+.ym{
+	position: absolute;
+	padding-top: 60px;
+	left: 5px;
+	top: 5px;
+	font-size: 60px;
+	font-style: italic;
+	font-family: 'Merienda', cursive;
+	background-image: url("images/chal4.png");
+	background-size: 220px 250px;
+	background-repeat: no-repeat;
+	width:220px;
+	height: 250px;
+}
+.ymtext{
+	font-size: 25px;
 }
 
-.ctMealplanRegistBtn:hover{
-	color: red;
-} 
+.line{
+	position: absolute;
+	top: 5px;
+	left: 250px;
+	width: 1px;
+	height: 95%;
+	border: 10px solid black;
+	border-radius: 20px;
+	background-color: black;
+}
 </style>
 
 <title>ctMealplanList</title>
 </head>
 <body>
 <div class="main" align="center">
+	<div class="ym">
+		<c:out value="${year }" /><span class="ymtext">年</span><br /> 
+		<c:out value="${month }" /><span class="ymtext">月</span><c:out value="${day }" /><span class="ymtext">日</span>
+	</div>
 	<div class="dateline" align="center">
 		<div class="today"">
 			Today
@@ -123,8 +180,16 @@ a {
 			&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${ da5}" />
 		</span>
 	</div>
-	<div class="ctMealplanRegist">
-		<a href="ctMealplanRegist"><button class="ctMealplanRegistBtn">식단등록</button></a>
+	<div class="ctMealplanLink1">
+		<a href="ctMealplanRegist" class="Links">식단등록</a>
+	</div>
+	<div class="ctMealplanLink2">
+		<a href="ctMealplanSurveyRegist" class="Links">조사등록</a>
+	</div>
+	<div class="ctMealplanLink3">
+		<a href="ctMealplanSurveyList" class="Links">조사통계</a>
+	</div>
+	<div class="line">
 	</div>
 	<div class="ctMealplanList">
 		<table>

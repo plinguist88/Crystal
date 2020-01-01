@@ -22,9 +22,12 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd"
 <mvc:interceptors>
 	<mvc:interceptor>
 		<mvc:mapping path="/edit/**" />
-		
-		
 		<bean class="Interceptor.AuthCheckInterceptor" />
+	</mvc:interceptor>
+	<mvc:interceptor>
+		<mvc:mapping path="/ctSupplyList" />
+		<mvc:mapping path="/ctContSupplyList" />
+		<bean class="Interceptor.CtLoginCheck" />
 	</mvc:interceptor>
 </mvc:interceptors>
 

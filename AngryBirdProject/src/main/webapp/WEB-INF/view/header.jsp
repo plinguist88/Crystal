@@ -96,7 +96,7 @@
 		<table class="table1" > 
 			<tr>
 				<td width="1400px" >
-					 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
 				 <a href="ctCafeteria" class="navA"> CAFETERIA</a>
 		 		 <a href="ctSupplyList" class="navA"> SUPPLY</a>
 		 		 <a href="ctFood" class="navA"> FOOD</a> 
