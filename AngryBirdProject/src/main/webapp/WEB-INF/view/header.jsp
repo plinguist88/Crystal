@@ -260,8 +260,8 @@
 		 		 <a href="/AngryBirdProject/pos" class="navA"> POS</a>
 		 		 <!-- <a href="/AngryBirdProject/goods" class="navA"> GOODS</a>  -->
 		 		 <!-- <a href="/AngryBirdProject/sales" class="navA"> SALES_RECORD</a> --> 
-		 		 <a href="/AngryBirdProject/manufacturer" class="navA"> MANUFACTURER</a>
-		 		 <a href="/AngryBirdProject/tax" class="navA"> TAX</a>
+		 		 <!-- <a href="/AngryBirdProject/manufacturer" class="navA"> MANUFACTURER</a> -->
+		 		 <!-- <a href="/AngryBirdProject/tax" class="navA"> TAX</a> -->
 		  		 <!-- <a href="/AngryBirdProject/" class="navA"> </a> -->
 		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>
 		  		 <a href="/AngryBirdProject/jumjuLogin" class="navA"> JJ</a>

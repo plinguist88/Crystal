@@ -42,7 +42,6 @@
 				case "0":
 					console.log("reset");
 					$("#orderList tbody").remove();
-					removeItem('goods');
 					location.reload();
 				//	obj.itNo = $('#num').removeAttr('value');
 				//	obj.itName = document.getElementById("name").removeAttribute("name");
@@ -178,15 +177,16 @@
 					
 				 },
 				 error : function() {
-					//alert("통신 실패!!");
+					alert("통신 실패!!");
 				 }
 			 
 			});
+			$("#orderList tbody").removeItem('goodsList');
 			setTimeout(function(){
 				location.reload();
 			},1000);
 			
-			sessionStorage.removeItem("goods");
+			
 		}
 		
 		//매출정보
@@ -207,24 +207,6 @@
 			});
 		}
 		
-		//상품관리
-		/*function goods() {
-			alert("상품관리");
-			$.ajax({
-					type : "POST",
-					 url : "goodsList",
-			//		data : $("#frmOrder").serialize(),
-				dataType : "html",
-				 success : function(data) {
-					//alert("통신 데이터 값 : " + data);
-					$("#goodsList1").html(data);
-				 },
-				 error : function() {
-					alert("통신 실패!!");
-				 }
-			 
-			});
-		}*/
 		
 	</script>
 </head>
@@ -359,82 +341,10 @@
 			</tr>
 			<tr>
 				<td>
-					상품 종류 : 
-				</td>
-				<td>
-					<form:input path="itemsSort" id="itemsSort" placeholder="상품종류" />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					상품 개수 : 
+					주문 개수 : 
 				</td>
 				<td>
 					<form:input path="itemsCount" id="itemsCount" placeholder="상품개수" />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					상품 판매 가격 :
-				</td>
-				<td>
-					<form:hidden path="itemsPrice" id="itemsPrice" placeholder="상품판매가격" />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					상품 단가 금액 :
-				</td>
-				<td>
-					<form:input path="itemsUnitPrice" id="itemsUnitPrice" placeholder="상품단가금액" />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					상품 가격 책정 :
-				</td>
-				<td>
-					<form:hidden path="itemsProtrait" id="itemsProtrait" placeholder="상품개수" />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					상품 가격 책정2 :
-				</td>
-				<td>
-					<form:hidden path="itemsMarjin" id="itemsMarjin" placeholder="상품개수" />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					계약자번호 : 
-				</td>
-				<td>
-					<form:hidden path="contractorNum" id="contractorNum" placeholder="상품개수" />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					계약자타입 : 
-				</td>
-				<td>
-					<form:hidden path="contractorType" id="contractorType" placeholder="상품개수" />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					계약자이름 : 
-				</td>
-				<td>
-					<form:hidden path="contractorName" id="contractorName" placeholder="상품개수" />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					계약자ID :
-				</td>
-				<td>
-					<form:hidden path="contractorId" id="contractorId" placeholder="상품개수" />
 				</td>
 			</tr>
 		</table>
