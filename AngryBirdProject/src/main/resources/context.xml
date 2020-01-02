@@ -26,7 +26,19 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd"
 	</mvc:interceptor>
 	<mvc:interceptor>
 		<mvc:mapping path="/ctSupplyList" />
+		<mvc:mapping path="/ctSupplyRegist" />
+		<mvc:mapping path="/ctSupplyRegistPro" />
+		<mvc:mapping path="/ctSupplyDetail" />
+		
 		<mvc:mapping path="/ctContSupplyList" />
+		<mvc:mapping path="/ctContSupplyRegist" />
+		<mvc:mapping path="/ctContSupplyRegistPro" />
+		
+		<mvc:mapping path="/ctFood" />
+		<mvc:mapping path="/ctFoodList" />
+		
+		<mvc:mapping path="/ctMealplanList" />
+		
 		<bean class="Interceptor.CtLoginCheck" />
 	</mvc:interceptor>
 </mvc:interceptors>
