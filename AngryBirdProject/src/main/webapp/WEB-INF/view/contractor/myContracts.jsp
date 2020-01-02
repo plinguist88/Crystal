@@ -38,9 +38,9 @@ $(function(){
 	<c:if test="${! empty contractList }">
 		<c:forEach var="cDTO" items="${contractList}" varStatus="status"> <!-- 처음 el을 통해서 items에 받아올때는 model에서 넣은 큰 dto만 넣고, forEach에서 돌릴 때 큰 DTO.필드명(작은dto).필드명(작은 dto의 멤버변수) 형식으로 해야함 -->
 			<tr>
-				<td>${status.count }</td>
-				<td><a href="<c:url value='/contractDetail/${cDTO.contractNum }' />">${cDTO.contractNum }</a></td>
-				<td>
+				<td align="center">${status.count }</td>
+				<td align="center"><a href="<c:url value='/contractDetail/${cDTO.contractNum }' />">${cDTO.contractNum }</a></td>
+				<td align="center">
 					<c:choose>
 						<c:when test="${cDTO.contractType eq 'trainee'}">
 							연습생
@@ -50,7 +50,7 @@ $(function(){
 						</c:when>
 					</c:choose>	
 				</td>
-				<td>${cDTO.contractRegDate }</td>			
+				<td align="center">${cDTO.contractRegDate }</td>			
 			</tr>
 		</c:forEach>
 	</c:if>

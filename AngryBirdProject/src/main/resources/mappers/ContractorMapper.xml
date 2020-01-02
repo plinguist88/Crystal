@@ -15,11 +15,18 @@
 	CONTRACT_NUM, CONTRACT_TYPE, CONTRACTOR_NAME, CONTRACT_STARTDATE, CONTRACT_ENDDATE, EMPLOYEE_NUM, CONTRACTOR_ID, SIGNATURE, CONTRACT_REGDATE
 </sql>
 
+<!-- contractorMeasure -->
+<sql id="basecolumn3">
+	contractor_ID, con_measure_date, standard_height, con_measure_weight, con_measure_meta,  standard_gender
+</sql>
+
 <insert id="insertContractor" parameterType="Model.DTO.ContractorDTO">
 	insert into CONTRACTORS
 	values(#{contractorId}, #{contractorPw}, #{contractorName}, #{contractorGender}, #{contractorBirth}, 
 	#{contractorPhone}, #{contractorAddr}, #{participantNum}, #{contractorLevel})
 </insert>
+
+
 
 <resultMap type="Model.DTO.ContractorDTO" id="conMap">
 	    <id column="contractor_ID" jdbcType="VARCHAR" property="contractorId" />
@@ -45,14 +52,25 @@
 		<result column="CONTRACT_REGDATE" jdbcType="TIMESTAMP" property="contractRegDate"/>
 </resultMap>
 
+<resultMap type="Model.DTO.BodyProfileDTO" id="measureMap">
+	    <id column="contractor_ID" jdbcType="VARCHAR" property="contractorId" />
+		<id column="con_measure_date" jdbcType="VARCHAR" property="measureDate"/>
+		<result column="con_measure_weight" jdbcType="INTEGER" property="weight"/>
+		<result column="con_measure_meta" jdbcType = "INTEGER" property="metabolism"/>
+		<result column="standard_height" jdbcType="INTEGER" property="height"/>
+		<result column="standard_gender" jdbcType="VARCHAR" property="gender"/>
+		<result column="mdate" jdbcType="DATE" property="mDate"/>
+</resultMap>
 
 
+<!-- 계약자 상세보기 -->
 <select id="selectOneContractor" resultMap="conMap">
 	select <include refid="basecolumn" />
 	from CONTRACTORS
 	where contractor_ID = #{contractorId}
 </select>
 
+<!-- 계약자리스트 불러오기 -->
 <select id="selectAllContractors" resultMap="conMap">
 	select <include refid="basecolumn" />
 	from CONTRACTORS
@@ -63,6 +81,35 @@
 	select <include refid="basecolumn2" />
 	from Contracts
 	where contractor_id = #{contractorId}
+</select>
+
+
+<insert id="registerBodyProfile" parameterType="Model.DTO.BodyProfileDTO">
+	insert into CON_MEASURE(<include refid="basecolumn3" />)
+	values(#{contractorId}, #{measureDate}, #{height}, #{weight}, #{metabolism}, #{gender})
+</insert>
+
+<!-- contractor의 신체계측정보 리스트 불러오기 , 날짜가 DB에서 문자열로 되어있음. 이거 날짜 이른 순으로 출력하기 위해 view에서 뭐 해볼것..fmt:formatDate태그 사용-->
+<select id="selectMyProfiles" resultMap="measureMap">
+	select contractor_ID, to_date(con_measure_date, 'YYYYMMDD') AS MDATE, con_measure_date,standard_height, con_measure_weight, con_measure_meta,  standard_gender
+	from con_measure
+	where contractor_id = #{contractorId}
+	order by MDATE asc
+</select>
+
+<!-- traininglevel에 따른 계약자 출력: 연예인 -->
+<select id="selectContractorsUponLevel4" resultMap="conMap">
+	select <include refid="basecolumn" />
+	from contractors
+	where contractor_level = #{level}
+</select>
+
+
+<!-- traininglevel에 따른 계약자 출력: 연습생 -->
+<select id="selectContractorsUponLevelElse" resultMap="conMap">
+	select <include refid="basecolumn" />
+	from contractors
+	where contractor_level = #{level}
 </select>
 
 </mapper>

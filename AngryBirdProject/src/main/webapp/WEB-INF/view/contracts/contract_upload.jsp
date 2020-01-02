@@ -25,7 +25,7 @@ var dateJ = /^(20\d{2})(0[0-9]|1[0-2])(0[0-9]|[1-2][0-9]|3[0-1])/;
 $(function(){	
 	   $("#contractStartDate").blur(function(){
 	        if($("#contractStartDate").val()==""){
-	        	$("#contractStartDateCheck").text("계약자 생년월일을 입력하세요.");
+	        	$("#contractStartDateCheck").text("시작일자를 입력하세요.");
 	        	$("#contractStartDateCheck").css('color','red');
 	        }else {
 		        if(dateJ.test($(this).val())){
@@ -39,7 +39,7 @@ $(function(){
 	    });
 	   $("#contractEndDate").blur(function(){
 	        if($("#contractEndDate").val()==""){
-	        	$("#contractEndDateCheck").text("계약자 생년월일을 입력하세요.");
+	        	$("#contractEndDateCheck").text("종료일자를 입력하세요.");
 	        	$("#contractEndDateCheck").css('color','red');
 	        }else {
 		        if(dateJ.test($(this).val())){

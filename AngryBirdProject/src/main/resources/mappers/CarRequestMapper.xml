@@ -10,9 +10,10 @@
 		CAR_TYPE, CAR_REQUEST_PASSENGER_NUM, CAR_REG_NUM, EMPLOYEE_NUM
 	</sql>
 	
+	<!-- #{from}, #{to} 는  db에서 CAR_REQUEST_RENTAL_DATE, CAR_REQUEST_RETURN_DATE -->
 	<sql id="carRequest2"> 
-		CAR_REQUEST_RENTAL_NUM, EMPLOYEE_NUM, CAR_TYPE, CAR_REQUEST_PASSENGER_NUM,
-		CAR_REQUEST_RENTAL_DATE, CAR_REQUEST_RETURN_DATE <!-- #{from}, #{to} 는  db에서 CAR_REQUEST_RENTAL_DATE, CAR_REQUEST_RETURN_DATE -->
+		CAR_REQUEST_RENTAL_NUM, CAR_REQUEST_RENTAL_DATE, CAR_REQUEST_RETURN_DATE,
+		CAR_TYPE, CAR_REQUEST_PASSENGER_NUM, EMPLOYEE_NUM
 	</sql>
 
 	<resultMap type="Model.DTO.CarRequestDTO" id="carReqRs">
@@ -39,8 +40,8 @@
 	
 	<insert id="insertCarRequest" parameterType="Model.DTO.CarRequestDTO">
 		insert into CAR_REQUEST(<include refid="carRequest"/>)
-		VALUES(#{carRequestRentalNum}, #{carRequestRentalDate}, #{carRequestReturnDate}, #{carType}, #{carRequestPassengerNum}, #{carRegNum}, #{employeeNum}
-		#{from}, #{to})
+		VALUES(#{carRequestRentalNum}, #{from}, #{to}, #{carType}, #{carRequestPassengerNum}, #{carRegNum}, #{employeeNum}
+		)
 	</insert>
 	
 	<!-- 차량 예약 리스트 보기 -->

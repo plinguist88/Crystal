@@ -8,6 +8,10 @@
 		training_num, training_level, training_startdate, training_enddate, training_curriculum 
 	</sql>
 
+	<sql id="basecolumn2">
+		TRAINING_NUM, CONTRACTOR_ID
+	</sql>
+
 	<insert id="insertTraining" parameterType="Model.DTO.TrainingDTO">
 		insert into Training(<include refid="basecolumn1" />) 
 		values(#{trainingNum},#{trainingLevel},#{trainingStartDate},#{trainingEndDate},#{trainingCurriculum})
@@ -20,7 +24,12 @@
 		<result column="TRAINING_ENDDATE" jdbcType="VARCHAR" property="trainingEndDate"/>		
 		<result column="TRAINING_CURRICULUM" jdbcType="CLOB" property="trainingCurriculum"/>		
 	</resultMap>
-
+	
+	<resultMap type="Model.DTO.TrainingTakeDTO" id="trainingTakeMap">
+		<id column="TRAINING_NUM" jdbcType="VARCHAR" property="trainingNum"/>
+		<id column="CONTRACTOR_ID" jdbcType="VARCHAR" property="contractorId"/>			
+	</resultMap>
+	
 	<select id="selectAllTrainings" resultMap="trainingMap">
 		select <include refid="basecolumn1" />
 		from training
@@ -31,6 +40,20 @@
 		from training
 		where TRAINING_NUM = #{trainingNum}
 	</select>
+
+	<insert id="addContractorToTraining" parameterType="Model.DTO.TrainingTakeDTO">
+		insert into TRAINING_TAKE (<include refid="basecolumn2" />) 
+		values(#{trainingNum},#{contractorId})
+	</insert>
+
+	<select id="selectContractorsPerTraining" resultMap="trainingTakeMap">
+		select <include refid="basecolumn2" />
+		from TRAINING_TAKE
+		where training_num = #{trainingNum}
+	</select>
+
+
+
 
 </mapper>
 

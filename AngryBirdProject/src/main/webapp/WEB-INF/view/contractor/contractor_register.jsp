@@ -14,7 +14,7 @@
 <script type="text/javascript">
 
 /* 생년월일 정규식*/
-var dateJ = /^([0-9][0-9])(0[0-9]|1[0-2])(0[0-9]|[1-2][0-9]|3[0-1])/;
+var dateJ = /^(19[0-9][0-9]|20[0-9][0-9])(0[0-9]|1[0-2])(0[0-9]|[1-2][0-9]|3[0-1])/;
 /* 숫자만 */
 var numJ = /\d/;
 /* 전화번호 */
@@ -38,7 +38,7 @@ $(function(){
 		        	console.log(dateJ.test($(this).val()));
 		        	$("#contractorBirthCheck").text('');
 		        } else {
-		        	$("#contractorBirthCheck").text('날짜형식이 맞지 않습니다. 생년월일은 숫자 6자리로만 입력 가능합니다.');
+		        	$("#contractorBirthCheck").text('날짜형식이 맞지 않습니다. 생년월일은 숫자 8자리로만 입력 가능합니다.');
 		        	$("#contractorBirthCheck").css('color','red');
 		        }
 	        } 
@@ -130,7 +130,7 @@ $(function(){
 					계약자 생년월일
 				</td>
 				<td >
-					<form:input path="contractorBirth" id="contractorBirth" size="10" />
+					<form:input path="contractorBirth" id="contractorBirth" size="8" />
 					<div id="contractorBirthCheck"></div>
 				</td>
 			</tr>

@@ -7,12 +7,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import Model.DTO.TrainingDTO;
+import Repository.Contractor.ContractorRepository;
 import Repository.Training.TrainingRepository;
 
 @Service
 public class TrainingSelectService {
 	@Autowired
 	TrainingRepository trainingRepository;
+	@Autowired
+	ContractorRepository contractorRepository;
 
 	//트레이닝 리스트
 	public void selectTrainings(Model model) {

@@ -23,7 +23,8 @@ $(function(){
 
 </head>
 <body>
-	<h2>트레이닝 상세보기</h2>								
+	<h2>트레이닝 상세보기</h2>	
+	<form action="/AngryBirdProject/updateTraining" id="frm" method="post">				
 		<table class="line">
 			<tr>
 				<td>
@@ -31,6 +32,7 @@ $(function(){
 				</td>
 				<td>
 					${tDTO.trainingNum }
+					<input type="hidden" name="trainingNum" value="${tDTO.trainingNum }"/>
 				</td>
 			</tr>
 			<tr>
@@ -69,15 +71,30 @@ $(function(){
 				<td >
 					${tDTO.trainingCurriculum }
 				</td>
-			</tr>			
+			</tr>	
+			<tr>
+				<td>트레이닝 수강생</td>
+				<td>
+					
+					<select name="chosenContractors" id="chosenContractors" multiple="multiple" style="width: 300px;">
+					<c:forEach var="con" items="${conList }">
+						<option value="${con.contractorId }">${con.contractorId } ${con.contractorName }</option>
+					</c:forEach>
+					</select>
+					<br />
+					<input type="submit" value="수강생 등록" />	
+									
+				</td>
+			</tr>		
 			<tr>
 				<td colspan="2">
 				<div align="center"><br />
-					<button id="btn">목록으로</button>
+					<button type="button" id="btn">목록으로</button>
 				</div>
 				</td>
 			</tr>
 		</table>
+	</form>				
 </body>
 </html>
 <%@ include file="/WEB-INF/view/footer.jsp"%>

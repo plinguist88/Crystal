@@ -137,7 +137,6 @@
 		 		 <a href="/AngryBirdProject/contractors" class="navA"> CONTRACTORS</a>
 		 		 <a href="/AngryBirdProject/trainings" class="navA"> TRAININGS</a> 
 		 		 <a href="/AngryBirdProject/trainingTFs" class="navA"> TRAINING TF</a> 
-		 		 <a href="/AngryBirdProject/trainees" class="navA"> TRAINEES</a> 
 		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="gf" class="navA"> GF</a>
 				</td>
@@ -281,7 +280,7 @@
 				<td width="1400px" >
 				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>  
 		 		 <a href="/AngryBirdProject/myContract/${contractorInfo.contractorId }" class="navA"> MY CONTRACTS</a>  
-		 		 <a href="/AngryBirdProject/myBodyProfile" class="navA"> MY B-PROFILES</a> <!-- B-profile에 체중감량계획, 식단, 운동 모두 나올수 있도록 -->
+		 		 <a href="/AngryBirdProject/myBodyProfile/${contractorInfo.contractorId }" class="navA"> MY B-PROFILES</a> <!-- B-profile에 체중감량계획, 식단, 운동 모두 나올수 있도록 -->
 		 		 <a href="/AngryBirdProject/myTraining" class="navA"> MY TRAININGS</a> 
 		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
 		  		 <a href="contractor" class="navA"> CONTRACTOR</a>  

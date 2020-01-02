@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import Model.DTO.TrainingDTO;
+import Model.DTO.TrainingTakeDTO;
 
 @Repository
 public class TrainingRepository {
@@ -33,6 +34,25 @@ public class TrainingRepository {
 		TrainingDTO tDTO = sqlSession.selectOne(statement, trainingNum);
 		return tDTO;
 	}
+
+	public void addContractorToTraining(List<TrainingTakeDTO> list) {
+		// TODO Auto-generated method stub
+		String statement = namespace + ".addContractorToTraining" ;
+		for(TrainingTakeDTO tDTO : list) {
+			sqlSession.insert(statement, tDTO);
+		}
+		
+	}
+	
+	public List<TrainingTakeDTO> selectContractorPerTraining(String trainingNum) {
+		// TODO Auto-generated method stub
+		String statement = namespace + ".selectContractorsPerTraining" ;
+
+		List<TrainingTakeDTO> list = sqlSession.selectList(statement, trainingNum);
+		return list;
+	}	
+	
+	
 	
 
 }

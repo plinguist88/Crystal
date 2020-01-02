@@ -37,5 +37,12 @@
 		<bean class="Service.Training.TrainingSelectService" id="trainingSelectService"/>		
 		<bean class="Service.ContractorLogin.ContractorLoginService" id="contractorLoginService"/>			
 		<bean class="Service.Contractor.MyContractAllService" id="myContractAllService"/>		
+		<bean class="Service.Contractor.MyProfileAllService" id="myProfileAllService"/>		
+		<bean class="Service.Contractor.MyProfilSelectOneService" id="myProfilSelectOneService"/>	
+		<bean class="Service.Contractor.MyBodyProfileGoService" id="myBodyProfileGoService"/>			
+		<bean class="Service.Contractor.GetStandardWeight" id="getStandardWeight"/>							
+		<bean class="Service.Contractor.MyBodyProfileUploadService" id="myBodyProfileUploadService"/>	
+		<bean class="Service.Contractor.ContractorUponLevelService" id="contractorUponLevelService"/>	
+		<bean class="Service.Training.TrainingUpdateService" id="trainingUpdateService"/>	
 			
 </beans>
