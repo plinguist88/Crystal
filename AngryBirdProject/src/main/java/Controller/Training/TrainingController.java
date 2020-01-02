@@ -58,16 +58,16 @@ public class TrainingController {
 		
 		trainingSelectService.selectOneTraining(trainingNum, model);
 		contractorUponLevelService.selectContractsUponLevel(trainingLevel, model);
-		trainingUpdateService.selectContractors(trainingNum, model); //출력될 섹션 jsp페이지에 만들기
+		trainingSelectService.selectContractorsForTraining(trainingNum, model); 
 		return "trainings/training_detail";
 	}	
 	
 	//트레이닝 상세보기 페이지에서 수강생 등록
 	@RequestMapping(value="/updateTraining", method = RequestMethod.POST)
-	public String updateTraining(@RequestParam("trainingNum") String trainingNum, @RequestParam("chosenContractors") String[] chosenContractors) {
+	public String updateTraining(@RequestParam("trainingNum") String trainingNum, @RequestParam("chosenContractorsTxt") String chosenContractorsTxt) {
 		
-		trainingUpdateService.addContractors(trainingNum, chosenContractors);
-		return "redirect:trainingDetail/" + trainingNum;
+		trainingUpdateService.addContractors(trainingNum, chosenContractorsTxt);
+		return "redirect:trainings";
 	}	
 
 	

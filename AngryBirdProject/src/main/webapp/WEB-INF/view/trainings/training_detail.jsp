@@ -12,12 +12,27 @@
 	rel="stylesheet">
 
 <title>트레이닝 상세내용</title>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" ></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
 <script type="text/javascript">
+
+
 $(function(){	
 	$("#btn").click(function(){
 		location.href="/AngryBirdProject/trainings";
-	});                  
+	}); 
+	
+	var chosens ="";
+ 	$("select option").dblclick(function(){		
+		chosens += $("select option:selected").val()+","  ;
+		$("#chosenContractorsTxt").val(chosens);
+	}); 
+ 	
+ 	$("#reset").click(function(){
+ 		chosens="";
+ 		$("#chosenContractorsTxt").val(chosens);
+ 		
+ 	});
+	
 });
 </script>
 
@@ -27,7 +42,7 @@ $(function(){
 	<form action="/AngryBirdProject/updateTraining" id="frm" method="post">				
 		<table class="line">
 			<tr>
-				<td>
+				<td width="200">
 					트레이닝 번호 
 				</td>
 				<td>
@@ -74,21 +89,30 @@ $(function(){
 			</tr>	
 			<tr>
 				<td>트레이닝 수강생</td>
-				<td>
-					
-					<select name="chosenContractors" id="chosenContractors" multiple="multiple" style="width: 300px;">
+				<c:if test="${empty trainees }">
+				<td>				
+					<select id="mySelect" multiple="multiple" style="width: 300px; height: 150px">
 					<c:forEach var="con" items="${conList }">
-						<option value="${con.contractorId }">${con.contractorId } ${con.contractorName }</option>
+						<option  value="${con.contractorId }" >${con.contractorId } ${con.contractorName }</option>
 					</c:forEach>
-					</select>
-					<br />
-					<input type="submit" value="수강생 등록" />	
-									
+					</select><br />				
+					<input type="text" style="border:1px solid gray; width:300px;height:150px; font-size:8px;" 
+					id="chosenContractorsTxt" name="chosenContractorsTxt" readonly="readonly" /><button type="button" id="reset">초기화</button>									
 				</td>
+				</c:if>
+				<c:if test="${!empty trainees }">
+				<td>				
+					<c:forEach var="tn" items="${trainees }">
+						${tn.contractorId } <br />
+					</c:forEach>
+					</select><br />												
+				</td>
+				</c:if>
 			</tr>		
 			<tr>
 				<td colspan="2">
 				<div align="center"><br />
+					<input type="submit" value="수강생 등록" />	
 					<button type="button" id="btn">목록으로</button>
 				</div>
 				</td>

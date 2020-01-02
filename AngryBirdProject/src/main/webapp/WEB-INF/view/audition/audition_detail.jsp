@@ -64,7 +64,7 @@ $(function(){
 <!-- 오늘날짜 출력하는 jstl -->
 		<jsp:useBean id="today" class="java.util.Date" />
 		<fmt:formatDate value="${today }" pattern="yyyyMMdd" var="today"/>
-		<tr><td colspan="2">${today }</td></tr>	
+		<%-- <tr><td colspan="2">${today }</td></tr>	 --%>
 		
 <!-- 종료일자가 지나지 않은 경우에만 지원할 수 있도록 -->	
 <c:if test="${(empty employeeInfo) && (oneAud.startDate <= today && oneAud.endDate >= today)}">

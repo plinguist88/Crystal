@@ -17,10 +17,12 @@ public class TrainingUpdateService {
 	List<TrainingTakeDTO> list = new ArrayList<TrainingTakeDTO>();
 
 	// 트레이닝 상세보기에서 수강생추가하기
-	public void addContractors(String trainingNum, String[] chosenContractors) {
+	public void addContractors(String trainingNum, String chosenContractorsTxt) {
 		// TODO Auto-generated method stub
+		System.out.println("1: "+chosenContractorsTxt);
+		String[] chosens = chosenContractorsTxt.split(",");
 
-		for (String contractor : chosenContractors) {
+		for (String contractor : chosens) {
 			TrainingTakeDTO tDTO = new TrainingTakeDTO();
 			tDTO.setTrainingNum(trainingNum);
 			tDTO.setContractorId(contractor);
@@ -37,13 +39,7 @@ public class TrainingUpdateService {
 		 
 	}
 	
-	//트레이닝 수강생 출력
-	public void selectContractors(String trainingNum, Model model) {
-		// TODO Auto-generated method stub
-		
-		List<TrainingTakeDTO> list = trainingRepository.selectContractorPerTraining(trainingNum);
-		model.addAttribute("cList", list); 
-	}	
+
 	
 	
 

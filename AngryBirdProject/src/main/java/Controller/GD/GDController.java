@@ -58,7 +58,7 @@ public class GDController {
 	 @RequestMapping("/evaluationRegister") 
 	 public String evaluate(EvalCommand evalCommand, HttpSession session) {
 		 candidateEvaluationService.evaluate(evalCommand, session); 
-		 return "redirect:candidates"; 
+		 return "redirect:showCandidates/"+ evalCommand.getAuditionSeq(); 
 	 }
 	 
 	 

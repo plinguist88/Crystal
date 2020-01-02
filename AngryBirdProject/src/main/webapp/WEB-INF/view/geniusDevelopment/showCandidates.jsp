@@ -39,7 +39,7 @@ $(function(){
 		<c:forEach var="audC" items="${audCandidatesDTO}" varStatus="status"> <!-- 처음 el을 통해서 items에 받아올때는 model에서 넣은 큰 dto만 넣고, forEach에서 돌릴 때 큰 DTO.필드명(작은dto).필드명(작은 dto의 멤버변수) 형식으로 해야함 -->
 		<c:choose>
 		<c:when test="${status.count <= audC.auditionDTO.passed}">
-			<tr style="background-color:yellow">
+			<tr style="background-color:#EFF5FB">
 				<td>${status.count }</td>
 				<td><a href="<c:url value='/candidateDetail/${audC.candidateDTO.candidateNum }' />">${audC.candidateDTO.candidateNum }</a></td>
 				<td>${audC.candidateDTO.candidateName}</td> 
@@ -70,7 +70,7 @@ $(function(){
 	
 	<c:if test="${empty audCandidatesDTO }">
 		<tr>
-			<td colspan="5" align="center">등록된 지원자가 없습니다.</td>
+			<td colspan="6" align="center">등록된 지원자가 없습니다.</td>
 		</tr>
 	</c:if>
 </table>

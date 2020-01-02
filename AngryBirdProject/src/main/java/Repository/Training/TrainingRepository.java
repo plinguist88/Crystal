@@ -44,14 +44,14 @@ public class TrainingRepository {
 		
 	}
 	
+	//트레이닝에 등록된 수강생 가져오기
 	public List<TrainingTakeDTO> selectContractorPerTraining(String trainingNum) {
 		// TODO Auto-generated method stub
 		String statement = namespace + ".selectContractorsPerTraining" ;
 
 		List<TrainingTakeDTO> list = sqlSession.selectList(statement, trainingNum);
 		return list;
-	}	
-	
+	}
 	
 	
 

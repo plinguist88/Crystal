@@ -48,7 +48,6 @@ $(function(){
 			<c:when test="${cdto.candidateGender eq 'M'}">남자</c:when>
 			<c:when test="${cdto.candidateGender eq 'F'}">여자</c:when>
 		</c:choose>
-		${cdto.candidateGender}
 		</td>
 	</tr>
 	<tr>
@@ -69,6 +68,7 @@ $(function(){
 	<tr>
 		<td width="200">평가 총점</td>
 		<td width="800">
+		<form:hidden path="auditionSeq" value="${cdto.auditionSeq }"/>
 		<form:hidden path="candidateNum" value="${cdto.candidateNum}"/>
  		<form:input path="evalScore"  id="evalScore" size="2" readonly="readonly" /> <!-- readonly라고만 치면 안됨. form태그는 반드시 ..=..라고 쳐야함. -->
  		<form:hidden path="q1" id="q1"/>		

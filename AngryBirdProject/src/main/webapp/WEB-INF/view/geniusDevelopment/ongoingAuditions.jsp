@@ -29,7 +29,7 @@
 <h2 align="center">모집 중인 오디션</h2>
 <table class="line">
 	<tr>
-		<th>번호</th><th>제목</th><th>시작일</th><th>종료일</th>
+		<th width="100">번호</th><th width="500">제목</th><th width="250">시작일</th><th width="250">종료일</th>
 	</tr>
 	<c:if test="${! empty ongoingAuds }">
 	<c:forEach var="aud" items="${ongoingAuds}" varStatus="status">
@@ -50,7 +50,7 @@
 <h2 align="center">모집 완료 오디션</h2>
 <table class="line">
 	<tr>
-		<th>번호</th><th>제목</th><th>시작일</th><th>종료일</th>
+		<th width="100">번호</th><th width="500">제목</th><th width="250">시작일</th><th width="250">종료일</th>
 	</tr>
 	<c:if test="${! empty finishedAuds }">
 	<c:forEach var="aud" items="${finishedAuds}" varStatus="status">

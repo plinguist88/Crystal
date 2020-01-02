@@ -41,7 +41,16 @@ $(function(){
 				<td><a href="<c:url value='contractorDetail/${conDTO.contractorId }' />">${conDTO.contractorId }</a></td>
 				<td>${conDTO.contractorName }</td> 
 				<td>${conDTO.contractorBirth }</td>
-				<td>${conDTO.contractorLevel }</td>
+				<td>
+					<c:choose>
+						<c:when test="${conDTO.contractorLevel ==0}">
+							연습생
+						</c:when>
+						<c:when test="${conDTO.contractorLevel ==1}">
+							연예인
+						</c:when>
+					</c:choose>
+				</td>
 				<td>
 					<input type="checkbox" name="passedCan"  value="${conDTO.contractorId }"/>
 				</td>				

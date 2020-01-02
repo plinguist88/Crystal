@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import Model.DTO.TrainingDTO;
+import Model.DTO.TrainingTakeDTO;
 import Repository.Contractor.ContractorRepository;
 import Repository.Training.TrainingRepository;
 
@@ -31,5 +32,13 @@ public class TrainingSelectService {
 		TrainingDTO tDTO = trainingRepository.selectOneTraining(trainingNum);
 		model.addAttribute("tDTO", tDTO);
 	}
+	
+	//트레이닝 수강생 출력
+	public void selectContractorsForTraining(String trainingNum, Model model) {
+		// TODO Auto-generated method stub
+		
+		List<TrainingTakeDTO> list = trainingRepository.selectContractorPerTraining(trainingNum);
+		model.addAttribute("trainees", list); 
+	}	
 
 }

@@ -13,7 +13,14 @@ public class EvalCommand {
 	Integer q9;	
 	Integer q10;
 	String candidateNum;
+	Integer auditionSeq;
 	
+	public Integer getAuditionSeq() {
+		return auditionSeq;
+	}
+	public void setAuditionSeq(Integer auditionSeq) {
+		this.auditionSeq = auditionSeq;
+	}
 	public Integer getEvalScore() {
 		return evalScore;
 	}

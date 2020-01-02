@@ -93,13 +93,16 @@ $(function(){
 <%@ include file="/WEB-INF/view/header.jsp"%>
 <body>
 <div  class="container">
-<h2>지원자 등록${auditionSeq }</h2>
+<h2>지원자 등록</h2>
 <form:form action="register" method="post" enctype="multipart/form-data" commandName="candidatesCommand" id="frm">
 
 <form:hidden path="auditionSeq" value="${auditionSeq }"/>
 <table class="line">
 	<tr>
-		<td width="200">지원자 번호</td><td width="400"><form:hidden path="candidateNum"/></td>
+		<td width="200">지원자 번호</td>
+		<td width="400">지원 완료 후 자동생성됩니다.
+			<form:hidden path="candidateNum"/>
+		</td>
 	</tr>
 	<tr>
 		<td width="200">지원자 이름</td><td width="400"><form:input path="candidateName" id="candidateName"/><div id="candidateNameCheck"></div></td>

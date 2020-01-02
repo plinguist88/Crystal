@@ -6,7 +6,7 @@
 	<!-- 여기저기서 편하게 쓰려고 -->
 	<sql id="basecolumn1">
 		participant_num, participant_name, participant_birth, participant_gender, participant_phone, 
-		participant_addr, participant_date, audition_seq, original_file_name, store_file_name, file_size
+		participant_addr, participant_date, audition_seq, original_file_name, store_file_name, file_size, total_score
 	</sql>
 	
 	<sql id="basecolumn2">
@@ -50,14 +50,14 @@
 	<insert id="registerCandidate" parameterType="Model.DTO.CandidateDTO">
 		insert into PARTICIPANT( <include refid="basecolumn1" /> ) 
 		values( #{candidateNum}, #{candidateName},#{candidateBirth},#{candidateGender},#{candidatePh},
-				#{candidateAddr}, sysdate, #{auditionSeq}, #{originalFilename}, #{storeFilename}, #{fileSize})
+				#{candidateAddr}, sysdate, #{auditionSeq}, #{originalFilename}, #{storeFilename}, #{fileSize},#{totalScore} )
 	</insert>
 	
 
 	
 	<!-- 지원자 상세보기 -->
 	<select parameterType="Model.DTO.CandidateDTO" resultMap="baseCan" id="oneCandidate">
-		select <include refid="basecolumn1" /> , total_score
+		select <include refid="basecolumn1" />
 		from participant 
 		where participant_num = #{candidateNum}
 	</select>
