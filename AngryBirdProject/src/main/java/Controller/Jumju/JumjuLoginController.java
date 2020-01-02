@@ -33,7 +33,7 @@ public class JumjuLoginController {
 		return "jumju/jumjuLoginForm";
 	}
 
-	@RequestMapping(value = "/jjLoginAction", method = RequestMethod.POST)
+	/*@RequestMapping(value = "/jjLoginAction", method = RequestMethod.POST)
 	public String jumjuLogin (JumjuLoginCommand jumjuLoginCommand,  
 							  Errors errors, HttpSession session, HttpServletResponse response) {
 		
@@ -62,5 +62,5 @@ public class JumjuLoginController {
 	public String jumjuLogin () {
 		
 		return "main";
-	}
+	}*/
 }

@@ -64,7 +64,6 @@
 		 		 <a href="/AngryBirdProject/audition" class="navA"> AUDITION</a>
 		  		 <a href="/AngryBirdProject/contactUs" class="navA"> CONTACT US</a>
 		  		 <a href="/AngryBirdProject/login" class="navA"> LOGIN</a>
-		  		 <a href="/AngryBirdProject/jumjuLogin" class="navA"> STORE_LOGIN</a>
 				</td>
 			</tr>
 		</table>

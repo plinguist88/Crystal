@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import Command.LoginCommand;
 import Service.ContractorLogin.ContractorLoginService;
+import Service.JumjuJoin.JumjuLoginService;
 import Service.Login.EmployeeLoginService;
 import Validator.LoginCommandValidator;
 
@@ -24,6 +25,8 @@ public class EmployeeLoginController {
 	@Autowired
 	private ContractorLoginService contractorLoginService;
 	
+	@Autowired
+	private JumjuLoginService jumjuLoginService; 
 	
 	// 직원 로그인
 	@RequestMapping(value = "/loginAction", method = RequestMethod.POST)
@@ -57,7 +60,32 @@ public class EmployeeLoginController {
 			return "main";
 		}
 		
-		
+		//점주 로그인
+		if(loginCommand.getEmployeeNum().substring(0, 1).equals("J")) {
+			
+			
+			new LoginCommandValidator().validate(loginCommand, errors);
+			if (errors.hasErrors() ) {
+				return "login";
+			}
+			
+			//계약자 로그
+			Integer result = jumjuLoginService.jumjuLogin(loginCommand, session, response);
+			if (result == 0) {
+				
+				errors.rejectValue("employeeNum", "failId");
+				return "login";
+				
+			} else if (result == -1){
+				
+				errors.rejectValue("employeePw", "failPw");
+				return "login";
+				
+			}
+			
+			System.out.println("Jumjuuuuuuuuuuu");
+			return "main";
+		}
 		
 		//직원 로그인
 		new LoginCommandValidator().validate(loginCommand, errors);
@@ -78,7 +106,7 @@ public class EmployeeLoginController {
 			
 		}
 		
-		System.out.println("Goooooooooood");
+		System.out.println("Employeeeeeeeeeeeeeeeeee");
 		return "main";
 		
 	}
