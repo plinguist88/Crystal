@@ -92,9 +92,9 @@ $(function() { 							//document.ready(function)
 
 <style>
 
-.a {
+/* .a {
 	border: 4px dashed #bcbcbc;
-}
+} */
 
 .main{
 	border-style : none;
@@ -109,10 +109,11 @@ $(function() { 							//document.ready(function)
 	bottom :0;
 	left : 250px;
 	right : 0;
-	background :url("images/c4.jpg") center center;
+	background :url("images/c4.jpg") center;
 	opacity : .2;
 	width : 70%;
-	height : 100%;
+	height : 135%;
+	background-repeat: no-repeat;
 }
 
 </style>
@@ -125,6 +126,7 @@ $(function() { 							//document.ready(function)
 			<br />
 			<br />
 		</div>
+		
 		<div class="a" align="center">
 			<h2>차량 예약신청</h2>
 		</div>
