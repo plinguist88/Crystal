@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,25 +12,27 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script>
 		var arr = new Array();
-		
+		var all = "";
 		$(document).ready(function() {
 			
 		});
 		
 		function addMenu(menuId) {
-			var itemsIdx = "";
-			var count = 0;
-			var price = 0;
+			
+			var itIdx = "";
+			var cnt = 0;
+			var price = "";
 			
 			if (arr != null) {
 				$(arr).each(function(idx, data) {
-					if (data.itemsNo === menuId) {
+					if (data.itNo === menuId) {
 						arr.splice(idx, 1);
-						itemsIdx = idx;
-						count = data.itemsCount;
-						price = data.itemsPrice;
-						console.log("itemsIdx : " + itemsIdx + ", count : " + count + ", price : " + price);
+						itIdx = idx;
+						cnt = data.itCnt;
+						price = data.itPrice;
+						console.log("itIdx : " + itIdx + ", cnt : " + cnt + ", price : " + price);
 					}
+					
 				});
 			}
 			
@@ -34,47 +40,68 @@
 			
 			switch (menuId) {
 				case "0":
-					console.log("초기화");
+					console.log("reset");
+					$("#orderList tbody").remove();
+					removeItem('goods');
+					location.reload();
+				//	obj.itNo = $('#num').removeAttr('value');
+				//	obj.itName = document.getElementById("name").removeAttribute("name");
+				//	obj.itCnt = document.getElementById("cnt").removeAttribute("name");
+				//	obj.itPrice = document.getElementById("pri").removeAttribute("name");
 					break;
 					
 				case "1":
-					console.log("상품1");
-					obj.itemsNo = '1';
-					obj.itemsName = '상품1';
-					obj.itemsCount = count + 1;
-					obj.itemsPrice = price + 30000;
+					var a = $("#itemsNo_" + menuId).val();
+					var b = $("#itemsName_" + menuId).val();
+					var c = $("#itemsPrice_" + menuId).val();
+					obj.itNo = a;
+					obj.itName = b;
+					obj.itCnt = cnt + 1;
+					obj.itPrice = c * obj.itCnt;
 					break;
 					
 				case "2":
+					var a = $("#itemsNo_" + menuId).val();
+					var b = $("#itemsName_" + menuId).val();
+					var c = $("#itemsPrice_" + menuId).val();
 					console.log("상품2");
-					obj.itemsNo = '2';
-					obj.itemsName = '상품2';
-					obj.itemsCount = count + 1;
-					obj.itemsPrice = price + 30000;
+					obj.itNo = a;
+					obj.itName = b;
+					obj.itCnt = cnt + 1;
+					obj.itPrice = c * obj.itCnt;
 					break;
 					
 				case "3":
+					var a = $("#itemsNo_" + menuId).val();
+					var b = $("#itemsName_" + menuId).val();
+					var c = $("#itemsPrice_" + menuId).val();
 					console.log("상품3");
-					obj.itemsNo = '3';
-					obj.itemsName = '상품3';
-					obj.itemsCount = count + 1;
-					obj.itemsPrice = price + 30000;
+					obj.itNo = a;
+					obj.itName = b;
+					obj.itCnt = cnt + 1;
+					obj.itPrice = c * obj.itCnt;
 					break;
 					
 				case "4":
+					var a = $("#itemsNo_" + menuId).val();
+					var b = $("#itemsName_" + menuId).val();
+					var c = $("#itemsPrice_" + menuId).val();
 					console.log("상품4");
-					obj.itemsNo = '4';
-					obj.itemsName = '상품4';
-					obj.itemsCount = count + 1;
-					obj.itemsPrice = price + 30000;
+					obj.itNo = a;
+					obj.itName = b;
+					obj.itCnt = cnt + 1;
+					obj.itPrice = c * obj.itCnt;
 					break;
 					
 				case "5":
+					var a = $("#itemsNo_" + menuId).val();
+					var b = $("#itemsName_" + menuId).val();
+					var c = $("#itemsPrice_" + menuId).val();
 					console.log("상품5");
-					obj.itemsNo = '5';
-					obj.itemsName = '상품5';
-					obj.itemsCount = count + 1;
-					obj.itemsPrice = price + 30000;
+					obj.itNo = a;
+					obj.itName = b;
+					obj.itCnt = cnt + 1;
+					obj.itPrice = c * obj.itCnt;
 					break;
 				
 				case "6":
@@ -118,7 +145,6 @@
 					break;
 				
 			}
-			
 			arr.push(obj);
 			
 			var tbl = "";
@@ -128,10 +154,10 @@
 				
 				$(arr).each(function(idx, data) {
 					tbl += "<tr>";
-					tbl += 		"<td><input type='text' name=" + "'itemsNo' value=" + "'" + data.itemsNo + "' /></td>";
-					tbl += 		"<td><input type='text' name=" + "'itemsName' value=" + "'" + data.itemsName + "' /></td>";
-					tbl += 		"<td><input type='text' name=" + "'itemsCount' value=" + "'" + data.itemsCount + "' /></td>";
-					tbl += 		"<td><input type='text' name=" + "'itemsPrice' value=" + "'" + data.itemsPrice + "' /></td>";
+					tbl += 		"<td>&nbsp;&nbsp;&nbsp;<input type='text' name=" + "'itemsNo' id=" + "'num' value=" + "'" + data.itNo + "'" + " style='width:20px;border:none;' /></td>";
+					tbl += 		"<td><input type='text' name=" + "'itemsName' id=" + "'name' value=" + "'" + data.itName + "'" + " style='width:50px;border:none;' /></td>";
+					tbl += 		"<td>&nbsp;&nbsp;&nbsp;<input type='text' name=" + "'itemsCount' id=" + "'cnt' value=" + "'" + data.itCnt + "'" + " style='width:20px;border:none;' /></td>";
+					tbl += 		"<td><input type='text' name=" + "'itemsPrice' id=" + "'pri' value=" + "'" + data.itPrice + "'" + " style='width:50px;border:none;' /></td>";
 					tbl += "</tr>";
 				});
 				
@@ -145,16 +171,22 @@
 			$.ajax({
 					type : "POST",
 					 url : "payment",
-					data : $("#frmOrder").serialize(), 
+					data : $("#frmOrder").serialize(),
 				dataType : "json",
 				 success : function(data) {
 					alert("통신 데이터 값 : " + data);
+					
 				 },
 				 error : function() {
-					alert("통신 실패!!");
+					//alert("통신 실패!!");
 				 }
 			 
 			});
+			setTimeout(function(){
+				location.reload();
+			},1000);
+			
+			sessionStorage.removeItem("goods");
 		}
 		
 		//매출정보
@@ -176,7 +208,7 @@
 		}
 		
 		//상품관리
-		function goods() {
+		/*function goods() {
 			alert("상품관리");
 			$.ajax({
 					type : "POST",
@@ -192,12 +224,12 @@
 				 }
 			 
 			});
-		}
+		}*/
 		
 	</script>
 </head>
 <body>
-	<div style="width: 50%; float: left; box-sizing: border-box;">
+	<div style="width: 30%; float: left; box-sizing: border-box;">
 		<h2>주문 리스트</h2>
 		<table>
 			<tr>
@@ -231,7 +263,7 @@
 		</form>
 	</div>
 	
-	<div style="width: 50%; float: right; box-sizing: border-box;">
+	<div style="width: 30%; float: left; box-sizing: border-box;">
 		<h2>상품명</h2>
 		<table>
 			<tr>
@@ -286,16 +318,129 @@
 				</td>
 			</tr>
 		</table>
-		<h2>상품관리</h2>
-		<table id="goodsList1">
 		
-		</table>
 	</div>
 	
-	<div style="width: 50%; float: right; box-sizing: border-box;">
-		<table id="">
-		
+	<div style="width: 30%; float: right; box-sizing: border-box;">
+		<h2>상품목록</h2>
+		<table id="goodsList">
+			<c:if test="${!empty goodsList }">
+				<tr>
+					<c:forEach var="goods" items="${goodsList }" varStatus="i">
+						<input type="hidden" id="itemsNo_${goods.itemsNo }" value="${goods.itemsNo }" style="width:50px;border:none;" readonly="readonly"/>
+						<input type="text" id="itemsName_${goods.itemsNo }" value="${goods.itemsName }" style="width:50px;border:none;" readonly="readonly"/> | &nbsp;
+						<input type="text" id="itemsCount_${goods.itemsNo }" value="${goods.itemsCount }" style="width:50px;border:none;" readonly="readonly"/> | &nbsp; 
+						<input type="text" id="itemsPrice_${goods.itemsNo }" value="${goods.itemsPrice }" style="width:50px;border:none;" readonly="readonly"/><br/><br/>
+					</c:forEach>
+				</tr>
+				
+			</c:if>
 		</table>
+		<b>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ</b>
+	<div><input type="button" id="btn" value="상품주문" /></div>  <!-- onclick="window.open('goodsListDetail')" -->
+	
+	<form:form action="insertGoods" method="post" commandName="goodsCommand" id="frm" style="display:none">
+		<table id="table">
+			<tr>
+				<td>
+					상품 번호 : 
+				</td>
+				<td>
+					<form:hidden path="itemsNo" id="itemsNo" placeholder="상품번호" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					상품 이름 :
+				</td>
+				<td>
+					<form:input path="itemsName" id="itemsName" placeholder="상품명" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					상품 종류 : 
+				</td>
+				<td>
+					<form:input path="itemsSort" id="itemsSort" placeholder="상품종류" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					상품 개수 : 
+				</td>
+				<td>
+					<form:input path="itemsCount" id="itemsCount" placeholder="상품개수" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					상품 판매 가격 :
+				</td>
+				<td>
+					<form:hidden path="itemsPrice" id="itemsPrice" placeholder="상품판매가격" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					상품 단가 금액 :
+				</td>
+				<td>
+					<form:input path="itemsUnitPrice" id="itemsUnitPrice" placeholder="상품단가금액" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					상품 가격 책정 :
+				</td>
+				<td>
+					<form:hidden path="itemsProtrait" id="itemsProtrait" placeholder="상품개수" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					상품 가격 책정2 :
+				</td>
+				<td>
+					<form:hidden path="itemsMarjin" id="itemsMarjin" placeholder="상품개수" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					계약자번호 : 
+				</td>
+				<td>
+					<form:hidden path="contractorNum" id="contractorNum" placeholder="상품개수" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					계약자타입 : 
+				</td>
+				<td>
+					<form:hidden path="contractorType" id="contractorType" placeholder="상품개수" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					계약자이름 : 
+				</td>
+				<td>
+					<form:hidden path="contractorName" id="contractorName" placeholder="상품개수" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					계약자ID :
+				</td>
+				<td>
+					<form:hidden path="contractorId" id="contractorId" placeholder="상품개수" />
+				</td>
+			</tr>
+		</table>
+		
+		<input type="submit" name="sbm" value="등록" />
+	</form:form>
 	</div>
 </body>
 </html>

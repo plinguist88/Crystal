@@ -1,5 +1,7 @@
 package Controller.Pos;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -21,14 +23,15 @@ public class PaymentController {
 	PaymentService paymentService;
 	
 	@RequestMapping(value = "/payment", method = RequestMethod.POST)
-	public String payment (HttpSession session, HttpServletRequest request) {//@RequestBody Map<String, Object> map,SalesDTO salesDTO, 
-	/*	System.out.println(salesDTO.getItemsNo());
+	@ResponseBody
+	public String payment (SalesDTO salesDTO, HttpSession session, HttpServletRequest request) {//@RequestBody Map<String, Object> map, 
+		System.out.println(salesDTO.getItemsNo());
 		System.out.println(salesDTO.getItemsName());
 		System.out.println(salesDTO.getItemsCount());
-		System.out.println(salesDTO.getItemsPrice()); */
+		System.out.println(salesDTO.getItemsPrice());
 		
-		//paymentService.payment(session, request);
-		
+		paymentService.payment(salesDTO, session, request);
+		session.invalidate();
 		return "store/pos1";
 	}
 }

@@ -21,8 +21,8 @@ public class GoodsService {
 	public void goodsSelect(Model model, HttpSession session) {
 		//String itemlist = null;
 		List<ItemsDTO> list = goodsRepository.goodsSelect();
-		//model.addAttribute("goods", list);
-		session.setAttribute("goods", list);
+		//model.addAttribute("goodsList", list);
+		session.setAttribute("goodsList", list);
 		System.out.println("list : " + list.size() );
 		
 	}

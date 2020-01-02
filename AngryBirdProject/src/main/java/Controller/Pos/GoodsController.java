@@ -23,7 +23,7 @@ public class GoodsController {
 		
 		goodsService.goodsSelect(model, session);
 		
-		return "store/goodsList";
+		return "store/pos1";
 	}
 	
 	@RequestMapping(value = "/insertGoods", method = RequestMethod.POST)

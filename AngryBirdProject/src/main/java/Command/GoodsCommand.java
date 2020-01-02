@@ -2,7 +2,7 @@ package Command;
 
 public class GoodsCommand {
 
-	private String itemsNo; 
+	private String itemsNo;
 	private String itemsName;
 	private String itemsSort; 
 	private Integer itemsCount;

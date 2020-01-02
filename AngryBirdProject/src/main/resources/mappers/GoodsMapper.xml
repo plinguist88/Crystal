@@ -37,6 +37,10 @@
 					   			#{contractorNum}, #{contractorType}, #{contractorName}, #{contractorId} )
 		</insert>
 		
+		<update id="updateCount" parameterType="Model.DTO.SalesRecordDTO">
+			update items set items_count = items_count - #{itemsTransaction} where items_no = #{itemsNo }
+		</update>
+		
 		<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
 		
 		<!-- sales_record col -->
@@ -45,7 +49,7 @@
 		</sql>
 		
 		<resultMap type="Model.DTO.SalesRecordDTO" id="salesRs">
-			<id column="ITEMS_NO" jdbcType="VARCHAR" property="itemsNo" />
+			<result column="ITEMS_NO" jdbcType="VARCHAR" property="itemsNo" />
 			<result column="ITEMS_NAME" jdbcType="VARCHAR" property="itemsName" />
 			<result column="ITEMS_TRANSACTION" jdbcType="INTEGER" property="itemsTransaction" />
 			<result column="ITEMS_TOTAL_PRICE" jdbcType="INTEGER" property="itemsTotalPrice" />

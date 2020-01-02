@@ -27,10 +27,10 @@ $(function() {
 </head>
 <body>
 	<table border="1" style="height: auto; width:20%; border:1px">
-		<c:if test="${!empty goods }">
+		<c:if test="${!empty goodsList }">
 		
 			<tr>
-				<c:forEach var="goods" items="${goods }" varStatus="i">
+				<c:forEach var="goods" items="${goodsList }" varStatus="i">
 					
 					
 					<c:if test="${i.count % 5 == 0}">
