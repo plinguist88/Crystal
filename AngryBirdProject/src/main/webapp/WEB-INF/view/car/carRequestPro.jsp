@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>  
+<%@ taglib prefix="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %> 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ include file="/WEB-INF/view/header.jsp"%>
@@ -10,12 +12,20 @@
 <link href="${pageContext.request.contextPath}/css/css/style.css" rel="stylesheet" >
 <meta charset="UTF-8">
 <title>차량 예약신청 확인 페이지</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" ></script>
+<script type="text/javascript">
+$(function(){
+	$("#btn1").click(function(){			//'.'은 (html)클래스 '#'은 id
+		location.href="carRequestList";
+	});
+});
+</script>
 <style>
 body{
 	background-image:url("images/car_1.png");
 	background-repeat:no-repeat;
 	background-position : bottom;
-	background-size:400px;
+	background-size:300px;
 }
 </style>
 </head>
@@ -28,10 +38,10 @@ body{
 	<br />
 	<br />
 	<div align="center"><a href="/AngryBirdProject/main"><img src="/AngryBirdProject/images/member.JPG" width="400" /></a></div>
-		<h2>[ 차량 예약이 완료되었습니다 ]</h2>
+		<h2>[&nbsp;  차량 예약이 완료되었습니다  &nbsp;]</h2>
 	</div>
-	<div align="right">
-		<input type="submit" value="예약내역확인" />
+	<div align="center">
+		<input type="button" value="예약내역확인" id="btn1" />
 	</div>
 </body>
 </html>

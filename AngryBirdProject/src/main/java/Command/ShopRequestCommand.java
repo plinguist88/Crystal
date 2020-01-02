@@ -4,9 +4,9 @@ public class ShopRequestCommand {
 
 	private String employeeNum;
 	private String managerCelebrity;
-	private String employeePh;
-	private String from;
-	private String to;
+	private String shopsName;
+	private Integer shopRequestStartTime;
+	private Integer shopRequestEndTime;
 	
 	public String getEmployeeNum() {
 		return employeeNum;
@@ -20,22 +20,22 @@ public class ShopRequestCommand {
 	public void setManagerCelebrity(String managerCelebrity) {
 		this.managerCelebrity = managerCelebrity;
 	}
-	public String getEmployeePh() {
-		return employeePh;
+	public String getShopsName() {
+		return shopsName;
 	}
-	public void setEmployeePh(String employeePh) {
-		this.employeePh = employeePh;
+	public void setShopsName(String shopsName) {
+		this.shopsName = shopsName;
 	}
-	public String getFrom() {
-		return from;
+	public Integer getShopRequestStartTime() {
+		return shopRequestStartTime;
 	}
-	public void setFrom(String from) {
-		this.from = from;
+	public void setShopRequestStartTime(Integer shopRequestStartTime) {
+		this.shopRequestStartTime = shopRequestStartTime;
 	}
-	public String getTo() {
-		return to;
+	public Integer getShopRequestEndTime() {
+		return shopRequestEndTime;
 	}
-	public void setTo(String to) {
-		this.to = to;
+	public void setShopRequestEndTime(Integer shopRequestEndTime) {
+		this.shopRequestEndTime = shopRequestEndTime;
 	}
 }

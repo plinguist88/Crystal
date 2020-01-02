@@ -13,4 +13,5 @@
 	<!-- controller는 id가 필요없음. 가져다가 쓸일이 없기 때문 -->
 	<bean class="Controller.Shop.ShopController"/>
 	<bean class="Controller.Car.CarController"/>
+	<bean class="Controller.Car.CarViewListController"/>
 </beans>

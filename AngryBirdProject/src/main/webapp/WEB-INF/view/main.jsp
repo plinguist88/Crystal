@@ -23,8 +23,7 @@
 <br />
 <br />
 <br />
-<div align="center"><a href="/AngryBirdProject/main"><img src="/AngryBirdProject/images/member.JPG" width="350" /></a></div>
-<h2>현재 페이지는 '메인 페이지' 입니다.</h2>
+<div align="center"><a href="/AngryBirdProject/main"><img src="images\crystal_logo.jpg" width="600" /></a></div>
 </div>
 
 </body>

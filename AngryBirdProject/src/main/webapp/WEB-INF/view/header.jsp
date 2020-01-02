@@ -214,22 +214,21 @@
 </c:if>
 
 <c:if test="${employeeInfo.deptNum eq 'MA' }">
-	<div class="navbar" align="center">
-		<table class="table1" > 
-			<tr>
-				<td width="1400px" >
-				 <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="400" align="left" /></a>
-		 		 <a href="/AngryBirdProject/shopRequest" class="navA"> SHOP RESERV.</a>
-		 		 <a href="/AngryBirdProject/designer" class="navA"> DESIGNER</a> 
-		 		 <a href="/AngryBirdProject/carRequestList" class="navA"> CAR RESERV.</a>
-		 		 <a href="/AngryBirdProject/cars" class="navA"> CARS</a> 
-		 		 <a href="/AngryBirdProject/calendar" class="navA"> CALENDAR</a> 
-		  		 <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
-		  		 <a href="ma" class="navA"> MA</a>
-				</td>
-			</tr>
-		</table>
-	</div>
+   <div class="navbar" align="center">
+      <table class="table1" > 
+         <tr>
+            <td width="1400px" >
+             <a href="/AngryBirdProject/main"><img alt="logo" src="/AngryBirdProject/images/crystal_logo.jpg" width="300" align="left" /></a>
+              <a href="/AngryBirdProject/shopRequest" class="navA"> SHOP RESERV.</a>
+              <a href="/AngryBirdProject/carRequestList" class="navA"> CAR RESERV.</a>
+              <a href="/AngryBirdProject/carViewList" class="navA"> CARS</a> 
+              <a href="/AngryBirdProject/calendar" class="navA"> CALENDAR</a> 
+               <a href="/AngryBirdProject/logout" class="navA"> LOGOUT</a>   
+               <a href="ma" class="navA"> MA</a>
+            </td>
+         </tr>
+      </table>
+   </div>
 </c:if>
 
 <c:if test="${employeeInfo.deptNum eq 'SI' }">	<!-- 전산 관리자 -->

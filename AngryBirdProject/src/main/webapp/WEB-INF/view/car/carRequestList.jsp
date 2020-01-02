@@ -10,12 +10,17 @@
 <head>
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/css/css/style.css" rel="stylesheet" >
-<title>예약리스트</title>
+<title>차량예약리스트</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" ></script>
 <script type="text/javascript">
 $(function(){
 	$("#btn1").click(function(){			//'.'은 (html)클래스 '#'은 id
 		location.href="carRequest";
+	});
+});
+$(function(){
+	$("#btn2").click(function(){			//'.'은 (html)클래스 '#'은 id
+		location.href="main";
 	});
 });
 </script>
@@ -27,16 +32,22 @@ $(function(){
 <div class="container">
 <table class="line">
 	<tr>
-		<th>번호</th><th>대여일자</th><th>반납일자</th><th>차종</th><th>인원</th>
+		<td colspan="8"><div align="center"><h2>배차요청리스트</h2></div></td>
+	</tr>
+	<tr>
+		<th>순번</th><th>직원번호</th><th>예약번호</th><th>대여일자</th><th>반납일자</th><th>차종</th><th>인원</th><th>차량번호</th>
 	</tr>
 	<c:if test="${! empty carRequestList }"> <!-- service model에 선언해준 이름과 동일해야 함 -->
 	<c:forEach var="carRequest" items="${carRequestList}" varStatus="status">
-	<tr align="center">
-		<td align="center">${status.count }</td>
+	<tr>
+		<td>${status.count }</td>
+		<td>${carRequest.employeeNum}</td>
+		<td>${carRequest.carRequestRentalNum}</td> 
 		<td>${carRequest.from }</td> 
 		<td>${carRequest.to }</td>
 		<td>${carRequest.carType }</td>
 		<td>${carRequest.carRequestPassengerNum }</td>
+		<td>${carRequest.carRegNum }</td>
 	</tr>
 	</c:forEach>
 	</c:if>
@@ -46,9 +57,10 @@ $(function(){
 		</tr>
 	</c:if>
 		<tr>
-			<td colspan="6">
+			<td colspan="8">
 				<div align="center">
 					<input type="button" value="배차신청" id="btn1" /> 
+					<input type="button" value="메인으로" id="btn2" /> 
 				</div>
 			</td>
 		</tr>

@@ -4,89 +4,61 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class ShopRequestDTO implements Serializable {
-	private String shopRequestRegNum;
-	private String shopRequestRegDate;
-	private String shopRequestResName;
-	private Long shopRequestStartTime;
-	private Long shopRequestEndTime;
-	private String shopsNum;
-	private String designerName;
+	
+	private String shopRequestResvNum;
+	private String shopRequestResvName;
+	private String managerCelebrity;
+	private String shopsName;
+	private Integer shopRequestStartTime;
+	private Integer shopRequestEndTime;
+	private String shopsDesignerName;
 	private String employeeNum;
 	
-	public ShopRequestDTO(String shopRequestRegNum, String shopRequestRegDate, String shopRequestResName,
-			Long shopRequestStartTime, Long shopRequestEndTime, String shopsNum, String designerName,
-			String employeeNum) {
-		super();
-		this.shopRequestRegNum = shopRequestRegNum;
-		this.shopRequestRegDate = shopRequestRegDate;
-		this.shopRequestResName = shopRequestResName;
-		this.shopRequestStartTime = shopRequestStartTime;
-		this.shopRequestEndTime = shopRequestEndTime;
-		this.shopsNum = shopsNum;
-		this.designerName = designerName;
-		this.employeeNum = employeeNum;
+	public String getShopRequestResvNum() {
+		return shopRequestResvNum;
 	}
-
-	public String getShopRequestRegNum() {
-		return shopRequestRegNum;
+	public void setShopRequestResvNum(String shopRequestResvNum) {
+		this.shopRequestResvNum = shopRequestResvNum;
 	}
-
-	public void setShopRequestRegNum(String shopRequestRegNum) {
-		this.shopRequestRegNum = shopRequestRegNum;
+	public String getShopRequestResvName() {
+		return shopRequestResvName;
 	}
-
-	public String getShopRequestRegDate() {
-		return shopRequestRegDate;
+	public void setShopRequestResvName(String shopRequestResvName) {
+		this.shopRequestResvName = shopRequestResvName;
 	}
-
-	public void setShopRequestRegDate(String shopRequestRegDate) {
-		this.shopRequestRegDate = shopRequestRegDate;
+	public String getManagerCelebrity() {
+		return managerCelebrity;
 	}
-
-	public String getShopRequestResName() {
-		return shopRequestResName;
+	public void setManagerCelebrity(String managerCelebrity) {
+		this.managerCelebrity = managerCelebrity;
 	}
-
-	public void setShopRequestResName(String shopRequestResName) {
-		this.shopRequestResName = shopRequestResName;
+	public String getShopsName() {
+		return shopsName;
 	}
-
-	public Long getShopRequestStartTime() {
+	public void setShopsName(String shopsName) {
+		this.shopsName = shopsName;
+	}
+	public Integer getShopRequestStartTime() {
 		return shopRequestStartTime;
 	}
-
-	public void setShopRequestStartTime(Long shopRequestStartTime) {
+	public void setShopRequestStartTime(Integer shopRequestStartTime) {
 		this.shopRequestStartTime = shopRequestStartTime;
 	}
-
-	public Long getShopRequestEndTime() {
+	public Integer getShopRequestEndTime() {
 		return shopRequestEndTime;
 	}
-
-	public void setShopRequestEndTime(Long shopRequestEndTime) {
+	public void setShopRequestEndTime(Integer shopRequestEndTime) {
 		this.shopRequestEndTime = shopRequestEndTime;
 	}
-
-	public String getShopsNum() {
-		return shopsNum;
+	public String getShopsDesignerName() {
+		return shopsDesignerName;
 	}
-
-	public void setShopsNum(String shopsNum) {
-		this.shopsNum = shopsNum;
+	public void setShopsDesignerName(String shopsDesignerName) {
+		this.shopsDesignerName = shopsDesignerName;
 	}
-
-	public String getDesignerName() {
-		return designerName;
-	}
-
-	public void setDesignerName(String designerName) {
-		this.designerName = designerName;
-	}
-
 	public String getEmployeeNum() {
 		return employeeNum;
 	}
-
 	public void setEmployeeNum(String employeeNum) {
 		this.employeeNum = employeeNum;
 	}

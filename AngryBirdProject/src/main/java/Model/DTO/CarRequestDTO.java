@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class CarRequestDTO implements Serializable {
-	
 	private String carRequestRentalNum;
 	private String from;
 	private String to;

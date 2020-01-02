@@ -4,51 +4,47 @@
 <mapper namespace="CarMapper">
 <cache />
 
-	<!-- sql tag는 table에 컬럼명을 넣어서 반복적으로 쓰기위해 만듦 -->
-	<sql id="carRequest"> 
-		CAR_REQUEST_RENTAL_NUM, CAR_REQUEST_RENTAL_DATE, CAR_REQUEST_RETURN_DATE,
-		CAR_TYPE, CAR_REQUEST_PASSENGER_NUM, CAR_REG_NUM, EMPLOYEE_NUM
-	</sql>
-	
-	<!-- #{from}, #{to} 는  db에서 CAR_REQUEST_RENTAL_DATE, CAR_REQUEST_RETURN_DATE -->
-	<sql id="carRequest2"> 
-		CAR_REQUEST_RENTAL_NUM, CAR_REQUEST_RENTAL_DATE, CAR_REQUEST_RETURN_DATE,
-		CAR_TYPE, CAR_REQUEST_PASSENGER_NUM, EMPLOYEE_NUM
-	</sql>
+   <!-- sql tag는 table에 컬럼명을 넣어서 반복적으로 쓰기위해 만듦 -->
+   <sql id="carRequest"> 
+      CAR_REQUEST_RENTAL_NUM, CAR_REQUEST_RENTAL_DATE, CAR_REQUEST_RETURN_DATE,
+      CAR_TYPE, CAR_REQUEST_PASSENGER_NUM, CAR_REG_NUM, EMPLOYEE_NUM
+   </sql>
+   
+   <!-- #{from}, #{to} 는  db에서 CAR_REQUEST_RENTAL_DATE, CAR_REQUEST_RETURN_DATE -->
 
-	<resultMap type="Model.DTO.CarRequestDTO" id="carReqRs">
-		<id column="car_request_rental_num" jdbcType="VARCHAR" property="carRequestRentalNum" />
-		<result column="car_request_rental_date" jdbcType="VARCHAR" property="from" />
-		<result column="car_request_return_date" jdbcType="VARCHAR" property="to" /> <!-- column DB명, property는 DTO 멤버변수명 -->
-		<result column="car_type" jdbcType="VARCHAR" property="carType" />
-		<result column="car_request_passenger_num" jdbcType="INTEGER" property="carRequestPassengerNum" />
-		<result column="car_reg_num" jdbcType="VARCHAR" property="carRegNum" />
-		<result column="employee_num" jdbcType="VARCHAR" property="employeeNum" />
-	</resultMap>
-	
-	<resultMap type="Model.DTO.CarsDTO" id="carRs">
-		<id column="car_reg_num" jdbcType="VARCHAR" property="carRegNum" />
-		<result column="car_type" jdbcType="VARCHAR" property="carType" />
-		<result column="car_passenger_num" jdbcType="INTEGER" property="carPassengerNum" />
-	</resultMap>
-	
-	<!-- 배차요청시 차량 선택 -->
-	<select id="carSel" resultMap="carRs">
-		select car_type, car_passenger_num, car_reg_num
-		  from cars
-	</select>
-	
-	<insert id="insertCarRequest" parameterType="Model.DTO.CarRequestDTO">
-		insert into CAR_REQUEST(<include refid="carRequest"/>)
-		VALUES(#{carRequestRentalNum}, #{from}, #{to}, #{carType}, #{carRequestPassengerNum}, #{carRegNum}, #{employeeNum}
-		)
-	</insert>
-	
-	<!-- 차량 예약 리스트 보기 -->
-	<select id="selectCarRequestList" resultMap="carReqRs">
-		select <include refid="carRequest2"/>
-		from CAR_REQUEST
-	</select>
-	
-	
+   <resultMap type="Model.DTO.CarRequestDTO" id="carReqRs">
+      <id column="car_request_rental_num" jdbcType="VARCHAR" property="carRequestRentalNum" />
+      <result column="car_request_rental_date" jdbcType="VARCHAR" property="from" />
+      <result column="car_request_return_date" jdbcType="VARCHAR" property="to" /> <!-- column DB명, property는 DTO 멤버변수명 -->
+      <result column="car_type" jdbcType="VARCHAR" property="carType" />
+      <result column="car_request_passenger_num" jdbcType="INTEGER" property="carRequestPassengerNum" />
+      <result column="car_reg_num" jdbcType="VARCHAR" property="carRegNum" />
+      <result column="employee_num" jdbcType="VARCHAR" property="employeeNum" />
+   </resultMap>
+   
+   <resultMap type="Model.DTO.CarsDTO" id="carRs">
+      <id column="car_reg_num" jdbcType="VARCHAR" property="carRegNum" />
+      <result column="car_type" jdbcType="VARCHAR" property="carType" />
+      <result column="car_passenger_num" jdbcType="INTEGER" property="carPassengerNum" />
+   </resultMap>
+   
+   <!-- 배차요청시 차량 선택 -->
+   <select id="carSel" resultMap="carRs">
+      select car_type, car_passenger_num, car_reg_num
+        from cars
+   </select>
+   
+   <insert id="insertCarRequest" parameterType="Model.DTO.CarRequestDTO">
+      insert into CAR_REQUEST(<include refid="carRequest"/>)
+      VALUES(#{carRequestRentalNum}, #{from}, #{to}, #{carType}, #{carRequestPassengerNum}, #{carRegNum}, #{employeeNum}
+      )
+   </insert>
+   
+   <!-- 차량 예약 리스트 보기 -->
+   <select id="selectCarRequestList" resultMap="carReqRs">
+      select <include refid="carRequest"/>
+      from CAR_REQUEST
+   </select>
+   
+   
 </mapper>

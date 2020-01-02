@@ -44,4 +44,10 @@ public class CarController {
 		
 		return "car/carRequestPro";
 	}
+	
+	// 부모창 -> 자식창
+	@RequestMapping(value = "/ChildPage", method = RequestMethod.GET) //value = "/ChildPage" url 값
+	public String goChildPage() {
+		return "car/carListForm"; //파일명(.jsp)
+	}
 }

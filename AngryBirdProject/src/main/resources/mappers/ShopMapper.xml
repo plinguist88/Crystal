@@ -1,12 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="shop">
+<mapper namespace="ShopMapper">
 	<cache />
 		
+	<!-- sql tag는 table에 컬럼명을 넣어서 반복적으로 쓰기위해 만듦 -->
+	<sql id="shopRequest"> 
+		SHOP_REQUEST_RESV_NUM, EMPLOYEE_NUM, MANAGER_CELEBRITY, SHOPS_NAME,
+		SHOP_REQUEST_START_TIME, SHOP_REQUEST_END_TIME
+	</sql>
+	
+	<resultMap type="Model.DTO.ShopRequestDTO" id="shopReqRs">
+		<id column="shop_request_resv_num" jdbcType="VARCHAR" property="shopRequestResvNum" />
+		<result column="employee_num" jdbcType="VARCHAR" property="employeeNum" />
+		<result column="manager_celebrity" jdbcType="VARCHAR" property="managerCelebrity" />
+		<result column="shops_name" jdbcType="VARCHAR" property="shopsName" />
+		<result column="shop_request_start_time" jdbcType="INTEGER" property="shopRequestStartTime" />
+		<result column="shop_request_end_time" jdbcType="INTEGER" property="shopRequestEndTime" />
+	</resultMap>
+	
+	<resultMap type="Model.DTO.ManagerDTO" id="managerMap">
+		<id column="employee_num" jdbcType="VARCHAR" property="employeeNum" />
+		<id column="manager_celebrity" jdbcType="VARCHAR" property="managerCelebrity" />
+	</resultMap>
+	
+	<select id="selectCelebrity" parameterType="Model.DTO.ManagerDTO" resultMap="managerMap">
+		select employee_num, manager_celebrity
+		from manager where employee_num = #{employeeNum}
+	</select>
+	
+	
+	
+	
+	
 		
-		
-		<insert id="shopAction">
-			
-		</insert>
 </mapper>

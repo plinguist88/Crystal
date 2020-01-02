@@ -33,7 +33,7 @@ public class CarRequestService {
 		
 		//sysdate를 date로 변환 및 자동생성 cad.setCarRequestRentalNum(carRequestCommand.getEmployeeNum() + today);
 		Date date = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd HH:mm");
 		String today = sdf.format(date);
 		
 		cad.setCarRegNum(carRequestCommand.getCarRegNum1());

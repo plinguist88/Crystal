@@ -12,18 +12,6 @@ public class Shops2DTO implements Serializable{
 	private Long shopsOpenTime;
 	private Long shopsCloseTime;
 	
-	public Shops2DTO(String shopsNum, String shopsName, String shopsCoRegNum, String shopsLoc, String shopsAddr,
-			Long shopsOpenTime, Long shopsCloseTime) {
-		super();
-		this.shopsNum = shopsNum;
-		this.shopsName = shopsName;
-		this.shopsCoRegNum = shopsCoRegNum;
-		this.shopsLoc = shopsLoc;
-		this.shopsAddr = shopsAddr;
-		this.shopsOpenTime = shopsOpenTime;
-		this.shopsCloseTime = shopsCloseTime;
-	}
-
 	public String getShopsNum() {
 		return shopsNum;
 	}
